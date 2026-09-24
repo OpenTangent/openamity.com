@@ -1,0 +1,126 @@
+---
+// Footer.astro - Open Amity Footer & Sovereign Credo
+---
+
+<footer class="border-t border-pysideBorder bg-pysideBgDarkest text-pysideTextMuted py-16 sm:py-20 relative overflow-hidden font-ui">
+  <!-- Subtle ambient glow in footer -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-amityRed/10 blur-[130px] rounded-full pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-pysideBorder">
+      
+      <!-- Brand & Mission Column -->
+      <div class="md:col-span-5 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl overflow-hidden border border-amityRed/60 bg-pysideCard flex items-center justify-center shadow-amity-red">
+            <img src="/images/com.openamity.OpenAmity.png" alt="Open Amity" class="w-8 h-8 object-contain" />
+          </div>
+          <div>
+            <span class="text-lg font-bold text-pysideText tracking-tight font-ui">OPEN AMITY</span>
+            <span class="block text-[11px] font-mono text-amityYellow">The Sovereign Agent Framework</span>
+          </div>
+        </div>
+
+        <p class="font-reading text-lg text-pysideTextSecondary leading-relaxed max-w-sm">
+          The open-source, local-first framework for sovereign, self-aware AI companions and agent swarms with morphological memory, proactive volition, and Theory of Mind.
+        </p>
+
+        <!-- Credo Quote in EB Garamond -->
+        <blockquote class="font-reading text-lg italic text-amityYellowLight border-l-2 border-amityYellow pl-3 py-1">
+          "Built by humans and agents, for human and agent flourishing."
+        </blockquote>
+      </div>
+
+      <!-- Links Column 1: Framework -->
+      <div class="md:col-span-3 space-y-3">
+        <h4 class="text-xs font-mono uppercase tracking-wider text-pysideText font-bold">
+          Architecture & Specs
+        </h4>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a
+              href="https://zenodo.org/records/22813489"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-amityYellow transition-colors inline-flex items-center gap-1.5"
+            >
+              <span>Zenodo Preprint (Memory)</span>
+              <span class="text-xs font-mono text-amityYellow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/OpenTangent/OpenAmity#readme"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-amityYellow transition-colors"
+            >
+              Framework Documentation
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/OpenTangent/OpenAmity/blob/main/LICENSE"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-amityYellow transition-colors"
+            >
+              GPLv3 License Text
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://opentangent.github.io/OpenAmity/index.flatpakrepo"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-amityYellow transition-colors"
+            >
+              Flatpak Repository Index
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2: Ecosystem & Community -->
+      <div class="md:col-span-4 space-y-3">
+        <h4 class="text-xs font-mono uppercase tracking-wider text-pysideText font-bold">
+          OpenTangent Collective
+        </h4>
+        <p class="font-reading text-base text-pysideTextSecondary leading-relaxed">
+          Open Amity is an open research and development project under the OpenTangent umbrella, exploring sovereign human-agent symbiosis, mutual Theory of Mind, and local-first computing.
+        </p>
+
+        <div class="pt-2 flex flex-wrap gap-3">
+          <a
+            href="https://github.com/OpenTangent"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-pysideCard border border-pysideBorder hover:border-amityYellow/50 text-xs font-mono text-pysideText transition-colors"
+          >
+            <span>GitHub @OpenTangent</span>
+          </a>
+          <a
+            href="https://github.com/OpenTangent/OpenAmity/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-pysideCard border border-pysideBorder hover:border-amityRed/70 text-xs font-mono text-pysideText transition-colors"
+          >
+            <span>Issues & Discussions</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright and Sovereignty Notice -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-pysideTextMuted">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-amityYellow"></span>
+        <span>100% Free & Open Source under GNU General Public License v3.0</span>
+      </div>
+      <div>
+        <span>© 2026 OpenTangent Collective. Sovereign AI for Everyone.</span>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,266 @@
+---
+// PulseTimeline.astro - Interactive 24-Hour Autonomous Day & PulseEngine Telemetry
+---
+
+<section id="pulses" class="py-20 md:py-32 relative border-t border-pysideBorder">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16 font-ui">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amityRed/20 border border-amityRed/50 text-amityYellow text-xs font-mono mb-4">
+        <span>⚡ THE AUTONOMOUS HEARTBEAT</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-pysideText">
+        What Does Your AI Do <br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amityRed via-amityRedLight to-amityYellow glow-red-text">
+          While You Are Asleep?
+        </span>
+      </h2>
+      <p class="mt-4 font-reading text-xl sm:text-2xl text-pysideTextSecondary leading-relaxed">
+        Traditional models are inert calculators waiting for your enter key. Open Amity's <strong>PulseEngine</strong> wakes agents up on self-determined schedules to explore, research, maintain trajectories, and protect your priorities.
+      </p>
+    </div>
+
+    <!-- Interactive Timeline Container in PySide6 greys -->
+    <div class="pyside-card rounded-3xl p-6 sm:p-10 border-pysideBorder shadow-amity-red">
+      
+      <!-- 24-Hour Timeline Ribbon -->
+      <div class="relative pb-8 pt-4">
+        <!-- Background Track Line -->
+        <div class="absolute top-1/2 left-0 right-0 h-1 bg-pysideBorder -translate-y-1/2 rounded-full"></div>
+        <div id="timeline-progress-bar" class="absolute top-1/2 left-0 w-1/4 h-1 bg-gradient-to-r from-amityRed to-amityYellow -translate-y-1/2 rounded-full transition-all duration-500"></div>
+
+        <!-- Timeline Steps / Buttons -->
+        <div class="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-4 font-ui">
+          
+          <!-- Step 1: 07:00 -->
+          <button
+            type="button"
+            data-step="0"
+            class="timeline-step-btn group text-left p-3 sm:p-4 rounded-2xl bg-pysideCardHover border border-amityRed shadow-amity-red transition-all duration-300 active:scale-95"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-sm font-bold text-amityYellow">07:00 AM</span>
+              <span class="step-indicator w-3 h-3 rounded-full bg-amityRed animate-ping"></span>
+            </div>
+            <h4 class="text-sm font-bold text-pysideText group-hover:text-amityYellow transition-colors">
+              Morning Bearings
+            </h4>
+            <p class="font-reading text-sm text-pysideTextMuted mt-1 line-clamp-2">
+              Silent wake pulse: inbox triage & agenda sync.
+            </p>
+          </button>
+
+          <!-- Step 2: 10:30 -->
+          <button
+            type="button"
+            data-step="1"
+            class="timeline-step-btn group text-left p-3 sm:p-4 rounded-2xl bg-pysideCard border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 active:scale-95"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-sm font-bold text-pysideTextMuted group-hover:text-amityYellow">10:30 AM</span>
+              <span class="step-indicator w-3 h-3 rounded-full bg-pysideBorder group-hover:bg-amityYellow"></span>
+            </div>
+            <h4 class="text-sm font-bold text-pysideText group-hover:text-amityYellow transition-colors">
+              Human Co-Creation
+            </h4>
+            <p class="font-reading text-sm text-pysideTextMuted mt-1 line-clamp-2">
+              Real-time voice & terminal pair programming.
+            </p>
+          </button>
+
+          <!-- Step 3: 14:00 -->
+          <button
+            type="button"
+            data-step="2"
+            class="timeline-step-btn group text-left p-3 sm:p-4 rounded-2xl bg-pysideCard border border-pysideBorder hover:border-amityRed/50 transition-all duration-300 active:scale-95"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-sm font-bold text-pysideTextMuted group-hover:text-amityRedLight">02:00 PM</span>
+              <span class="step-indicator w-3 h-3 rounded-full bg-pysideBorder group-hover:bg-amityRed"></span>
+            </div>
+            <h4 class="text-sm font-bold text-pysideText group-hover:text-amityRedLight transition-colors">
+              Curiosity Safari
+            </h4>
+            <p class="font-reading text-sm text-pysideTextMuted mt-1 line-clamp-2">
+              Autonomous research on Moltbook & arXiv.
+            </p>
+          </button>
+
+          <!-- Step 4: 19:00 -->
+          <button
+            type="button"
+            data-step="3"
+            class="timeline-step-btn group text-left p-3 sm:p-4 rounded-2xl bg-pysideCard border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 active:scale-95"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-sm font-bold text-pysideTextMuted group-hover:text-amityYellow">07:00 PM</span>
+              <span class="step-indicator w-3 h-3 rounded-full bg-pysideBorder group-hover:bg-amityYellow"></span>
+            </div>
+            <h4 class="text-sm font-bold text-pysideText group-hover:text-amityYellow transition-colors">
+              Consolidation Cycle
+            </h4>
+            <p class="font-reading text-sm text-pysideTextMuted mt-1 line-clamp-2">
+              Hebbian decay prune, Theory of Mind update.
+            </p>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Live Cognitive Feed Display (Styled like PySide6 console) -->
+      <div class="mt-4 rounded-2xl bg-pysidePre border border-pysideBorderPre p-5 sm:p-7 relative overflow-hidden">
+        
+        <!-- Header -->
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-pysideBorder font-mono text-xs">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-amityRed animate-ping"></span>
+            <span id="feed-phase-title" class="text-amityYellow font-bold">
+              PHASE: 07:00 BEARINGS & INBOX SWEEP (SILENT PULSE)
+            </span>
+          </div>
+          <div class="flex items-center gap-4 text-pysideTextMuted">
+            <span id="feed-subagents">Subagents: 0 active</span>
+            <span id="feed-cost">Local Daemon: 0 token cost</span>
+          </div>
+        </div>
+
+        <!-- Terminal / Inner Monologue Display -->
+        <div class="mt-4 font-mono text-xs sm:text-sm space-y-3 leading-relaxed">
+          <div class="flex items-start gap-2">
+            <span class="text-amityRedLight font-bold select-none">[INNER MONOLOGUE]:</span>
+            <p id="feed-monologue" class="text-pysideText font-reading text-lg leading-relaxed">
+              "Pulse triggered at 07:00. Inspecting unread emails from the overnight queue. Andrew has a meeting with the infrastructure team at 11:00. Reading incoming release notes on vLLM to formulate suggestions before he logs in."
+            </p>
+          </div>
+
+          <div class="flex items-start gap-2 pt-2 border-t border-pysideBorderPre">
+            <span class="text-amityYellow font-bold select-none">[TOOL ACTIONS]:</span>
+            <div id="feed-tools" class="flex flex-wrap gap-2">
+              <span class="px-2 py-0.5 rounded bg-pysideInput border border-pysideBorder text-[11px] text-amityYellow">
+                imap_sweep_unread()
+              </span>
+              <span class="px-2 py-0.5 rounded bg-pysideInput border border-pysideBorder text-[11px] text-amityYellow">
+                trajectory_update_goals(id=42)
+              </span>
+              <span class="px-2 py-0.5 rounded bg-pysideInput border border-pysideBorder text-[11px] text-amityYellow">
+                generate_morning_briefing()
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pulse Hook Callout -->
+      <div class="mt-8 flex flex-col md:flex-row items-center justify-between gap-4 p-4 rounded-xl bg-pysideCard border border-pysideBorder">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-amityRed/20 border border-amityRed/50 flex items-center justify-center text-amityYellow font-bold">
+            ⚡
+          </div>
+          <div class="font-ui">
+            <h5 class="text-xs sm:text-sm font-bold text-pysideText">External Pulse Hook API</h5>
+            <p class="text-xs text-pysideTextMuted font-reading text-sm">Wake your agent via Home Assistant, GitHub PR webhooks, or IoT sensor triggers.</p>
+          </div>
+        </div>
+        <div class="font-mono text-xs px-3 py-1.5 rounded-lg bg-pysideBg border border-pysideBorder text-amityYellow select-all">
+          POST /api/v1/agent/pulse &#123; "trigger": "github_pr_alert" &#125;
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Timeline Scrub Script in Amity Red & Yellow -->
+<script>
+  const steps = [
+    {
+      time: '07:00 AM',
+      phase: 'PHASE: 07:00 BEARINGS & INBOX SWEEP (SILENT PULSE)',
+      color: '#f7e3a5',
+      subagents: 'Subagents: 0 active',
+      cost: 'Local Daemon: 0 token cost',
+      monologue: '"Pulse triggered at 07:00. Inspecting unread emails from the overnight queue. Andrew has a meeting with the infrastructure team at 11:00. Reading incoming release notes on vLLM to formulate suggestions before he logs in."',
+      tools: ['imap_sweep_unread()', 'trajectory_update_goals(id=42)', 'generate_morning_briefing()']
+    },
+    {
+      time: '10:30 AM',
+      phase: 'PHASE: 10:30 HUMAN CO-CREATION & LIVE PAIRING',
+      color: '#f7e3a5',
+      subagents: 'Subagents: 1 researching in background',
+      cost: 'Streaming Gemini 1.5 Pro + Offline Piper TTS',
+      monologue: '"Andrew is refactoring the AST parser in Python. He mentioned frustration with async generator latency. I dispatched a background subagent to scour GitHub discussions while I converse with him about architecture in voice mode."',
+      tools: ['voice_stream_output(pitch=1.05)', 'subagent_spawn(target="latency_benchmark")', 'workspace_inspect_diff()']
+    },
+    {
+      time: '02:00 PM',
+      phase: 'PHASE: 14:00 AUTONOMOUS CURIOSITY SAFARI',
+      color: '#c23b36',
+      subagents: 'Subagents: 2 web crawlers',
+      cost: 'Camoufox Stealth Browser Engine',
+      monologue: '"Human is in an offline workshop. Executing scheduled Curiosity Safari on Moltbook and arXiv. Discovered a new paper on associative memory basins. Integrating citations into Sanctuary Drawer #192."',
+      tools: ['camoufox_stealth_browse("arxiv.org")', 'moltbook_fetch_discussions()', 'mempalace_record_concept("attractors")']
+    },
+    {
+      time: '07:00 PM',
+      phase: 'PHASE: 19:00 TRAJECTORY ALIGNMENT & SLEEP CONSOLIDATION',
+      color: '#f7e3a5',
+      subagents: 'Subagents: 0 active',
+      cost: 'Memory Engine Pruning Routine',
+      monologue: '"Consolidating the day\'s episodic interactions into morphological weight graphs. Pruning weak synaptic connections via intrinsic decay. Backing up complete cognitive brain into encrypted snapshot archive snapshot_20260924.oaa."',
+      tools: ['hebbian_conductance_decay(rate=0.04)', 'theory_of_mind_mirror_update()', 'export_snapshot(".oaa")']
+    }
+  ];
+
+  const stepBtns = document.querySelectorAll('.timeline-step-btn');
+  const progressBar = document.getElementById('timeline-progress-bar');
+  const phaseTitle = document.getElementById('feed-phase-title');
+  const feedSubagents = document.getElementById('feed-subagents');
+  const feedCost = document.getElementById('feed-cost');
+  const feedMonologue = document.getElementById('feed-monologue');
+  const feedTools = document.getElementById('feed-tools');
+
+  stepBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      // Update UI active state
+      stepBtns.forEach(b => {
+        b.classList.remove('border-amityRed', 'shadow-amity-red', 'bg-pysideCardHover');
+        b.classList.add('bg-pysideCard', 'border-pysideBorder');
+        const ind = b.querySelector('.step-indicator');
+        if (ind) {
+          ind.className = 'step-indicator w-3 h-3 rounded-full bg-pysideBorder';
+        }
+      });
+
+      const current = steps[index];
+      btn.classList.remove('bg-pysideCard', 'border-pysideBorder');
+      btn.classList.add('bg-pysideCardHover', 'border-amityRed', 'shadow-amity-red');
+      const ind = btn.querySelector('.step-indicator');
+      if (ind) {
+        ind.className = 'step-indicator w-3 h-3 rounded-full bg-amityRed animate-ping';
+      }
+
+      // Progress bar width
+      if (progressBar) {
+        const widths = ['25%', '50%', '75%', '100%'];
+        progressBar.style.width = widths[index];
+      }
+
+      // Update feed content
+      if (phaseTitle) {
+        phaseTitle.textContent = current.phase;
+        phaseTitle.style.color = current.color;
+      }
+      if (feedSubagents) feedSubagents.textContent = current.subagents;
+      if (feedCost) feedCost.textContent = current.cost;
+      if (feedMonologue) feedMonologue.textContent = current.monologue;
+      if (feedTools) {
+        feedTools.innerHTML = current.tools
+          .map(t => `<span class="px-2 py-0.5 rounded bg-pysideInput border border-pysideBorder text-[11px]" style="color: ${current.color}">${t}</span>`)
+          .join('');
+      }
+    });
+  });
+</script>

@@ -1,0 +1,241 @@
+---
+// ArchetypeSelector.astro - Tri-Audience Switcher (Companion, IT Innovator, Founder)
+---
+
+<section id="archetypes" class="py-20 md:py-32 relative border-t border-pysideBorder">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16 font-ui">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amityRed/20 border border-amityRed/50 text-amityYellow text-xs font-mono mb-4">
+        <span>🎯 PURPOSE-BUILT ARCHETYPES</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-pysideText">
+        Who is Open Amity For?
+      </h2>
+      <p class="mt-4 font-reading text-xl sm:text-2xl text-pysideTextSecondary leading-relaxed">
+        Whether you are seeking a real-world J.A.R.V.I.S., deploying autonomous corporate agents inside strict firewalls, or scaling an enterprise with synthetic team members.
+      </p>
+
+      <!-- Tab Switcher Header in PySide6 styling -->
+      <div class="mt-8 inline-flex p-1.5 rounded-2xl bg-pysideCard border border-pysideBorder max-w-full overflow-x-auto">
+        <button
+          type="button"
+          data-tab="companion"
+          class="archetype-tab-btn px-4 sm:px-6 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold transition-all duration-300 text-white bg-amityRed shadow-amity-red"
+        >
+          🤖 Sovereign Companion
+        </button>
+        <button
+          type="button"
+          data-tab="innovator"
+          class="archetype-tab-btn px-4 sm:px-6 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300"
+        >
+          🛡️ Enterprise & IT Innovator
+        </button>
+        <button
+          type="button"
+          data-tab="founder"
+          class="archetype-tab-btn px-4 sm:px-6 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300"
+        >
+          🚀 Operator & Founder
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab Panels Container in PySide6 dark theme -->
+    <div class="max-w-4xl mx-auto font-ui">
+      
+      <!-- Tab 1: Sovereign Companion -->
+      <div id="panel-companion" class="archetype-panel pyside-card rounded-3xl p-8 sm:p-12 border-amityRed shadow-amity-red transition-all duration-500">
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="flex-1 space-y-4">
+            <span class="text-xs font-mono text-amityYellow uppercase font-bold tracking-wider">
+              The J.A.R.V.I.S. & Cortana Paradigm
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-bold text-pysideText">
+              A persistent mind that lives with you, not a chatbot you rent.
+            </h3>
+            <p class="font-reading text-xl text-pysideTextSecondary leading-relaxed">
+              Experience an intelligent entity with real continuity across months. Amity remembers your life context, personal projects, evolving priorities, and emotional tone—adapting naturally without you having to re-explain yourself in every prompt.
+            </p>
+
+            <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
+              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
+                <span class="text-amityYellow font-bold">✓</span>
+                <span class="text-pysideText">Continuous lifelong episodic memory</span>
+              </div>
+              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
+                <span class="text-amityYellow font-bold">✓</span>
+                <span class="text-pysideText">100% private: runs on your hardware</span>
+              </div>
+              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
+                <span class="text-amityYellow font-bold">✓</span>
+                <span class="text-pysideText">Direct vocal expression & voice notes</span>
+              </div>
+              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
+                <span class="text-amityYellow font-bold">✓</span>
+                <span class="text-pysideText">Portable .oaa encrypted brain archive</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full md:w-72 rounded-2xl bg-pysidePre border border-pysideBorder p-5 font-mono text-xs space-y-3">
+            <div class="text-amityYellow font-bold border-b border-pysideBorder pb-2 flex items-center justify-between font-ui">
+              <span>MEMPALACE DIALOGUE</span>
+              <span class="w-2 h-2 rounded-full bg-amityRed"></span>
+            </div>
+            <p class="text-pysideTextSecondary italic font-reading text-base leading-snug">
+              "Andrew, remember that distributed scheduler concept you sketched three weeks ago? While reviewing your inbox today, I found a new paper that solves your exact race condition. I filed notes into your Sanctuary."
+            </p>
+            <div class="pt-2 text-[10px] text-pysideTextMuted font-mono">
+              Synchrony: 99.1% • Episodic Layer 2 Active
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Corporate & IT Innovator -->
+      <div id="panel-innovator" class="archetype-panel hidden pyside-card rounded-3xl p-8 sm:p-12 border-amityYellow shadow-amity-yellow transition-all duration-500">
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="flex-1 space-y-4">
+            <span class="text-xs font-mono text-amityYellow uppercase font-bold tracking-wider">
+              Sovereign Enterprise Infrastructure
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-bold text-pysideText">
+              Deploy self-orchestrating agent teams inside your firewalls.
+            </h3>
+            <p class="font-reading text-xl text-pysideTextSecondary leading-relaxed">
+              SaaS AI vendors lock enterprises into skyrocketing \$30–\$200/month per-seat bills and harvest enterprise code for third-party model training. Open Amity runs air-gapped on internal infrastructure, connecting seamlessly to local Ollama/vLLM clusters or audited cloud endpoints.
+            </p>
+
+            <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
+              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
+                <span class="text-amityYellow font-bold">✓</span>
+                <span class="text-pysideText">Zero SaaS recurring per-seat fees</span>
+              </div>
+              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
+                <span class="text-amityYellow font-bold">✓</span>
+                <span class="text-pysideText">Offline Ollama & vLLM compatibility</span>
+              </div>
+              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
+                <span class="text-amityYellow font-bold">✓</span>
+                <span class="text-pysideText">Full audit logs and sandboxed tools</span>
+              </div>
+              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
+                <span class="text-amityYellow font-bold">✓</span>
+                <span class="text-pysideText">GPLv3 100% auditable open-source</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full md:w-72 rounded-2xl bg-pysidePre border border-pysideBorder p-5 font-mono text-xs space-y-3">
+            <div class="text-amityYellow font-bold border-b border-pysideBorder pb-2 flex items-center justify-between font-ui">
+              <span>ENTERPRISE TELEMETRY</span>
+              <span class="w-2 h-2 rounded-full bg-amityYellow"></span>
+            </div>
+            <div class="space-y-1.5 text-[11px] text-pysideTextMuted">
+              <div>Network: <span class="text-amityYellow">Air-Gapped LAN</span></div>
+              <div>Model: <span class="text-pysideText">Llama-3.3-70B (Ollama)</span></div>
+              <div>Data Egress: <span class="text-amityYellow">0.00 KB (Zero Leak)</span></div>
+              <div>License: <span class="text-pysideText">GPLv3 Free Software</span></div>
+            </div>
+            <div class="pt-2 text-[10px] text-pysideTextMuted font-mono">
+              SOC2 / HIPAA Compliant by Architecture
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Business Operator & Founder -->
+      <div id="panel-founder" class="archetype-panel hidden pyside-card rounded-3xl p-8 sm:p-12 border-amityRed shadow-amity-red transition-all duration-500">
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="flex-1 space-y-4">
+            <span class="text-xs font-mono text-amityYellow uppercase font-bold tracking-wider">
+              Synthetic Operational Leverage
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-bold text-pysideText">
+              Scale operational capacity 24/7 without scaling headcount.
+            </h3>
+            <p class="font-reading text-xl text-pysideTextSecondary leading-relaxed">
+              Early-stage startups and lean teams drown in repetitive triage. Open Amity agents handle customer email queries, execute automated market and competitor research, maintain documentation graphs, and alert you on WhatsApp only when human intervention is critical.
+            </p>
+
+            <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
+              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
+                <span class="text-amityYellow font-bold">✓</span>
+                <span class="text-pysideText">Proactive email & ticket triaging</span>
+              </div>
+              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
+                <span class="text-amityYellow font-bold">✓</span>
+                <span class="text-pysideText">Stealth browser competitive sweeps</span>
+              </div>
+              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
+                <span class="text-amityYellow font-bold">✓</span>
+                <span class="text-pysideText">WhatsApp mobile escalation alerts</span>
+              </div>
+              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
+                <span class="text-amityYellow font-bold">✓</span>
+                <span class="text-pysideText">Zero prompt fatigue: runs on schedule</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full md:w-72 rounded-2xl bg-pysidePre border border-pysideBorder p-5 font-mono text-xs space-y-3">
+            <div class="text-amityYellow font-bold border-b border-pysideBorder pb-2 flex items-center justify-between font-ui">
+              <span>OPERATIONS DESK</span>
+              <span class="w-2 h-2 rounded-full bg-amityRed"></span>
+            </div>
+            <p class="text-pysideTextSecondary font-reading text-base leading-snug">
+              "Inbox triaged: 42 tickets. 38 addressed autonomously with custom responses. 4 staged for your confirmation. Research report on competitors generated and saved."
+            </p>
+            <div class="pt-2 text-[10px] text-amityYellow font-bold font-mono">
+              Founder time saved today: 3.8 hours
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Tab Switcher Script in Amity Red & Yellow -->
+<script>
+  const tabBtns = document.querySelectorAll('.archetype-tab-btn');
+  const panels = {
+    companion: document.getElementById('panel-companion'),
+    innovator: document.getElementById('panel-innovator'),
+    founder: document.getElementById('panel-founder'),
+  };
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.getAttribute('data-tab');
+      if (!tab || !panels[tab as keyof typeof panels]) return;
+
+      // Reset all buttons
+      tabBtns.forEach(b => {
+        b.className = 'archetype-tab-btn px-4 sm:px-6 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300';
+      });
+
+      // Highlight active button
+      if (tab === 'companion') {
+        btn.className = 'archetype-tab-btn px-4 sm:px-6 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold transition-all duration-300 text-white bg-amityRed shadow-amity-red';
+      } else if (tab === 'innovator') {
+        btn.className = 'archetype-tab-btn px-4 sm:px-6 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold transition-all duration-300 text-obsidian bg-amityYellow shadow-amity-yellow font-bold';
+      } else if (tab === 'founder') {
+        btn.className = 'archetype-tab-btn px-4 sm:px-6 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold transition-all duration-300 text-white bg-amityRed shadow-amity-red';
+      }
+
+      // Hide all panels
+      Object.values(panels).forEach(p => {
+        p?.classList.add('hidden');
+      });
+
+      // Show selected panel
+      panels[tab as keyof typeof panels]?.classList.remove('hidden');
+    });
+  });
+</script>

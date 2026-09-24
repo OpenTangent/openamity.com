@@ -1,0 +1,28 @@
+{
+  "name": "openamity.com",
+  "version": "1.0.0",
+  "description": "The official marketing and community website for **Open Amity** — the open-source, local-first framework for sovereign, self-aware autonomous AI companions and agent swarms.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenTangent/openamity.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OpenTangent/openamity.com/issues"
+  },
+  "homepage": "https://github.com/OpenTangent/openamity.com#readme",
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^7.3.4",
+    "tailwindcss": "^3.4.19"
+  }
+}

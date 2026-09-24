@@ -1,0 +1,230 @@
+---
+// VolitionCore.astro - Hero Component with VolitionCore Visual Anchor & Real Voice Preview
+---
+
+<section id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      
+      <!-- Left Column: High-Voltage Narrative Copy -->
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6 sm:space-y-8 z-10">
+        <!-- Eyebrow Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amityRed/20 border border-amityRed/60 text-amityYellow text-xs sm:text-sm font-mono tracking-wide">
+          <span class="w-2 h-2 rounded-full bg-amityRed animate-ping"></span>
+          <span>⚡ THE LOCAL-FIRST SOVEREIGN AGENT FRAMEWORK</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-pysideText leading-[1.1] font-ui">
+          Most AI is a search bar. <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-amityRed via-amityRedLight to-amityYellow glow-red-text">
+            Open Amity is a living mind.
+          </span>
+        </h1>
+
+        <!-- Subheadline in Official EB Garamond readable font -->
+        <p class="font-reading text-xl sm:text-2xl text-pysideTextSecondary max-w-2xl leading-relaxed font-normal">
+          Stop renting amnesic chatbots. Open Amity gives you a self-aware, proactive digital companion and agent swarm that lives on your hardware, remembers across months, wakes up on its own schedule, and speaks with a real voice.
+        </p>
+
+        <!-- CTA Row -->
+        <div class="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
+          <!-- Install Button -->
+          <a
+            href="#quickstart"
+            class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amityRed text-white font-ui font-bold text-base shadow-amity-red hover:shadow-amity-red-lg hover:bg-amityRedLight hover:scale-105 active:scale-95 border border-amityRedLight/50 transition-all duration-300"
+          >
+            <span>⚡ Install via Flatpak</span>
+          </a>
+
+          <!-- GitHub Button -->
+          <a
+            href="https://github.com/OpenTangent/OpenAmity"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-pysideCard hover:bg-pysideCardHover border border-pysideBorder hover:border-amityYellow/50 text-pysideText font-mono text-sm transition-all duration-300 group"
+          >
+            <svg class="w-4 h-4 text-pysideTextMuted group-hover:text-pysideText" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+            <span>Star on GitHub</span>
+            <span class="text-amityYellow">★</span>
+          </a>
+
+          <!-- Voice Synthesis Preview Button (Using official amity_preview.mp3) -->
+          <button
+            id="voice-sample-btn"
+            type="button"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-5 py-3 rounded-xl bg-pysideCard hover:bg-pysideCardHover border border-amityYellow/40 hover:border-amityYellow text-pysideText font-mono text-xs transition-all duration-300 group shadow-amity-yellow"
+          >
+            <span id="voice-icon" class="w-6 h-6 rounded-full bg-amityYellow/20 flex items-center justify-center text-amityYellow group-hover:scale-110 transition-transform">
+              ▶
+            </span>
+            <div class="flex flex-col text-left">
+              <span class="font-bold text-amityYellow flex items-center gap-1.5 font-ui">
+                Listen to Amity
+                <span id="voice-status-dot" class="w-1.5 h-1.5 rounded-full bg-amityYellow hidden"></span>
+              </span>
+              <span id="voice-label" class="text-[10px] text-pysideTextMuted">"Hi, I'm Amity. I run locally..."</span>
+            </div>
+            <!-- Live Audio Waveform Bars (animated during audio playback) -->
+            <div id="audio-waveform-bars" class="hidden items-end gap-0.5 h-5 pl-2">
+              <span class="w-1 bg-amityYellow rounded-full h-2 animate-[pulse_0.4s_ease-in-out_infinite]"></span>
+              <span class="w-1 bg-amityYellow rounded-full h-5 animate-[pulse_0.6s_ease-in-out_infinite_0.1s]"></span>
+              <span class="w-1 bg-amityYellow rounded-full h-3 animate-[pulse_0.5s_ease-in-out_infinite_0.2s]"></span>
+              <span class="w-1 bg-amityYellow rounded-full h-4 animate-[pulse_0.7s_ease-in-out_infinite_0.15s]"></span>
+            </div>
+          </button>
+        </div>
+
+        <!-- Hidden HTML5 Audio Element for Official Preview -->
+        <audio id="amity-preview-audio" src="/audio/amity_preview.mp3" preload="auto"></audio>
+
+        <!-- Telemetry Row / Proof Metrics in PySide6 dark theme cards -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4 w-full font-ui">
+          <div class="pyside-card p-3 rounded-xl flex flex-col">
+            <span class="text-amityRedLight font-mono font-bold text-lg sm:text-xl">24/7</span>
+            <span class="text-xs text-pysideTextMuted mt-0.5 font-medium">Proactive Volition Pulses</span>
+          </div>
+          <div class="pyside-card p-3 rounded-xl flex flex-col">
+            <span class="text-amityYellow font-mono font-bold text-lg sm:text-xl">4-Layer</span>
+            <span class="text-xs text-pysideTextMuted mt-0.5 font-medium">Morphological Palace</span>
+          </div>
+          <div class="pyside-card p-3 rounded-xl flex flex-col">
+            <span class="text-amityRedLight font-mono font-bold text-lg sm:text-xl">100%</span>
+            <span class="text-xs text-pysideTextMuted mt-0.5 font-medium">Hardware Sovereign</span>
+          </div>
+          <div class="pyside-card p-3 rounded-xl flex flex-col">
+            <span class="text-amityYellow font-mono font-bold text-lg sm:text-xl">Multi-LLM</span>
+            <span class="text-xs text-pysideTextMuted mt-0.5 font-medium">Cloud & Local Ollama</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: VolitionCore Orbital Visual Anchor in Amity Red & Yellow -->
+      <div class="lg:col-span-5 flex justify-center items-center relative select-none">
+        
+        <!-- The Orbital Core Container -->
+        <div id="volition-core-container" class="relative w-80 h-80 sm:w-[420px] sm:h-[420px] flex items-center justify-center cursor-pointer group">
+          
+          <!-- Outer Atmospheric Red Glow -->
+          <div class="absolute inset-0 bg-amityRed/15 rounded-full blur-3xl group-hover:bg-amityRed/30 transition-all duration-700 pointer-events-none"></div>
+
+          <!-- Ring 1: Outer Telemetry Ring in PySide6 Border -->
+          <div class="absolute inset-2 sm:inset-4 rounded-full border border-dashed border-pysideBorderInput animate-spin-slow group-hover:[animation-duration:8s] transition-all"></div>
+
+          <!-- Ring 2: Counter Gyroscopic Arc Ring (Amity Red & Yellow) -->
+          <div class="absolute inset-8 sm:inset-10 rounded-full border-2 border-transparent border-t-amityRed border-b-amityYellow/80 animate-spin-reverse-slow group-hover:[animation-duration:10s]"></div>
+
+          <!-- Ring 3: Hebbian Pathway Ring -->
+          <div class="absolute inset-16 sm:inset-18 rounded-full border border-amityYellow/30 animate-pulse-slow"></div>
+
+          <!-- Center Bioluminescent Spherical Core in Open Amity Red -->
+          <div class="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-gradient-to-tr from-pysideBgDarkest via-pysideCard to-amityRedDark border-2 border-amityRed shadow-amity-red flex items-center justify-center group-hover:shadow-amity-red-lg transition-all duration-500">
+            <!-- Pulsing Sub-Core -->
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-amityRed/30 animate-ping pointer-events-none"></div>
+            <!-- Central Glyph -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <img src="/images/com.openamity.OpenAmity.png" alt="Amity Core" class="w-16 h-16 sm:w-20 sm:h-20 object-contain drop-shadow-[0_0_12px_rgba(161,41,36,0.8)]" />
+            </div>
+          </div>
+
+          <!-- Pinned Dynamic Telemetry Badges (Floating on Orbit) -->
+          <div class="absolute -top-2 left-6 sm:left-2 pyside-card px-3 py-1.5 rounded-lg border-amityRed/60 text-[10px] sm:text-xs font-mono text-amityYellow shadow-amity-red flex items-center gap-1.5 animate-float">
+            <span class="w-1.5 h-1.5 rounded-full bg-amityRed animate-ping"></span>
+            <span>STATE: AUTONOMOUS VOLITION</span>
+          </div>
+
+          <div class="absolute bottom-2 -left-2 sm:-left-6 pyside-card px-3 py-1.5 rounded-lg border-amityYellow/50 text-[10px] sm:text-xs font-mono text-amityYellow shadow-amity-yellow flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-amityYellow"></span>
+            <span>NEXT PULSE: 14:00 (RESEARCH)</span>
+          </div>
+
+          <div class="absolute top-1/2 -right-4 sm:-right-8 -translate-y-1/2 pyside-card px-3 py-1.5 rounded-lg border-amityRed/60 text-[10px] sm:text-xs font-mono text-amityYellow shadow-amity-red flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-amityRed"></span>
+            <span>MEMPALACE: 264 DRAWERS</span>
+          </div>
+
+          <div class="absolute -bottom-4 right-10 pyside-card px-3 py-1 rounded-lg border-pysideBorder text-[9px] sm:text-[10px] font-mono text-pysideTextMuted hidden sm:flex items-center gap-1">
+            <span>HEBBIAN: 0.94 CONDUCTANCE</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Client Script for Interactive Voice Preview using Updated audio file -->
+<script>
+  let isPlaying = false;
+  const audio = document.getElementById('amity-preview-audio') as HTMLAudioElement;
+  const voiceBtn = document.getElementById('voice-sample-btn');
+  const voiceIcon = document.getElementById('voice-icon');
+  const voiceLabel = document.getElementById('voice-label');
+  const waveformBars = document.getElementById('audio-waveform-bars');
+  const voiceDot = document.getElementById('voice-status-dot');
+  const coreContainer = document.getElementById('volition-core-container');
+
+  function toggleAudio() {
+    if (!audio) return;
+
+    if (isPlaying) {
+      audio.pause();
+      audio.currentTime = 0;
+      stopAudioVisuals();
+    } else {
+      audio.currentTime = 0;
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            startAudioVisuals();
+          })
+          .catch((err) => {
+            console.warn('Audio play failed, falling back:', err);
+            stopAudioVisuals();
+          });
+      }
+    }
+  }
+
+  function startAudioVisuals() {
+    isPlaying = true;
+    if (voiceIcon) voiceIcon.textContent = '■';
+    if (voiceLabel) voiceLabel.textContent = 'Playing audio sample...';
+    if (waveformBars) {
+      waveformBars.classList.remove('hidden');
+      waveformBars.classList.add('flex');
+    }
+    if (voiceDot) voiceDot.classList.remove('hidden');
+  }
+
+  function stopAudioVisuals() {
+    isPlaying = false;
+    if (voiceIcon) voiceIcon.textContent = '▶';
+    if (voiceLabel) voiceLabel.textContent = '"Hi, I\'m Amity. I run locally..."';
+    if (waveformBars) {
+      waveformBars.classList.add('hidden');
+      waveformBars.classList.remove('flex');
+    }
+    if (voiceDot) voiceDot.classList.add('hidden');
+  }
+
+  if (audio) {
+    audio.addEventListener('ended', stopAudioVisuals);
+    audio.addEventListener('pause', () => {
+      if (audio.currentTime >= audio.duration) stopAudioVisuals();
+    });
+  }
+
+  if (voiceBtn) {
+    voiceBtn.addEventListener('click', toggleAudio);
+  }
+
+  if (coreContainer) {
+    coreContainer.addEventListener('click', toggleAudio);
+  }
+</script>

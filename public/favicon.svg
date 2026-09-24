@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <radialGradient id="amityCoreRed" cx="50%" cy="50%" r="50%" fx="40%" fy="40%">
+      <stop offset="0%" stop-color="#f7e3a5" />
+      <stop offset="45%" stop-color="#a12924" />
+      <stop offset="100%" stop-color="#1a1a1a" stop-opacity="0" />
+    </radialGradient>
+    <filter id="amityGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Base Tile with PySide6 Dark Background -->
+  <rect width="64" height="64" rx="14" fill="#1a1a1a" stroke="#3c3c3c" stroke-width="1.5" />
+  
+  <!-- Outer orbital ring in PySide6 border -->
+  <circle cx="32" cy="32" r="22" stroke="#383838" stroke-width="1.5" stroke-dasharray="4 3" />
+  
+  <!-- Primary Open Amity Red Arc -->
+  <path d="M 32 10 A 22 22 0 0 1 54 32" stroke="#a12924" stroke-width="2.5" stroke-linecap="round" filter="url(#amityGlow)" />
+  
+  <!-- Secondary Open Amity Yellow Arc -->
+  <path d="M 32 54 A 22 22 0 0 1 10 32" stroke="#f7e3a5" stroke-width="2.5" stroke-linecap="round" />
+  
+  <!-- Inner Ring -->
+  <circle cx="32" cy="32" r="13" stroke="#484848" stroke-width="1.5" />
+  
+  <!-- Core Node in Amity Red/Yellow -->
+  <circle cx="32" cy="32" r="7.5" fill="url(#amityCoreRed)" filter="url(#amityGlow)" />
+  <circle cx="32" cy="32" r="3" fill="#f7e3a5" />
+  
+  <!-- Satellite Nodes -->
+  <circle cx="50" cy="20" r="2.5" fill="#f7e3a5" />
+  <circle cx="14" cy="44" r="2.5" fill="#a12924" />
+</svg>

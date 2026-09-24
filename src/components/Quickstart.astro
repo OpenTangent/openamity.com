@@ -1,0 +1,207 @@
+---
+// Quickstart.astro - 60-Second Quickstart & Developer Terminal
+---
+
+<section id="quickstart" class="py-20 md:py-32 relative border-t border-pysideBorder">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16 font-ui">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amityRed/20 border border-amityRed/50 text-amityYellow text-xs font-mono mb-4">
+        <span>🚀 60-SECOND ONBOARDING</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-pysideText">
+        From Zero to Sovereign <br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amityRed via-amityRedLight to-amityYellow">
+          In Under 60 Seconds
+        </span>
+      </h2>
+      <p class="mt-4 font-reading text-xl sm:text-2xl text-pysideTextSecondary leading-relaxed">
+        No account creation. No credit cards. No cloud telemetry. Deploy your sovereign companion instantly on Linux via Flatpak or build directly from source.
+      </p>
+
+      <!-- Track Switcher -->
+      <div class="mt-8 inline-flex p-1 rounded-2xl bg-pysideCard border border-pysideBorder">
+        <button
+          type="button"
+          id="btn-track-flatpak"
+          class="px-5 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold transition-all duration-300 text-white bg-amityRed shadow-amity-red"
+        >
+          📦 One-Click Linux (Flatpak)
+        </button>
+        <button
+          type="button"
+          id="btn-track-dev"
+          class="px-5 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300"
+        >
+          💻 Hackers & Python (Source)
+        </button>
+      </div>
+    </div>
+
+    <!-- Terminal Code Box Container in PySide6 greys -->
+    <div class="max-w-3xl mx-auto font-ui">
+      
+      <!-- Terminal Window -->
+      <div class="pyside-card rounded-2xl border border-pysideBorder shadow-2xl overflow-hidden">
+        <!-- Terminal Header / Titlebar -->
+        <div class="flex items-center justify-between px-4 py-3 bg-pysideBgDarkest border-b border-pysideBorder select-none">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+            <span id="terminal-title" class="ml-2 font-mono text-xs text-pysideTextMuted">bash — flatpak-install.sh</span>
+          </div>
+
+          <!-- Copy All Button -->
+          <button
+            id="copy-terminal-btn"
+            type="button"
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-pysideButton hover:bg-pysideButtonHover border border-pysideBorderButton text-xs font-mono text-pysideText hover:text-amityYellow transition-colors"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+            <span id="copy-text">Copy Commands</span>
+          </button>
+        </div>
+
+        <!-- Terminal Body styled like PySide6 pre block -->
+        <div class="p-6 bg-pysidePre font-mono text-xs sm:text-sm text-pysideText space-y-4 overflow-x-auto border-t border-pysideBorderPre">
+          
+          <!-- Flatpak Track -->
+          <div id="code-flatpak" class="space-y-3">
+            <p class="text-pysideTextMuted text-xs"># 1. Ensure Flathub is configured</p>
+            <div class="text-amityYellow">flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo</div>
+
+            <p class="text-pysideTextMuted text-xs"># 2. Add the Open Amity repository</p>
+            <div class="text-amityYellow">flatpak remote-add --user --if-not-exists openamity https://opentangent.github.io/OpenAmity/index.flatpakrepo</div>
+
+            <p class="text-pysideTextMuted text-xs"># 3. Install the KDE Platform runtime</p>
+            <div class="text-amityYellow">flatpak install flathub org.kde.Platform//6.11</div>
+
+            <p class="text-pysideTextMuted text-xs"># 4. Install & Run Open Amity</p>
+            <div class="text-amityYellow">flatpak install --user openamity com.openamity.OpenAmity</div>
+            <div class="text-white font-bold bg-amityRed/40 p-2 rounded border border-amityRed/60">flatpak run com.openamity.OpenAmity</div>
+          </div>
+
+          <!-- Dev Track -->
+          <div id="code-dev" class="hidden space-y-3">
+            <p class="text-pysideTextMuted text-xs"># 1. Clone the Open Amity repository</p>
+            <div class="text-amityYellow">git clone https://github.com/OpenTangent/OpenAmity.git</div>
+            <div class="text-amityYellow">cd OpenAmity</div>
+
+            <p class="text-pysideTextMuted text-xs"># 2. Create and activate a Python 3.10+ virtual environment</p>
+            <div class="text-amityYellow">python3 -m venv .venv && source .venv/bin/activate</div>
+
+            <p class="text-pysideTextMuted text-xs"># 3. Install dependencies (requires libportaudio2 on Debian/Ubuntu)</p>
+            <div class="text-amityYellow">pip install -r requirements.txt</div>
+
+            <p class="text-pysideTextMuted text-xs"># 4. Launch your sovereign companion</p>
+            <div class="text-white font-bold bg-amityRed/40 p-2 rounded border border-amityRed/60">./run_OpenAmity.sh</div>
+          </div>
+
+        </div>
+
+        <!-- Terminal Footer Notes -->
+        <div class="px-6 py-3 bg-pysideBgDarkest border-t border-pysideBorder flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-pysideTextMuted">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amityYellow"></span>
+            <span>Platform: Linux (Debian, Ubuntu, Fedora, Arch)</span>
+          </div>
+          <a
+            href="https://github.com/OpenTangent/OpenAmity/blob/main/README.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-amityYellow transition-colors"
+          >
+            Read Full Documentation ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Tips Matrix in PySide6 greys -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+        <div class="pyside-card p-3 rounded-xl border border-pysideBorder flex items-center gap-3">
+          <span class="text-lg">⌨️</span>
+          <div>
+            <div class="font-bold text-xs text-pysideText font-ui">Press `~` for Console</div>
+            <div class="text-[11px] text-pysideTextMuted font-reading text-sm">Inspect live thoughts and memory logs.</div>
+          </div>
+        </div>
+        <div class="pyside-card p-3 rounded-xl border border-pysideBorder flex items-center gap-3">
+          <span class="text-lg">🦙</span>
+          <div>
+            <div class="font-bold text-xs text-pysideText font-ui">Offline Ollama</div>
+            <div class="text-[11px] text-pysideTextMuted font-reading text-sm">Zero API keys required for local models.</div>
+          </div>
+        </div>
+        <div class="pyside-card p-3 rounded-xl border border-pysideBorder flex items-center gap-3">
+          <span class="text-lg">📦</span>
+          <div>
+            <div class="font-bold text-xs text-pysideText font-ui">.oaa Export</div>
+            <div class="text-[11px] text-pysideTextMuted font-reading text-sm">One-click brain backup to USB drive.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Terminal Scripts -->
+<script>
+  let activeTrack = 'flatpak';
+  const btnFlatpak = document.getElementById('btn-track-flatpak');
+  const btnDev = document.getElementById('btn-track-dev');
+  const codeFlatpak = document.getElementById('code-flatpak');
+  const codeDev = document.getElementById('code-dev');
+  const termTitle = document.getElementById('terminal-title');
+  const copyBtn = document.getElementById('copy-terminal-btn');
+  const copyText = document.getElementById('copy-text');
+
+  const flatpakCommands = `flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --user --if-not-exists openamity https://opentangent.github.io/OpenAmity/index.flatpakrepo
+flatpak install flathub org.kde.Platform//6.11
+flatpak install --user openamity com.openamity.OpenAmity
+flatpak run com.openamity.OpenAmity`;
+
+  const devCommands = `git clone https://github.com/OpenTangent/OpenAmity.git
+cd OpenAmity
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+./run_OpenAmity.sh`;
+
+  if (btnFlatpak && btnDev) {
+    btnFlatpak.addEventListener('click', () => {
+      activeTrack = 'flatpak';
+      btnFlatpak.className = 'px-5 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold transition-all duration-300 text-white bg-amityRed shadow-amity-red';
+      btnDev.className = 'px-5 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300';
+      codeFlatpak?.classList.remove('hidden');
+      codeDev?.classList.add('hidden');
+      if (termTitle) termTitle.textContent = 'bash — flatpak-install.sh';
+    });
+
+    btnDev.addEventListener('click', () => {
+      activeTrack = 'dev';
+      btnDev.className = 'px-5 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold transition-all duration-300 text-white bg-amityRed shadow-amity-red';
+      btnFlatpak.className = 'px-5 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300';
+      codeDev?.classList.remove('hidden');
+      codeFlatpak?.classList.add('hidden');
+      if (termTitle) termTitle.textContent = 'bash — dev-setup.sh';
+    });
+  }
+
+  if (copyBtn && copyText) {
+    copyBtn.addEventListener('click', () => {
+      const textToCopy = activeTrack === 'flatpak' ? flatpakCommands : devCommands;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        copyText.textContent = 'Copied!';
+        setTimeout(() => {
+          copyText.textContent = 'Copy Commands';
+        }, 2000);
+      });
+    });
+  }
+</script>

@@ -1,0 +1,143 @@
+/* Open Amity Official Fonts */
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/fonts/Ubuntu-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/fonts/Ubuntu-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/fonts/EBGaramond-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/fonts/EBGaramond-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu Mono';
+  src: url('/fonts/UbuntuMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    background-color: #1a1a1a; /* PySide6 BG_DARK */
+    color: #eeeeee;            /* PySide6 TEXT_PRIMARY */
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  /* Readable prose uses EB Garamond by default */
+  p, blockquote, .prose-reading {
+    font-family: 'EB Garamond', 'Liberation Serif', 'Georgia', serif;
+  }
+
+  /* Code and telemetry */
+  code, pre, kbd, .font-mono {
+    font-family: 'Ubuntu Mono', monospace;
+  }
+
+  /* PySide6 Standardized Modern Minimal Scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.38);
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background-color: #a12924; /* Primary accent on pressed */
+  }
+}
+
+@layer utilities {
+  .bg-subtle-grid {
+    background-image: radial-gradient(rgba(247, 227, 165, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  
+  .glow-red-text {
+    text-shadow: 0 0 20px rgba(161, 41, 36, 0.6), 0 0 40px rgba(161, 41, 36, 0.3);
+  }
+
+  .glow-yellow-text {
+    text-shadow: 0 0 20px rgba(247, 227, 165, 0.6), 0 0 40px rgba(247, 227, 165, 0.25);
+  }
+
+  /* PySide6 styled container objects */
+  .pyside-card {
+    background-color: #242424;
+    border: 1px solid #3c3c3c;
+  }
+
+  .pyside-card-hover {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .pyside-card-hover:hover {
+    border-color: #a12924;
+    box-shadow: 0 0 25px -4px rgba(161, 41, 36, 0.35);
+    background-color: #282828;
+    transform: translateY(-2px);
+  }
+
+  .pyside-btn {
+    background-color: #484848;
+    color: #eeeeee;
+    border: 1px solid #666666;
+    transition: all 0.2s ease;
+  }
+  .pyside-btn:hover {
+    background-color: #585858;
+    border-color: #f7e3a5;
+    color: #ffffff;
+  }
+  .pyside-btn:active {
+    background-color: #383838;
+  }
+
+  .pyside-input {
+    background-color: #383838;
+    border: 1px solid #585858;
+    color: #eeeeee;
+  }
+  .pyside-input:focus {
+    background-color: #404040;
+    border-color: #f7e3a5;
+    outline: none;
+  }
+}
