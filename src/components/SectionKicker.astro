@@ -1,0 +1,28 @@
+---
+// SectionKicker.astro - Unified Architectural Section Locator & Divider
+interface Props {
+  title: string;      // e.g. "Morphological Memory"
+  index?: string;
+  class?: string;
+}
+
+const { title, class: className = "" } = Astro.props;
+---
+
+<div
+  class={`relative w-full flex items-center justify-center select-none font-ui ${className}`}
+  aria-label={`Section: ${title}`}
+>
+  <!-- Full-width dividing line passing behind the badge -->
+  <div class="absolute inset-0 flex items-center" aria-hidden="true">
+    <div class="w-full border-t border-pysideBorder"></div>
+  </div>
+
+  <!-- Badge sitting on top of the divider line -->
+  <div class="relative z-10 inline-flex items-center px-4 py-1.5 rounded-lg bg-pysideBg border border-pysideBorder shadow-inner-pyside whitespace-nowrap">
+    <!-- Section Name (pure white title case) -->
+    <span class="text-xs sm:text-[13px] font-medium tracking-wide text-white">
+      {title}
+    </span>
+  </div>
+</div>

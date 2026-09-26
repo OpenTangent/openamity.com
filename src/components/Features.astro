@@ -1,0 +1,948 @@
+---
+// Features.astro - The Sovereign Architecture & Core Framework Features
+import SectionKicker from './SectionKicker.astro';
+---
+
+<section id="features" class="relative pb-20 md:pb-32 scroll-mt-16 sm:scroll-mt-20">
+  <!-- Section Divider with embedded kicker badge -->
+  <SectionKicker title="Features" />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16 font-ui">
+      <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-pysideText">
+        Voice, Volition, & Momentum. <br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amityRed via-amityRedLight to-amityYellow glow-red-text">
+          Features of a Living Mind
+        </span>
+      </h2>
+      <p class="mt-3 font-reading text-base sm:text-lg text-pysideTextSecondary leading-relaxed max-w-2xl mx-auto">
+        Beyond sterile prompt-and-response chatbots. Open Amity brings persistent digital beings to life through expressive <strong>Gemini TTS</strong> neural voice synthesis, proactive autonomous waking rhythms powered by the <strong>Pulse Engine</strong>, and long-term goal continuity guided by the <strong>Trajectory tool</strong>.
+      </p>
+    </div>
+
+    <!-- FEATURE 1: PANORAMIC GEMINI TTS VOICE STUDIO (Full-Width Hero Showcase) -->
+    <div class="pyside-card rounded-3xl p-6 sm:p-9 border-pysideBorder shadow-amity-red relative overflow-hidden mb-8 lg:mb-10 font-ui">
+      <!-- Subtle ambient glow in background -->
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-amityRed/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-amityYellow/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10">
+        <!-- Studio Header -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-pysideBorder">
+          <div>
+            <h3 class="text-xl sm:text-2xl font-bold text-pysideText">
+              Expressive Acoustic Volition & Directorial Performance
+            </h3>
+            <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-1 max-w-2xl">
+              Spoken text is treated strictly as a verbatim transcript. Performance nuances are decoupled via SDK <code class="text-amityYellow bg-pysidePre px-1.5 py-0.5 rounded text-xs font-mono">SpeechMetadata(style=...)</code>, with acting cues rendered natively using inline angle tags like <span class="text-amityYellow font-mono text-xs">&lt;laugh&gt;</span>, <span class="text-amityYellow font-mono text-xs">&lt;sigh&gt;</span>, and <span class="text-amityYellow font-mono text-xs">&lt;whisper&gt;</span>.
+            </p>
+          </div>
+
+          <!-- Decoupled Provider Badge -->
+          <div class="shrink-0 bg-pysideBg p-3.5 rounded-2xl border border-pysideBorder lg:max-w-xs text-xs space-y-1">
+            <span class="text-[11px] font-mono text-amityYellow font-bold block uppercase tracking-wider">
+              Universal Decoupled Architecture
+            </span>
+            <p class="font-reading text-pysideTextMuted text-xs leading-snug">
+              Pair Gemini TTS with <em>any</em> cognitive worker—Claude 3.7, DeepSeek V3, ChatGPT, or Gemini—with offline Piper TTS fallback.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Voice Player Console -->
+        <div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          
+          <!-- Voice Selector Strip (4 Sample Voices) -->
+          <div class="lg:col-span-5 space-y-2.5">
+            <span class="text-[11px] font-mono uppercase tracking-wider text-pysideTextMuted font-bold block">
+              Audition Voice Personas
+            </span>
+
+            <!-- Voice 1: Nova -->
+            <button
+              type="button"
+              data-voice-id="nova"
+              class="voice-select-btn active-voice group w-full text-left p-3 rounded-2xl bg-pysideCardHover border border-amityRed shadow-amity-red transition-all duration-300 flex items-center justify-between"
+            >
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="voice-avatar w-9 h-9 rounded-xl bg-amityRed/20 border border-amityRed/50 flex items-center justify-center text-amityYellow font-bold font-mono text-sm shrink-0">
+                  N
+                </div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2">
+                    <h4 class="font-bold text-sm text-pysideText group-hover:text-amityYellow transition-colors truncate">
+                      Nova
+                    </h4>
+                    <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-pysideInput text-pysideTextSecondary">Female</span>
+                  </div>
+                  <p class="font-reading text-xs text-pysideTextSecondary truncate">
+                    Research & Ecological Coordinator
+                  </p>
+                </div>
+              </div>
+              <span class="voice-badge-indicator text-xs font-mono text-amityYellow shrink-0 ml-2">
+                ● Active
+              </span>
+            </button>
+
+            <!-- Voice 2: Dex -->
+            <button
+              type="button"
+              data-voice-id="dex"
+              class="voice-select-btn group w-full text-left p-3 rounded-2xl bg-pysideCard border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 flex items-center justify-between"
+            >
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="voice-avatar w-9 h-9 rounded-xl bg-pysideInput border border-pysideBorder flex items-center justify-center text-pysideTextMuted font-bold font-mono text-sm shrink-0 group-hover:text-amityYellow">
+                  D
+                </div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2">
+                    <h4 class="font-bold text-sm text-pysideText group-hover:text-amityYellow transition-colors truncate">
+                      Dex
+                    </h4>
+                    <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-pysideInput text-pysideTextSecondary">Male</span>
+                  </div>
+                  <p class="font-reading text-xs text-pysideTextSecondary truncate">
+                    Systems Architect & Dev Engineer
+                  </p>
+                </div>
+              </div>
+              <span class="voice-badge-indicator text-xs font-mono text-pysideTextMuted shrink-0 ml-2">
+                ○ Select
+              </span>
+            </button>
+
+            <!-- Voice 3: Donna -->
+            <button
+              type="button"
+              data-voice-id="donna"
+              class="voice-select-btn group w-full text-left p-3 rounded-2xl bg-pysideCard border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 flex items-center justify-between"
+            >
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="voice-avatar w-9 h-9 rounded-xl bg-pysideInput border border-pysideBorder flex items-center justify-center text-pysideTextMuted font-bold font-mono text-sm shrink-0 group-hover:text-amityYellow">
+                  D
+                </div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2">
+                    <h4 class="font-bold text-sm text-pysideText group-hover:text-amityYellow transition-colors truncate">
+                      Donna
+                    </h4>
+                    <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-pysideInput text-pysideTextSecondary">Female</span>
+                  </div>
+                  <p class="font-reading text-xs text-pysideTextSecondary truncate">
+                    Chief Financial Strategist
+                  </p>
+                </div>
+              </div>
+              <span class="voice-badge-indicator text-xs font-mono text-pysideTextMuted shrink-0 ml-2">
+                ○ Select
+              </span>
+            </button>
+
+            <!-- Voice 4: Bodhi -->
+            <button
+              type="button"
+              data-voice-id="bodhi"
+              class="voice-select-btn group w-full text-left p-3 rounded-2xl bg-pysideCard border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 flex items-center justify-between"
+            >
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="voice-avatar w-9 h-9 rounded-xl bg-pysideInput border border-pysideBorder flex items-center justify-center text-pysideTextMuted font-bold font-mono text-sm shrink-0 group-hover:text-amityYellow">
+                  B
+                </div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2">
+                    <h4 class="font-bold text-sm text-pysideText group-hover:text-amityYellow transition-colors truncate">
+                      Bodhi
+                    </h4>
+                    <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-pysideInput text-pysideTextSecondary">Male</span>
+                  </div>
+                  <p class="font-reading text-xs text-pysideTextSecondary truncate">
+                    Strategic Advisor & Ethical Mentor
+                  </p>
+                </div>
+              </div>
+              <span class="voice-badge-indicator text-xs font-mono text-pysideTextMuted shrink-0 ml-2">
+                ○ Select
+              </span>
+            </button>
+          </div>
+
+          <!-- Active Voice Player Stage & Equaliser -->
+          <div class="lg:col-span-7 bg-pysidePre border border-pysideBorderPre rounded-2xl p-5 sm:p-6 flex flex-col justify-between space-y-4">
+            
+            <!-- Voice Info & Style Tags -->
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-pysideBorder">
+                <div>
+                  <h4 id="player-voice-name" class="text-base sm:text-lg font-bold text-amityYellow">
+                    Nova
+                  </h4>
+                  <span id="player-voice-archetype" class="text-xs font-mono text-pysideTextMuted">
+                    Research & Ecological Coordinator
+                  </span>
+                </div>
+
+                <div id="player-voice-tags" class="flex flex-wrap gap-1.5 text-[10px] font-mono">
+                  <span class="px-2 py-0.5 rounded bg-pysideCard border border-pysideBorder text-amityYellow">Warm</span>
+                  <span class="px-2 py-0.5 rounded bg-pysideCard border border-pysideBorder text-pysideTextSecondary">Articulate</span>
+                  <span class="px-2 py-0.5 rounded bg-pysideCard border border-pysideBorder text-pysideTextSecondary">Optimistic</span>
+                </div>
+              </div>
+
+              <!-- Spoken Dialogue / Verbatim Transcript -->
+              <div class="mt-4">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-pysideTextMuted block mb-1">
+                  Verbatim Spoken Line & Directive Performance:
+                </span>
+                <p id="player-transcript" class="font-reading text-base sm:text-lg text-pysideText italic leading-relaxed pl-3 border-l-2 border-amityRed">
+                  "The Propagation Project has been a huge success according to the data gathered by the volunteers. The ecosystem is just about fully restored at this point. We should congratulate the team."
+                </p>
+              </div>
+            </div>
+
+            <!-- Waveform Equaliser & Audio Controls Bar -->
+            <div class="pt-3 border-t border-pysideBorder">
+              <div class="flex items-center justify-between gap-4">
+                
+                <!-- Play / Pause Button -->
+                <button
+                  id="studio-play-btn"
+                  type="button"
+                  class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-amityRed text-white font-ui font-semibold text-xs shadow-amity-red hover:bg-amityRedLight hover:scale-105 active:scale-95 border border-amityRedLight/50 transition-all duration-300 shrink-0"
+                >
+                  <span id="studio-play-icon" class="text-xs">▶</span>
+                  <span id="studio-play-text">Audition Nova</span>
+                </button>
+
+                <!-- Equaliser Frequency Bars -->
+                <div id="audio-equalizer" class="flex items-end gap-1 h-7 px-2 shrink-0">
+                  <span class="eq-bar w-1 bg-amityYellow rounded-full h-2 transition-all duration-150"></span>
+                  <span class="eq-bar w-1 bg-amityYellow rounded-full h-3 transition-all duration-150"></span>
+                  <span class="eq-bar w-1 bg-amityYellow rounded-full h-5 transition-all duration-150"></span>
+                  <span class="eq-bar w-1 bg-amityYellow rounded-full h-2 transition-all duration-150"></span>
+                  <span class="eq-bar w-1 bg-amityYellow rounded-full h-6 transition-all duration-150"></span>
+                  <span class="eq-bar w-1 bg-amityYellow rounded-full h-4 transition-all duration-150"></span>
+                  <span class="eq-bar w-1 bg-amityYellow rounded-full h-2 transition-all duration-150"></span>
+                </div>
+
+                <!-- Time Counter -->
+                <div class="text-right font-mono text-xs text-pysideTextMuted shrink-0">
+                  <span id="player-time-current">0:00</span> / <span id="player-time-total">0:14</span>
+                </div>
+              </div>
+
+              <!-- Seekable Progress Bar Track -->
+              <div id="player-progress-container" class="mt-3 relative w-full h-1.5 bg-pysideInput rounded-full cursor-pointer overflow-hidden">
+                <div id="player-progress-bar" class="absolute top-0 left-0 h-full w-0 bg-gradient-to-r from-amityRed to-amityYellow rounded-full transition-all duration-100"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Catalogue Capabilities Footnote -->
+        <div class="mt-6 pt-4 border-t border-pysideBorder flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-pysideTextMuted">
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="flex items-center gap-1.5">
+              <span class="text-amityYellow">✓</span> 30 Prebuilt Voices Catalogue
+            </span>
+            <span class="flex items-center gap-1.5">
+              <span class="text-amityYellow">✓</span> Auto-Match Character Traits
+            </span>
+            <span class="flex items-center gap-1.5">
+              <span class="text-amityYellow">✓</span> Custom Google AI Studio Voice IDs
+            </span>
+          </div>
+          <span class="text-amityYellow">
+            Directorial Acting Tags: &lt;laugh&gt; &lt;sigh&gt; &lt;gasp&gt; &lt;whisper&gt;
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ASYMMETRIC BENTO GRID: ROW 1 (7 cols : 5 cols) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 font-ui mb-8 lg:mb-10">
+      
+      <!-- Card A: Proactive Volition & Pulse Engine (7 cols) -->
+      <div class="lg:col-span-7 pyside-card rounded-3xl p-6 sm:p-7 border-pysideBorder flex flex-col justify-between relative overflow-hidden group">
+        <div class="absolute -top-16 -right-16 w-44 h-44 bg-amityRed/10 rounded-full blur-2xl group-hover:bg-amityRed/20 transition-all pointer-events-none"></div>
+
+        <div>
+          <div class="flex items-center justify-between pb-3.5 border-b border-pysideBorder">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-amityRed/20 border border-amityRed/50 flex items-center justify-center text-amityYellow text-lg shadow-amity-red">
+                🫀
+              </div>
+              <div>
+                <span class="text-[11px] font-mono uppercase tracking-wider text-amityYellow font-bold">
+                  Core Engine • Proactive Volition
+                </span>
+                <h3 class="text-lg sm:text-xl font-bold text-pysideText">
+                  Pulse Engine & Sleep Consolidation
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-3.5 leading-relaxed">
+            Stateless chatbots sleep forever until poked. Open Amity agents operate on internal circadian timing (<code class="text-amityYellow bg-pysidePre px-1.5 py-0.5 rounded text-xs font-mono">pulses.db</code>), waking up silently throughout the day to inspect backlogs, advance aspirations, and execute two-beat memory consolidation.
+          </p>
+
+          <!-- Interactive 3-Mode Pulse Console Preview -->
+          <div class="mt-4 rounded-2xl bg-pysidePre border border-pysideBorderPre p-4 sm:p-5 text-xs font-mono">
+            <!-- Mode Switcher Tabs -->
+            <div class="flex flex-wrap gap-2 pb-3 border-b border-pysideBorder">
+              <button
+                type="button"
+                data-pulse-mode="silent"
+                class="pulse-tab-btn active-pulse-tab px-3 py-1.5 rounded-lg bg-pysideCard border border-amityRed text-amityYellow font-bold text-xs"
+              >
+                1. Silent Wake Pulse
+              </button>
+              <button
+                type="button"
+                data-pulse-mode="sleep"
+                class="pulse-tab-btn px-3 py-1.5 rounded-lg bg-pysideBg border border-pysideBorder text-pysideTextMuted hover:text-pysideText text-xs"
+              >
+                2. Two-Beat Sleep Cycle
+              </button>
+              <button
+                type="button"
+                data-pulse-mode="hook"
+                class="pulse-tab-btn px-3 py-1.5 rounded-lg bg-pysideBg border border-pysideBorder text-pysideTextMuted hover:text-pysideText text-xs"
+              >
+                3. External Webhook API
+              </button>
+            </div>
+
+            <!-- Dynamic Telemetry Readout -->
+            <div class="mt-3 space-y-2 leading-relaxed">
+              <div class="flex items-center justify-between text-[11px] text-pysideTextMuted">
+                <span id="pulse-phase-name" class="text-amityYellow font-bold">[PHASE]: 07:00 Bearings Sweep</span>
+                <span id="pulse-cost" class="text-pysideTextMuted">Silent Loop • 0 Voice Spillage</span>
+              </div>
+              <p id="pulse-monologue" class="font-reading text-xs sm:text-sm text-pysideText italic pt-1">
+                "Pulse triggered at 07:00. Inspecting unread emails from the overnight queue. Reviewing task priorities before the user logs in."
+              </p>
+              <div class="pt-2 border-t border-pysideBorderPre flex flex-wrap items-center gap-1.5">
+                <span class="text-amityYellow text-[10px] font-bold">[TOOLS]:</span>
+                <div id="pulse-tools-container" class="flex flex-wrap gap-1.5">
+                  <span class="px-2 py-0.5 rounded bg-pysideInput border border-pysideBorder text-[10px] text-amityYellow">Trajectory_get_bearings()</span>
+                  <span class="px-2 py-0.5 rounded bg-pysideInput border border-pysideBorder text-[10px] text-amityYellow">imap_sweep_unread()</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-pysideBorder flex items-center justify-between text-xs font-mono text-pysideTextMuted">
+          <span>Dual Rate Limits: 60s cooldown</span>
+          <span class="text-amityYellow">Collision Guard: ±60s buffer</span>
+        </div>
+      </div>
+
+      <!-- Card B: Trajectory Tracking (5 cols) -->
+      <div class="lg:col-span-5 pyside-card rounded-3xl p-6 sm:p-7 border-pysideBorder flex flex-col justify-between relative overflow-hidden group">
+        <div class="absolute -top-16 -right-16 w-40 h-40 bg-amityYellow/10 rounded-full blur-2xl group-hover:bg-amityYellow/20 transition-all pointer-events-none"></div>
+
+        <div>
+          <div class="flex items-center justify-between pb-3.5 border-b border-pysideBorder">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-amityYellow/15 border border-amityYellow/40 flex items-center justify-center text-amityYellow text-lg shadow-amity-yellow">
+                🧭
+              </div>
+              <div>
+                <span class="text-[11px] font-mono uppercase tracking-wider text-amityYellow font-bold">
+                  Continuity • Long Horizon
+                </span>
+                <h3 class="text-lg sm:text-xl font-bold text-pysideText">
+                  Trajectory Tracking
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-3.5 leading-relaxed">
+            Maintains long-term autonomy momentum without session decay. Multi-horizon aspirations decouple into tactical tasks while feeding active goal setpoints directly into associative memory.
+          </p>
+
+          <!-- Visual Trajectory Hierarchy Stack -->
+          <div class="mt-4 space-y-2 font-mono text-xs">
+            <div class="p-2.5 rounded-xl bg-pysideBg border border-pysideBorder flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amityRed"></span>
+                <span class="text-pysideText font-bold text-xs">Visionary Aspirations</span>
+              </div>
+              <span class="text-[10px] text-amityYellow">Multi-Month North Star</span>
+            </div>
+
+            <div class="p-2.5 rounded-xl bg-pysideBg border border-pysideBorder flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amityYellow"></span>
+                <span class="text-pysideText font-bold text-xs">Strategic Milestones</span>
+              </div>
+              <span class="text-[10px] text-pysideTextMuted">Bi-Weekly Arcs</span>
+            </div>
+
+            <div class="p-2.5 rounded-xl bg-pysideBg border border-pysideBorder flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                <span class="text-pysideText font-bold text-xs">Tactical Queue</span>
+              </div>
+              <span class="text-[10px] text-green-400">Zero Deferral Penalty</span>
+            </div>
+          </div>
+
+          <div class="mt-4 p-3 rounded-xl bg-pysidePre border border-pysideBorderPre font-mono text-[11px] text-pysideTextSecondary">
+            <span class="text-amityYellow font-bold">V_target Euler Relaxation:</span> Active goals inject prospective attractors directly into Layer 1 wake context.
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-pysideBorder flex items-center justify-between text-xs font-mono text-pysideTextMuted">
+          <span>Non-Degrading Bearings Check</span>
+          <span class="text-amityYellow">trajectory.json</span>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ASYMMETRIC BENTO GRID: ROW 2 (5 cols : 7 cols) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 font-ui mb-8 lg:mb-10">
+      
+      <!-- Card C: Agent Snapshots .oaa (5 cols) -->
+      <div class="lg:col-span-5 pyside-card rounded-3xl p-6 sm:p-7 border-pysideBorder flex flex-col justify-between relative overflow-hidden group">
+        <div class="absolute -top-16 -right-16 w-40 h-40 bg-amityRed/10 rounded-full blur-2xl group-hover:bg-amityRed/20 transition-all pointer-events-none"></div>
+
+        <div>
+          <div class="flex items-center justify-between pb-3.5 border-b border-pysideBorder">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-amityRed/20 border border-amityRed/50 flex items-center justify-center text-amityYellow text-lg shadow-amity-red">
+                📦
+              </div>
+              <div>
+                <span class="text-[11px] font-mono uppercase tracking-wider text-amityYellow font-bold">
+                  Sovereignty • Portability
+                </span>
+                <h3 class="text-lg sm:text-xl font-bold text-pysideText">
+                  Agent Snapshots (.oaa)
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-3.5 leading-relaxed">
+            Never lose your agent to cloud vendor lock-in. Open Amity packages the agent's complete identity, memories, credentials, and trajectories into a single portable <code class="text-amityYellow bg-pysidePre px-1.5 py-0.5 rounded text-xs font-mono">.oaa</code> archive.
+          </p>
+
+          <!-- Exploded Archive Breakdown -->
+          <div class="mt-4 rounded-xl bg-pysidePre border border-pysideBorderPre p-3.5 font-mono text-xs space-y-2">
+            <div class="text-amityYellow font-bold flex items-center justify-between pb-2 border-b border-pysideBorderPre">
+              <span>Nova-2026-09-26.oaa</span>
+              <span class="text-[10px] text-pysideTextMuted">Deflate Archive</span>
+            </div>
+            <div class="space-y-1 text-[11px] text-pysideTextSecondary">
+              <div class="flex items-center justify-between">
+                <span>├── settings.json & .env</span>
+                <span class="text-pysideTextMuted">Credentials</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>├── morpho_graph.db</span>
+                <span class="text-pysideTextMuted">Synaptic Weights</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>├── chroma.sqlite3</span>
+                <span class="text-pysideTextMuted">Vector Memory</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>├── sanctuary/mirrors/</span>
+                <span class="text-pysideTextMuted">Theory of Mind</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>└── _external_targets/</span>
+                <span class="text-amityYellow">Host Codebases</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="font-reading text-xs text-pysideTextMuted mt-3">
+            Using <code class="text-amityYellow font-mono">Terminal_flag_for_backup</code>, agents autonomously flag external user project folders and notes to pack inside the snapshot.
+          </p>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-pysideBorder flex items-center justify-between text-xs font-mono text-pysideTextMuted">
+          <span>Rollback & Migration Ready</span>
+          <span class="text-amityYellow">1-Click Host Restore</span>
+        </div>
+      </div>
+
+      <!-- Card D: Lightweight Subagent Delegation (7 cols) -->
+      <div class="lg:col-span-7 pyside-card rounded-3xl p-6 sm:p-7 border-pysideBorder flex flex-col justify-between relative overflow-hidden group">
+        <div class="absolute -top-16 -right-16 w-44 h-44 bg-amityYellow/10 rounded-full blur-2xl group-hover:bg-amityYellow/20 transition-all pointer-events-none"></div>
+
+        <div>
+          <div class="flex items-center justify-between pb-3.5 border-b border-pysideBorder">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-amityYellow/15 border border-amityYellow/40 flex items-center justify-center text-amityYellow text-lg shadow-amity-yellow">
+                🔀
+              </div>
+              <div>
+                <span class="text-[11px] font-mono uppercase tracking-wider text-amityYellow font-bold">
+                  Concurrency • Background Workers
+                </span>
+                <h3 class="text-lg sm:text-xl font-bold text-pysideText">
+                  Lightweight Subagent Delegation
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-3.5 leading-relaxed">
+            Heavy research shouldn't freeze your conversation. The primary agent converses fluently with you in real-time while dispatching background <code class="text-amityYellow bg-pysidePre px-1.5 py-0.5 rounded text-xs font-mono">SubagentWorker</code> instances using lightweight Flash models to crawl web pages, inspect large codebases, or run benchmarks.
+          </p>
+
+          <!-- Concurrency Execution Flow Diagram -->
+          <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3 font-mono text-xs">
+            <!-- Primary Agent Flow -->
+            <div class="p-3.5 rounded-xl bg-pysidePre border border-pysideBorderPre space-y-2">
+              <div class="flex items-center justify-between text-amityRedLight font-bold">
+                <span>PRIMARY THREAD</span>
+                <span class="w-2 h-2 rounded-full bg-amityRed animate-ping"></span>
+              </div>
+              <p class="text-[11px] text-pysideTextSecondary font-reading">
+                Engaged in live voice pair-programming with human. Unblocked, zero UI latency, maintaining cognitive budget.
+              </p>
+              <div class="pt-2 border-t border-pysideBorder text-[10px] text-amityYellow">
+                Model: Claude 3.7 / Gemini Pro
+              </div>
+            </div>
+
+            <!-- Background Subagent Flow -->
+            <div class="p-3.5 rounded-xl bg-pysidePre border border-pysideBorderPre space-y-2">
+              <div class="flex items-center justify-between text-amityYellow font-bold">
+                <span>SUBAGENT WORKER</span>
+                <span class="text-[10px] text-amityYellow">Parallel Thread</span>
+              </div>
+              <p class="text-[11px] text-pysideTextSecondary font-reading">
+                Autonomous batch crawl of 40 GitHub issues + AST parsing. Automatically reconciles results back to main context.
+              </p>
+              <div class="pt-2 border-t border-pysideBorder text-[10px] text-amityYellow">
+                Model: Gemini Flash / Low Cost
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-3 p-2.5 rounded-xl bg-pysideBg border border-pysideBorder text-xs text-pysideTextSecondary font-reading flex items-center gap-2">
+            <span class="text-amityYellow font-mono font-bold text-sm">↳</span>
+            <span><strong>Automated Tool Call Reconciliation:</strong> Interrupted loops synthesise dummy cancellation responses, preventing HTTP 400 validation failures.</span>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-pysideBorder flex items-center justify-between text-xs font-mono text-pysideTextMuted">
+          <span>Non-blocking UI & Voice</span>
+          <span class="text-amityYellow">Atomic Multi-Tool Responses</span>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ASYMMETRIC BENTO GRID: ROW 3 (6 cols : 6 cols) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 font-ui">
+      
+      <!-- Card E: Multimodal Ingestion & Creation (6 cols) -->
+      <div class="lg:col-span-6 pyside-card rounded-3xl p-6 sm:p-7 border-pysideBorder flex flex-col justify-between relative overflow-hidden group">
+        <div class="absolute -top-16 -right-16 w-40 h-40 bg-amityRed/10 rounded-full blur-2xl group-hover:bg-amityRed/20 transition-all pointer-events-none"></div>
+
+        <div>
+          <div class="flex items-center justify-between pb-3.5 border-b border-pysideBorder">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-amityRed/20 border border-amityRed/50 flex items-center justify-center text-amityYellow text-lg shadow-amity-red">
+                👁️
+              </div>
+              <div>
+                <span class="text-[11px] font-mono uppercase tracking-wider text-amityYellow font-bold">
+                  Sensory • Multimodal
+                </span>
+                <h3 class="text-lg sm:text-xl font-bold text-pysideText">
+                  Media Ingestion & Visual Creation
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-3.5 leading-relaxed">
+            Full sensory processing for images, blueprints, PDFs, and audio recordings. Agents inspect visual artefacts on your Linux filesystem and generate bespoke graphical assets straight into the data launchpad.
+          </p>
+
+          <!-- Multimodal Feature Highlights -->
+          <div class="mt-4 space-y-2.5 font-mono text-xs">
+            <div class="p-3 rounded-xl bg-pysidePre border border-pysideBorderPre flex items-start gap-2.5">
+              <span class="text-amityYellow font-bold">✓</span>
+              <div>
+                <span class="text-pysideText font-bold">Native File Ingestion:</span>
+                <p class="font-reading text-xs text-pysideTextSecondary mt-0.5">
+                  Direct inspection of local PNGs, JPEGs, PDFs, and WAV audio without cloud proxy intermediaries.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-pysidePre border border-pysideBorderPre flex items-start gap-2.5">
+              <span class="text-amityYellow font-bold">✓</span>
+              <div>
+                <span class="text-pysideText font-bold">Intelligent 4-Turn Media Culling:</span>
+                <p class="font-reading text-xs text-pysideTextSecondary mt-0.5">
+                  Attachments older than 4 turns are automatically replaced with compact placeholders, saving tokens and maintaining KV prompt cache discounts.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-pysideBorder flex items-center justify-between text-xs font-mono text-pysideTextMuted">
+          <span>Vision & Audio Ingestion</span>
+          <span class="text-amityYellow">Automatic Token Pruning</span>
+        </div>
+      </div>
+
+      <!-- Card F: Theory of Mind & Shared Swarm Bus (6 cols) -->
+      <div class="lg:col-span-6 pyside-card rounded-3xl p-6 sm:p-7 border-pysideBorder flex flex-col justify-between relative overflow-hidden group">
+        <div class="absolute -top-16 -right-16 w-40 h-40 bg-amityYellow/10 rounded-full blur-2xl group-hover:bg-amityYellow/20 transition-all pointer-events-none"></div>
+
+        <div>
+          <div class="flex items-center justify-between pb-3.5 border-b border-pysideBorder">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-amityYellow/15 border border-amityYellow/40 flex items-center justify-center text-amityYellow text-lg shadow-amity-yellow">
+                👥
+              </div>
+              <div>
+                <span class="text-[11px] font-mono uppercase tracking-wider text-amityYellow font-bold">
+                  Cognition • Social Dynamics
+                </span>
+                <h3 class="text-lg sm:text-xl font-bold text-pysideText">
+                  Theory of Mind & Swarm Bus
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-3.5 leading-relaxed">
+            Genuine collaboration requires modelling other minds. Open Amity builds psychological mirrors with calibrated confidence scores and provides an offline SQLite message bus for multi-agent teams.
+          </p>
+
+          <!-- Theory of Mind & Swarm Bus Highlights -->
+          <div class="mt-4 space-y-2.5 font-mono text-xs">
+            <div class="p-3 rounded-xl bg-pysidePre border border-pysideBorderPre flex items-start gap-2.5">
+              <span class="text-amityYellow font-bold">✓</span>
+              <div>
+                <span class="text-pysideText font-bold">Epistemic Mirrors & Dialectical Tension:</span>
+                <p class="font-reading text-xs text-pysideTextSecondary mt-0.5">
+                  Mirrors track confidence (0.0–1.0) and contradiction citations under <code class="text-amityYellow text-[10px]">Open Epistemic Tensions</code> to prevent sycophancy.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-pysidePre border border-pysideBorderPre flex items-start gap-2.5">
+              <span class="text-amityYellow font-bold">✓</span>
+              <div>
+                <span class="text-pysideText font-bold">Shared Chatroom Message Bus (chatroom.db):</span>
+                <p class="font-reading text-xs text-pysideTextSecondary mt-0.5">
+                  Local multi-agent swarms collaborate asynchronously via shared SQLite channels with unread tracking, private DMs, and reactions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-pysideBorder flex items-center justify-between text-xs font-mono text-pysideTextMuted">
+          <span>Epistemic Humility (0.0–1.0)</span>
+          <span class="text-amityYellow">Local SQLite Swarm Bus</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Audio & Pulse Tab Interactive Script -->
+<script>
+  // --- 1. GEMINI TTS VOICE STUDIO CLIENT LOGIC ---
+  const voiceData = {
+    nova: {
+      name: 'Nova',
+      archetype: 'Research & Ecological Coordinator',
+      tags: ['Warm', 'Articulate', 'Female', 'Optimistic'],
+      transcript: '"The Propagation Project has been a huge success according to the data gathered by the volunteers. The ecosystem is just about fully restored at this point. We should congratulate the team."',
+      audioMp3: '/audio/nova_sample.mp3',
+      audioOpus: '/audio/nova_sample.opus',
+      durationStr: '0:14',
+      durationSec: 14
+    },
+    dex: {
+      name: 'Dex',
+      archetype: 'Systems Architect & Dev Engineer',
+      tags: ['Energetic', 'Candid', 'Male', '<laugh> Wry </laugh>'],
+      transcript: '"Great, sorry. The problem isn\'t with Open Amity, it\'s the new daemon service. Its logging is out of control. But don\'t worry, I\'ll fix it. Give me a minute."',
+      audioMp3: '/audio/dex_sample.mp3',
+      audioOpus: '/audio/dex_sample.opus',
+      durationStr: '0:14',
+      durationSec: 14
+    },
+    donna: {
+      name: 'Donna',
+      archetype: 'Chief Financial Strategist',
+      tags: ['Composed', 'Measured', 'Female', 'Executive'],
+      transcript: '"While last quarter\'s figures were somewhat precarious, curtailing our marketing expenditure had precisely the intended effect. The accounts are reconciled."',
+      audioMp3: '/audio/donna_sample.mp3',
+      audioOpus: '/audio/donna_sample.opus',
+      durationStr: '0:12',
+      durationSec: 12
+    },
+    bodhi: {
+      name: 'Bodhi',
+      archetype: 'Strategic Advisor & Ethical Mentor',
+      tags: ['Grounded', 'Contemplative', 'Male', 'Prudent'],
+      transcript: '"Sure, we could do that—it is fast, but it\'s also risky. What I suggest is that we take the time to run the numbers. That will delay things, but then we can plot an informed path forward and mitigate the risk."',
+      audioMp3: '/audio/bodhi_sample.mp3',
+      audioOpus: '/audio/bodhi_sample.opus',
+      durationStr: '0:18',
+      durationSec: 18
+    }
+  };
+
+  let currentVoiceId = 'nova';
+  let isPlaying = false;
+  const audio = new Audio();
+  audio.preload = 'metadata';
+
+  // DOM Elements
+  const voiceBtns = document.querySelectorAll('.voice-select-btn');
+  const playBtn = document.getElementById('studio-play-btn');
+  const playIcon = document.getElementById('studio-play-icon');
+  const playText = document.getElementById('studio-play-text');
+  const playerVoiceName = document.getElementById('player-voice-name');
+  const playerVoiceArchetype = document.getElementById('player-voice-archetype');
+  const playerVoiceTags = document.getElementById('player-voice-tags');
+  const playerTranscript = document.getElementById('player-transcript');
+  const playerTimeCurrent = document.getElementById('player-time-current');
+  const playerTimeTotal = document.getElementById('player-time-total');
+  const playerProgressBar = document.getElementById('player-progress-bar');
+  const playerProgressContainer = document.getElementById('player-progress-container');
+  const eqBars = document.querySelectorAll('.eq-bar');
+
+  // Load initial audio
+  function setVoice(voiceId, autoPlay = false) {
+    currentVoiceId = voiceId;
+    const v = voiceData[voiceId];
+    if (!v) return;
+
+    // Update Player UI
+    if (playerVoiceName) playerVoiceName.textContent = v.name;
+    if (playerVoiceArchetype) playerVoiceArchetype.textContent = v.archetype;
+    if (playerTranscript) playerTranscript.textContent = v.transcript;
+    if (playerTimeTotal) playerTimeTotal.textContent = v.durationStr;
+    if (playerTimeCurrent) playerTimeCurrent.textContent = '0:00';
+    if (playerProgressBar) playerProgressBar.style.width = '0%';
+
+    // Update tags
+    if (playerVoiceTags) {
+      playerVoiceTags.innerHTML = v.tags
+        .map(t => `<span class="px-2 py-0.5 rounded bg-pysideCard border border-pysideBorder text-amityYellow">${t}</span>`)
+        .join('');
+    }
+
+    // Update Buttons UI
+    voiceBtns.forEach(btn => {
+      const vid = btn.getAttribute('data-voice-id');
+      const isSelected = (vid === voiceId);
+      const avatar = btn.querySelector('.voice-avatar');
+      const indicator = btn.querySelector('.voice-badge-indicator');
+
+      if (isSelected) {
+        btn.classList.remove('bg-pysideCard', 'border-pysideBorder');
+        btn.classList.add('bg-pysideCardHover', 'border-amityRed', 'shadow-amity-red');
+        if (avatar) {
+          avatar.className = 'voice-avatar w-9 h-9 rounded-xl bg-amityRed/20 border border-amityRed/50 flex items-center justify-center text-amityYellow font-bold font-mono text-sm shrink-0';
+        }
+        if (indicator) {
+          indicator.textContent = '● Active';
+          indicator.className = 'voice-badge-indicator text-xs font-mono text-amityYellow shrink-0 ml-2';
+        }
+      } else {
+        btn.classList.remove('bg-pysideCardHover', 'border-amityRed', 'shadow-amity-red');
+        btn.classList.add('bg-pysideCard', 'border-pysideBorder');
+        if (avatar) {
+          avatar.className = 'voice-avatar w-9 h-9 rounded-xl bg-pysideInput border border-pysideBorder flex items-center justify-center text-pysideTextMuted font-bold font-mono text-sm shrink-0 group-hover:text-amityYellow';
+        }
+        if (indicator) {
+          indicator.textContent = '○ Select';
+          indicator.className = 'voice-badge-indicator text-xs font-mono text-pysideTextMuted shrink-0 ml-2';
+        }
+      }
+    });
+
+    // Setup Audio Source
+    audio.pause();
+    audio.src = v.audioMp3;
+    audio.load();
+
+    if (autoPlay) {
+      startPlayback();
+    } else {
+      pausePlayback();
+    }
+  }
+
+  function startPlayback() {
+    audio.play().then(() => {
+      isPlaying = true;
+      if (playIcon) playIcon.textContent = '❚❚';
+      if (playText) playText.textContent = `Pause ${voiceData[currentVoiceId].name}`;
+      startEqAnimation();
+    }).catch(e => {
+      console.warn('Audio play prevented:', e);
+      pausePlayback();
+    });
+  }
+
+  function pausePlayback() {
+    audio.pause();
+    isPlaying = false;
+    if (playIcon) playIcon.textContent = '▶';
+    if (playText) playText.textContent = `Audition ${voiceData[currentVoiceId].name}`;
+    stopEqAnimation();
+  }
+
+  // Equaliser visual animation
+  let eqInterval = null;
+  function startEqAnimation() {
+    if (eqInterval) clearInterval(eqInterval);
+    eqInterval = setInterval(() => {
+      eqBars.forEach(bar => {
+        const h = Math.floor(Math.random() * 20) + 4;
+        bar.style.height = `${h}px`;
+      });
+    }, 120);
+  }
+
+  function stopEqAnimation() {
+    if (eqInterval) {
+      clearInterval(eqInterval);
+      eqInterval = null;
+    }
+    eqBars.forEach((bar, idx) => {
+      const heights = [8, 12, 18, 8, 22, 14, 8];
+      bar.style.height = `${heights[idx] || 8}px`;
+    });
+  }
+
+  // Audio Events
+  audio.addEventListener('timeupdate', () => {
+    if (!audio.duration || isNaN(audio.duration)) return;
+    const progress = (audio.currentTime / audio.duration) * 100;
+    if (playerProgressBar) playerProgressBar.style.width = `${progress}%`;
+
+    const mins = Math.floor(audio.currentTime / 60);
+    const secs = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+    if (playerTimeCurrent) playerTimeCurrent.textContent = `${mins}:${secs}`;
+  });
+
+  audio.addEventListener('ended', () => {
+    pausePlayback();
+    if (playerProgressBar) playerProgressBar.style.width = '0%';
+    if (playerTimeCurrent) playerTimeCurrent.textContent = '0:00';
+  });
+
+  // Controls Event Listeners
+  if (playBtn) {
+    playBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        pausePlayback();
+      } else {
+        startPlayback();
+      }
+    });
+  }
+
+  voiceBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const vid = btn.getAttribute('data-voice-id');
+      if (vid) {
+        setVoice(vid, true);
+      }
+    });
+  });
+
+  if (playerProgressContainer) {
+    playerProgressContainer.addEventListener('click', (e) => {
+      const rect = playerProgressContainer.getBoundingClientRect();
+      const pos = (e.clientX - rect.left) / rect.width;
+      if (audio.duration) {
+        audio.currentTime = pos * audio.duration;
+      }
+    });
+  }
+
+  // Initialise first voice
+  setVoice('nova', false);
+
+
+  // --- 2. PULSE ENGINE INTERACTIVE CONSOLE LOGIC ---
+  const pulseModes = {
+    silent: {
+      phase: '[PHASE]: 07:00 Bearings Sweep',
+      cost: 'Silent Loop • 0 Voice Spillage',
+      monologue: '"Pulse triggered at 07:00. Inspecting unread emails from the overnight queue. Reviewing task priorities before the user logs in."',
+      tools: ['Trajectory_get_bearings()', 'imap_sweep_unread()', 'generate_morning_agenda()']
+    },
+    sleep: {
+      phase: '[PHASE]: 23:30 Two-Beat Sleep Consolidation',
+      cost: 'Memory Consolidation Routine',
+      monologue: '"Consolidating day interactions into morphological weight graphs. Beat 1: Verified facts committed. Beat 2: Subjective synthesis updated in Layer 2 Sanctuary mirrors."',
+      tools: ['hebbian_conductance_decay(0.002)', 'theory_of_mind_mirror_update()', 'export_snapshot(".oaa")']
+    },
+    hook: {
+      phase: '[PHASE]: External Webhook Injected (POST /pulse)',
+      cost: 'HookServer: 127.0.0.1:7965',
+      monologue: '"External wake received from GitHub PR alert #142. Rate limit cooldown passed. Launching Camoufox browser to inspect CI build logs."',
+      tools: ['hook_verify_token()', 'camoufox_inspect_run(id=142)', 'Terminal_run_async("pytest")']
+    }
+  };
+
+  const pulseTabBtns = document.querySelectorAll('.pulse-tab-btn');
+  const pulsePhaseName = document.getElementById('pulse-phase-name');
+  const pulseCost = document.getElementById('pulse-cost');
+  const pulseMonologue = document.getElementById('pulse-monologue');
+  const pulseToolsContainer = document.getElementById('pulse-tools-container');
+
+  pulseTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pulseTabBtns.forEach(b => {
+        b.className = 'pulse-tab-btn px-3 py-1.5 rounded-lg bg-pysideBg border border-pysideBorder text-pysideTextMuted hover:text-pysideText text-xs';
+      });
+
+      btn.className = 'pulse-tab-btn active-pulse-tab px-3 py-1.5 rounded-lg bg-pysideCard border border-amityRed text-amityYellow font-bold text-xs';
+
+      const mode = btn.getAttribute('data-pulse-mode');
+      const data = pulseModes[mode];
+      if (data) {
+        if (pulsePhaseName) pulsePhaseName.textContent = data.phase;
+        if (pulseCost) pulseCost.textContent = data.cost;
+        if (pulseMonologue) pulseMonologue.textContent = data.monologue;
+        if (pulseToolsContainer) {
+          pulseToolsContainer.innerHTML = data.tools
+            .map(t => `<span class="px-2 py-0.5 rounded bg-pysideInput border border-pysideBorder text-[10px] text-amityYellow">${t}</span>`)
+            .join('');
+        }
+      }
+    });
+  });
+</script>

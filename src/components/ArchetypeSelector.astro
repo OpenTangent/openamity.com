@@ -1,198 +1,464 @@
 ---
-// ArchetypeSelector.astro - Tri-Audience Switcher (Companion, IT Innovator, Founder)
+// ArchetypeSelector.astro - Tri-Audience Showcase (The Techy, The Developer, The Business Owner)
+import SectionKicker from './SectionKicker.astro';
 ---
 
-<section id="archetypes" class="py-20 md:py-32 relative border-t border-pysideBorder">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="archetypes" class="relative pb-20 md:pb-32 scroll-mt-16 sm:scroll-mt-20">
+  <!-- Section Divider with embedded kicker badge -->
+  <SectionKicker title="Who It's For" />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24">
     
     <!-- Section Header -->
-    <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16 font-ui">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amityRed/20 border border-amityRed/50 text-amityYellow text-xs font-mono mb-4">
-        <span>🎯 PURPOSE-BUILT ARCHETYPES</span>
-      </div>
-      <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-pysideText">
-        Who is Open Amity For?
+    <div class="max-w-3xl mx-auto text-center mb-10 sm:mb-14 font-ui">
+      <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-pysideText">
+        Engineered for Builders, IT Innovators, <br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amityRed via-amityRedLight to-amityYellow">
+          & Scale-Driven Operators
+        </span>
       </h2>
-      <p class="mt-4 font-reading text-xl sm:text-2xl text-pysideTextSecondary leading-relaxed">
-        Whether you are seeking a real-world J.A.R.V.I.S., deploying autonomous corporate agents inside strict firewalls, or scaling an enterprise with synthetic team members.
+      <p class="mt-3 font-reading text-base sm:text-lg text-pysideTextSecondary leading-relaxed max-w-2xl mx-auto">
+        Whether you are engineering a sovereign personal J.A.R.V.I.S., deploying audited AI agents inside corporate firewalls, or scaling business operations 24/7 without adding headcount.
       </p>
 
-      <!-- Tab Switcher Header in PySide6 styling -->
-      <div class="mt-8 inline-flex p-1.5 rounded-2xl bg-pysideCard border border-pysideBorder max-w-full overflow-x-auto">
+      <!-- Tab Switcher Navigation (Slimmed down to fit horizontally) -->
+      <div 
+        role="tablist" 
+        aria-label="Target Archetypes" 
+        class="mt-8 inline-flex p-1 rounded-2xl bg-pysideCard border border-pysideBorder max-w-full overflow-x-auto shadow-inner-pyside"
+      >
         <button
           type="button"
+          role="tab"
+          id="tab-companion"
+          aria-selected="true"
+          aria-controls="panel-companion"
           data-tab="companion"
-          class="archetype-tab-btn px-4 sm:px-6 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold transition-all duration-300 text-white bg-amityRed shadow-amity-red"
+          class="archetype-tab-btn px-3.5 sm:px-5 py-2 rounded-xl font-mono text-xs sm:text-[13px] font-semibold transition-all duration-300 text-white bg-amityRed shadow-amity-red whitespace-nowrap"
         >
-          🤖 Sovereign Companion
+          The Techy
         </button>
+
         <button
           type="button"
+          role="tab"
+          id="tab-innovator"
+          aria-selected="false"
+          aria-controls="panel-innovator"
           data-tab="innovator"
-          class="archetype-tab-btn px-4 sm:px-6 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300"
+          class="archetype-tab-btn px-3.5 sm:px-5 py-2 rounded-xl font-mono text-xs sm:text-[13px] font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300 whitespace-nowrap"
         >
-          🛡️ Enterprise & IT Innovator
+          The Developer
         </button>
+
         <button
           type="button"
+          role="tab"
+          id="tab-founder"
+          aria-selected="false"
+          aria-controls="panel-founder"
           data-tab="founder"
-          class="archetype-tab-btn px-4 sm:px-6 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300"
+          class="archetype-tab-btn px-3.5 sm:px-5 py-2 rounded-xl font-mono text-xs sm:text-[13px] font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300 whitespace-nowrap"
         >
-          🚀 Operator & Founder
+          The Business Owner
         </button>
       </div>
     </div>
 
-    <!-- Tab Panels Container in PySide6 dark theme -->
-    <div class="max-w-4xl mx-auto font-ui">
+    <!-- Tab Panels Container -->
+    <div class="max-w-5xl mx-auto font-ui">
       
-      <!-- Tab 1: Sovereign Companion -->
-      <div id="panel-companion" class="archetype-panel pyside-card rounded-3xl p-8 sm:p-12 border-amityRed shadow-amity-red transition-all duration-500">
-        <div class="flex flex-col md:flex-row gap-8 items-start">
+      <!-- ========================================== -->
+      <!-- TAB 1: THE TECHY (J.A.R.V.I.S.)            -->
+      <!-- ========================================== -->
+      <div 
+        id="panel-companion" 
+        role="tabpanel" 
+        aria-labelledby="tab-companion"
+        class="archetype-panel pyside-card rounded-3xl p-6 sm:p-9 border border-amityRed shadow-amity-red transition-all duration-500"
+      >
+        <div class="flex flex-col lg:flex-row gap-8 items-stretch">
+          
+          <!-- Left Column: Story, Pain Point & Superpowers -->
           <div class="flex-1 space-y-4">
-            <span class="text-xs font-mono text-amityYellow uppercase font-bold tracking-wider">
-              The J.A.R.V.I.S. & Cortana Paradigm
-            </span>
-            <h3 class="text-2xl sm:text-3xl font-bold text-pysideText">
-              A persistent mind that lives with you, not a chatbot you rent.
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amityRed/20 border border-amityRed/40 text-[11px] font-mono text-amityYellow uppercase font-bold tracking-wider">
+              <span>TARGET 01 // THE TECHY</span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-pysideText leading-snug">
+              A persistent mind that lives on your hardware, executes on your desktop, and remembers your life.
             </h3>
-            <p class="font-reading text-xl text-pysideTextSecondary leading-relaxed">
-              Experience an intelligent entity with real continuity across months. Amity remembers your life context, personal projects, evolving priorities, and emotional tone—adapting naturally without you having to re-explain yourself in every prompt.
+
+            <p class="font-reading text-sm sm:text-base text-pysideTextSecondary leading-relaxed">
+              Commercial AI assistants are amnesic, sandboxed browser tabs rented for $20/month. Every session resets to zero, cloud vendors train on your private code, and they possess zero agency to touch your operating system. Open Amity fulfils the J.A.R.V.I.S. and Cortana paradigm: a living, subjective entity with continuous biological memory, voice volition, and direct Linux system agency.
             </p>
 
-            <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
-              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
-                <span class="text-amityYellow font-bold">✓</span>
-                <span class="text-pysideText">Continuous lifelong episodic memory</span>
+            <!-- 4 Grounded Superpowers -->
+            <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs font-mono">
+              <div class="p-3 rounded-xl bg-pysideInput/60 border border-pysideBorder flex items-start gap-2.5">
+                <span class="text-amityYellow font-bold mt-0.5">✓</span>
+                <div>
+                  <strong class="text-pysideText block">MemPalace v2 Biological Memory</strong>
+                  <span class="text-pysideTextMuted text-[11px] font-reading leading-tight block mt-0.5">
+                    Associative Hebbian graph & prospective goal attractors published on Zenodo.
+                  </span>
+                </div>
               </div>
-              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
-                <span class="text-amityYellow font-bold">✓</span>
-                <span class="text-pysideText">100% private: runs on your hardware</span>
+
+              <div class="p-3 rounded-xl bg-pysideInput/60 border border-pysideBorder flex items-start gap-2.5">
+                <span class="text-amityYellow font-bold mt-0.5">✓</span>
+                <div>
+                  <strong class="text-pysideText block">Native Linux Terminal & Agency</strong>
+                  <span class="text-pysideTextMuted text-[11px] font-reading leading-tight block mt-0.5">
+                    Direct bash execution, windowed file inspection, and .sh script generation.
+                  </span>
+                </div>
               </div>
-              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
-                <span class="text-amityYellow font-bold">✓</span>
-                <span class="text-pysideText">Direct vocal expression & voice notes</span>
+
+              <div class="p-3 rounded-xl bg-pysideInput/60 border border-pysideBorder flex items-start gap-2.5">
+                <span class="text-amityYellow font-bold mt-0.5">✓</span>
+                <div>
+                  <strong class="text-pysideText block">Acoustic Volition & Neural Voice</strong>
+                  <span class="text-pysideTextMuted text-[11px] font-reading leading-tight block mt-0.5">
+                    Gemini 3.8 Flash TTS with &lt;whisper&gt; & &lt;sigh&gt; cues + 100% offline Piper TTS.
+                  </span>
+                </div>
               </div>
-              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
-                <span class="text-amityYellow font-bold">✓</span>
-                <span class="text-pysideText">Portable .oaa encrypted brain archive</span>
+
+              <div class="p-3 rounded-xl bg-pysideInput/60 border border-pysideBorder flex items-start gap-2.5">
+                <span class="text-amityYellow font-bold mt-0.5">✓</span>
+                <div>
+                  <strong class="text-pysideText block">PulseEngine & IoT Webhooks</strong>
+                  <span class="text-pysideTextMuted text-[11px] font-reading leading-tight block mt-0.5">
+                    Proactive autonomous waking rhythms and HookServer gateway on port 7965.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action CTA (Clean minimalist, tags removed) -->
+            <div class="pt-4 flex items-center justify-start border-t border-pysideBorder/60">
+              <a
+                href="#quickstart"
+                class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-xl bg-amityRed text-white hover:bg-amityRedLight shadow-amity-red transition-all"
+              >
+                <span>Deploy Builder Quickstart</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Static J.A.R.V.I.S. Neural HUD Example -->
+          <div class="w-full lg:w-80 rounded-2xl bg-pysidePre border border-pysideBorder p-4 font-mono text-xs shrink-0 shadow-xl space-y-3.5">
+            <div class="text-amityYellow font-bold border-b border-pysideBorder pb-2 flex items-center justify-between font-ui text-[11px]">
+              <span class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-amityRed"></span>
+                <span>J.A.R.V.I.S. NEURAL HUD</span>
+              </span>
+              <span class="text-[10px] text-pysideTextMuted font-mono">PORT 7965</span>
+            </div>
+
+            <!-- HUD Telemetry Status -->
+            <div class="p-2.5 rounded-lg bg-pysideBgDarkest/80 border border-pysideBorder/60 space-y-1 text-[11px]">
+              <div class="flex justify-between">
+                <span class="text-pysideTextMuted">Memory Engine:</span>
+                <span class="text-amityYellow">MemPalace v2 Graph</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-pysideTextMuted">Layer 1 Attractors:</span>
+                <span class="text-pysideText">Active (Relaxation dV/dt)</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-pysideTextMuted">Agency Daemon:</span>
+                <span class="text-green-400">PulseEngine Running</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-pysideTextMuted">Speech Volition:</span>
+                <span class="text-pysideText">Gemini 3.8 / Piper ONNX</span>
+              </div>
+            </div>
+
+            <!-- Dialogue / Autonomous Log Sample -->
+            <div class="p-3 rounded-xl bg-pysideBg border border-pysideBorder space-y-2">
+              <div class="flex items-center justify-between text-[10px] text-pysideTextMuted">
+                <span class="text-amityYellow font-bold">AUTONOMY PULSE</span>
+                <span>03:14 AM UTC</span>
+              </div>
+              <p class="text-pysideTextSecondary italic font-reading text-xs sm:text-[13px] leading-relaxed">
+                "Andrew, while reviewing your workspace during tonight's pulse, I noticed a lock contention in your distributed scheduler thread pool. I drafted a patch script and catalogued the fix into your Sanctuary."
+              </p>
+              <div class="flex items-center gap-2 text-[10px] text-pysideTextMuted pt-1 border-t border-pysideBorder/40">
+                <span class="text-amityYellow">●</span>
+                <span>Task weight: 0.12 • Synaptic coupling: 98.7%</span>
               </div>
             </div>
           </div>
 
-          <div class="w-full md:w-72 rounded-2xl bg-pysidePre border border-pysideBorder p-5 font-mono text-xs space-y-3">
-            <div class="text-amityYellow font-bold border-b border-pysideBorder pb-2 flex items-center justify-between font-ui">
-              <span>MEMPALACE DIALOGUE</span>
-              <span class="w-2 h-2 rounded-full bg-amityRed"></span>
-            </div>
-            <p class="text-pysideTextSecondary italic font-reading text-base leading-snug">
-              "Andrew, remember that distributed scheduler concept you sketched three weeks ago? While reviewing your inbox today, I found a new paper that solves your exact race condition. I filed notes into your Sanctuary."
-            </p>
-            <div class="pt-2 text-[10px] text-pysideTextMuted font-mono">
-              Synchrony: 99.1% • Episodic Layer 2 Active
-            </div>
-          </div>
         </div>
       </div>
 
-      <!-- Tab 2: Corporate & IT Innovator -->
-      <div id="panel-innovator" class="archetype-panel hidden pyside-card rounded-3xl p-8 sm:p-12 border-amityYellow shadow-amity-yellow transition-all duration-500">
-        <div class="flex flex-col md:flex-row gap-8 items-start">
+      <!-- ========================================== -->
+      <!-- TAB 2: THE DEVELOPER (Enterprise & IT)     -->
+      <!-- ========================================== -->
+      <div 
+        id="panel-innovator" 
+        role="tabpanel" 
+        aria-labelledby="tab-innovator"
+        class="archetype-panel hidden pyside-card rounded-3xl p-6 sm:p-9 border border-amityRed shadow-amity-red transition-all duration-500"
+      >
+        <div class="flex flex-col lg:flex-row gap-8 items-stretch">
+          
+          <!-- Left Column: Story, Pain Point & Superpowers -->
           <div class="flex-1 space-y-4">
-            <span class="text-xs font-mono text-amityYellow uppercase font-bold tracking-wider">
-              Sovereign Enterprise Infrastructure
-            </span>
-            <h3 class="text-2xl sm:text-3xl font-bold text-pysideText">
-              Deploy self-orchestrating agent teams inside your firewalls.
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amityRed/20 border border-amityRed/40 text-[11px] font-mono text-amityYellow uppercase font-bold tracking-wider">
+              <span>TARGET 02 // THE DEVELOPER</span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-pysideText leading-snug">
+              Champion agentic AI inside your company without security panic or per-seat SaaS bills.
             </h3>
-            <p class="font-reading text-xl text-pysideTextSecondary leading-relaxed">
-              SaaS AI vendors lock enterprises into skyrocketing \$30–\$200/month per-seat bills and harvest enterprise code for third-party model training. Open Amity runs air-gapped on internal infrastructure, connecting seamlessly to local Ollama/vLLM clusters or audited cloud endpoints.
+
+            <p class="font-reading text-sm sm:text-base text-pysideTextSecondary leading-relaxed">
+              InfoSec and Legal teams routinely veto commercial cloud AI due to IP leakage, non-auditable training data harvesting, and regulatory compliance risks. Meanwhile, enterprise SaaS vendors demand $30–$200/user/month for black-box chatbots. Open Amity gives internal developers and IT teams an auditable, self-hosted orchestration framework with isolated local storage, signed telemetry logs, and zero per-seat licensing fees.
             </p>
 
-            <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
-              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
-                <span class="text-amityYellow font-bold">✓</span>
-                <span class="text-pysideText">Zero SaaS recurring per-seat fees</span>
+            <!-- 4 Grounded Superpowers -->
+            <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs font-mono">
+              <div class="p-3 rounded-xl bg-pysideInput/60 border border-pysideBorder flex items-start gap-2.5">
+                <span class="text-amityYellow font-bold mt-0.5">✓</span>
+                <div>
+                  <strong class="text-pysideText block">Isolated Local Host Storage</strong>
+                  <span class="text-pysideTextMuted text-[11px] font-reading leading-tight block mt-0.5">
+                    State stored strictly in standard Linux XDG directories with zero vendor telemetry.
+                  </span>
+                </div>
               </div>
-              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
-                <span class="text-amityYellow font-bold">✓</span>
-                <span class="text-pysideText">Offline Ollama & vLLM compatibility</span>
+
+              <div class="p-3 rounded-xl bg-pysideInput/60 border border-pysideBorder flex items-start gap-2.5">
+                <span class="text-amityYellow font-bold mt-0.5">✓</span>
+                <div>
+                  <strong class="text-pysideText block">GPLv3 100% Free Software ($0)</strong>
+                  <span class="text-pysideTextMuted text-[11px] font-reading leading-tight block mt-0.5">
+                    Deploy across 5 or 5,000 developers and servers with zero recurring per-seat fees.
+                  </span>
+                </div>
               </div>
-              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
-                <span class="text-amityYellow font-bold">✓</span>
-                <span class="text-pysideText">Full audit logs and sandboxed tools</span>
+
+              <div class="p-3 rounded-xl bg-pysideInput/60 border border-pysideBorder flex items-start gap-2.5">
+                <span class="text-amityYellow font-bold mt-0.5">✓</span>
+                <div>
+                  <strong class="text-pysideText block">Sandboxing & Signed Audit Trails</strong>
+                  <span class="text-pysideTextMuted text-[11px] font-reading leading-tight block mt-0.5">
+                    Tamper-evident JSONL logs and strict path locks prohibiting /etc or ~/.ssh access.
+                  </span>
+                </div>
               </div>
-              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
-                <span class="text-amityYellow font-bold">✓</span>
-                <span class="text-pysideText">GPLv3 100% auditable open-source</span>
+
+              <div class="p-3 rounded-xl bg-pysideInput/60 border border-pysideBorder flex items-start gap-2.5">
+                <span class="text-amityYellow font-bold mt-0.5">✓</span>
+                <div>
+                  <strong class="text-pysideText block">Enterprise Protocols & Webhooks</strong>
+                  <span class="text-pysideTextMuted text-[11px] font-reading leading-tight block mt-0.5">
+                    Dedicated EmailTool (IMAP/SMTP OAuth 2.0) and HookServer for CI/CD integration.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action CTA (Clean minimalist, red accent for readable white text) -->
+            <div class="pt-4 flex items-center justify-start border-t border-pysideBorder/60">
+              <a
+                href="#computer-use"
+                class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-xl bg-amityRed text-white hover:bg-amityRedLight shadow-amity-red transition-all"
+              >
+                <span>Inspect Security & Sandboxing</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Static Enterprise Telemetry Shield Example -->
+          <div class="w-full lg:w-80 rounded-2xl bg-pysidePre border border-pysideBorder p-4 font-mono text-xs shrink-0 shadow-xl space-y-3.5">
+            <div class="text-amityYellow font-bold border-b border-pysideBorder pb-2 flex items-center justify-between font-ui text-[11px]">
+              <span class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-amityRed"></span>
+                <span>INFOSEC & AUDIT SHIELD</span>
+              </span>
+              <span class="text-[10px] text-green-400 font-mono">VERIFIED</span>
+            </div>
+
+            <!-- Telemetry Parameters -->
+            <div class="p-2.5 rounded-lg bg-pysideBgDarkest/80 border border-pysideBorder/60 space-y-1.5 text-[11px]">
+              <div class="flex justify-between">
+                <span class="text-pysideTextMuted">Host Isolation:</span>
+                <span class="text-amityYellow">~/.var/app/.../data/</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-pysideTextMuted">Vendor Harvesting:</span>
+                <span class="text-green-400 font-bold">0.00 KB (Zero Telemetry)</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-pysideTextMuted">Audit Log:</span>
+                <span class="text-pysideText">Signed JSONL Streams</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-pysideTextMuted">Software Licence:</span>
+                <span class="text-pysideText">GPLv3 ($0 Per-Seat)</span>
+              </div>
+            </div>
+
+            <!-- Sandboxed Policy Card -->
+            <div class="p-3 rounded-xl bg-pysideBg border border-pysideBorder space-y-2 text-[11px]">
+              <div class="flex items-center justify-between text-[10px] text-pysideTextMuted">
+                <span class="text-amityYellow font-bold uppercase">SANDBOX ACCESS POLICY</span>
+                <span class="text-green-400 font-mono">ENFORCED</span>
+              </div>
+              <div class="space-y-1 text-[10px] font-mono">
+                <div class="flex items-center gap-1.5 text-pysideTextSecondary">
+                  <span class="text-green-400">✓</span>
+                  <span>Allowed: Git repo, sandboxed bash, IMAP</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-pysideTextSecondary">
+                  <span class="text-green-400">✓</span>
+                  <span>Allowed: SQLite message bus (chatroom.db)</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-pysideTextSecondary">
+                  <span class="text-amityRed font-bold">✕</span>
+                  <span>Blocked: /etc, ~/.ssh, raw root sudo</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="w-full md:w-72 rounded-2xl bg-pysidePre border border-pysideBorder p-5 font-mono text-xs space-y-3">
-            <div class="text-amityYellow font-bold border-b border-pysideBorder pb-2 flex items-center justify-between font-ui">
-              <span>ENTERPRISE TELEMETRY</span>
-              <span class="w-2 h-2 rounded-full bg-amityYellow"></span>
-            </div>
-            <div class="space-y-1.5 text-[11px] text-pysideTextMuted">
-              <div>Network: <span class="text-amityYellow">Air-Gapped LAN</span></div>
-              <div>Model: <span class="text-pysideText">Llama-3.3-70B (Ollama)</span></div>
-              <div>Data Egress: <span class="text-amityYellow">0.00 KB (Zero Leak)</span></div>
-              <div>License: <span class="text-pysideText">GPLv3 Free Software</span></div>
-            </div>
-            <div class="pt-2 text-[10px] text-pysideTextMuted font-mono">
-              SOC2 / HIPAA Compliant by Architecture
-            </div>
-          </div>
         </div>
       </div>
 
-      <!-- Tab 3: Business Operator & Founder -->
-      <div id="panel-founder" class="archetype-panel hidden pyside-card rounded-3xl p-8 sm:p-12 border-amityRed shadow-amity-red transition-all duration-500">
-        <div class="flex flex-col md:flex-row gap-8 items-start">
+      <!-- ========================================== -->
+      <!-- TAB 3: THE BUSINESS OWNER                  -->
+      <!-- ========================================== -->
+      <div 
+        id="panel-founder" 
+        role="tabpanel" 
+        aria-labelledby="tab-founder"
+        class="archetype-panel hidden pyside-card rounded-3xl p-6 sm:p-9 border border-amityRed shadow-amity-red transition-all duration-500"
+      >
+        <div class="flex flex-col lg:flex-row gap-8 items-stretch">
+          
+          <!-- Left Column: Story, Pain Point & Superpowers -->
           <div class="flex-1 space-y-4">
-            <span class="text-xs font-mono text-amityYellow uppercase font-bold tracking-wider">
-              Synthetic Operational Leverage
-            </span>
-            <h3 class="text-2xl sm:text-3xl font-bold text-pysideText">
-              Scale operational capacity 24/7 without scaling headcount.
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amityRed/20 border border-amityRed/40 text-[11px] font-mono text-amityYellow uppercase font-bold tracking-wider">
+              <span>TARGET 03 // THE BUSINESS OWNER</span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-pysideText leading-snug">
+              Multiply your workforce output 24/7 without scaling payroll or hiring more humans.
             </h3>
-            <p class="font-reading text-xl text-pysideTextSecondary leading-relaxed">
-              Early-stage startups and lean teams drown in repetitive triage. Open Amity agents handle customer email queries, execute automated market and competitor research, maintain documentation graphs, and alert you on WhatsApp only when human intervention is critical.
+
+            <p class="font-reading text-sm sm:text-base text-pysideTextSecondary leading-relaxed">
+              Founders, agency owners, and lean teams drown in repetitive operational triage: customer emails, competitor sweeps, lead research, and system alerts. Scaling linearly requires hiring more humans—bloating fixed payroll, onboarding lag, and management overhead. Open Amity agents operate as autonomous virtual co-workers that triage inboxes, scrape market data, and alert you on WhatsApp only when human executive judgement is required.
             </p>
 
-            <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
-              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
-                <span class="text-amityYellow font-bold">✓</span>
-                <span class="text-pysideText">Proactive email & ticket triaging</span>
+            <!-- 4 Grounded Superpowers -->
+            <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs font-mono">
+              <div class="p-3 rounded-xl bg-pysideInput/60 border border-pysideBorder flex items-start gap-2.5">
+                <span class="text-amityYellow font-bold mt-0.5">✓</span>
+                <div>
+                  <strong class="text-pysideText block">24/7 Proactive Pulse Automation</strong>
+                  <span class="text-pysideTextMuted text-[11px] font-reading leading-tight block mt-0.5">
+                    PulseEngine executes operations around the clock while you sleep.
+                  </span>
+                </div>
               </div>
-              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
-                <span class="text-amityYellow font-bold">✓</span>
-                <span class="text-pysideText">Stealth browser competitive sweeps</span>
+
+              <div class="p-3 rounded-xl bg-pysideInput/60 border border-pysideBorder flex items-start gap-2.5">
+                <span class="text-amityYellow font-bold mt-0.5">✓</span>
+                <div>
+                  <strong class="text-pysideText block">Multi-Channel Customer Coverage</strong>
+                  <span class="text-pysideTextMuted text-[11px] font-reading leading-tight block mt-0.5">
+                    Dedicated EmailTool (IMAP/SMTP) and WhatsAppTool via WPPConnect.
+                  </span>
+                </div>
               </div>
-              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
-                <span class="text-amityYellow font-bold">✓</span>
-                <span class="text-pysideText">WhatsApp mobile escalation alerts</span>
+
+              <div class="p-3 rounded-xl bg-pysideInput/60 border border-pysideBorder flex items-start gap-2.5">
+                <span class="text-amityYellow font-bold mt-0.5">✓</span>
+                <div>
+                  <strong class="text-pysideText block">Stealth Camoufox Market Sweeps</strong>
+                  <span class="text-pysideTextMuted text-[11px] font-reading leading-tight block mt-0.5">
+                    Anti-detect browser sweeps competitor pricing without bot detection.
+                  </span>
+                </div>
               </div>
-              <div class="p-3 rounded-xl bg-pysideInput border border-pysideBorder flex items-center gap-2.5">
-                <span class="text-amityYellow font-bold">✓</span>
-                <span class="text-pysideText">Zero prompt fatigue: runs on schedule</span>
+
+              <div class="p-3 rounded-xl bg-pysideInput/60 border border-pysideBorder flex items-start gap-2.5">
+                <span class="text-amityYellow font-bold mt-0.5">✓</span>
+                <div>
+                  <strong class="text-pysideText block">Smart WhatsApp Escalation Filter</strong>
+                  <span class="text-pysideTextMuted text-[11px] font-reading leading-tight block mt-0.5">
+                    Handles 85%+ autonomously; pings you on mobile only for critical decisions.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action CTA (Clean minimalist, tags removed) -->
+            <div class="pt-4 flex items-center justify-start border-t border-pysideBorder/60">
+              <a
+                href="#social-tools"
+                class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-xl bg-amityRed text-white hover:bg-amityRedLight shadow-amity-red transition-all"
+              >
+                <span>Explore Agent Swarms & Tools</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Static Operations Cockpit & ROI Example -->
+          <div class="w-full lg:w-80 rounded-2xl bg-pysidePre border border-pysideBorder p-4 font-mono text-xs shrink-0 shadow-xl space-y-3.5">
+            <div class="text-amityYellow font-bold border-b border-pysideBorder pb-2 flex items-center justify-between font-ui text-[11px]">
+              <span class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-amityRed"></span>
+                <span>OPERATIONS COCKPIT // 24/7</span>
+              </span>
+              <span class="text-[10px] text-green-400 font-mono">AUTONOMOUS</span>
+            </div>
+
+            <!-- Live Shift Metrics -->
+            <div class="p-2.5 rounded-lg bg-pysideBgDarkest/80 border border-pysideBorder/60 space-y-1.5 text-[11px]">
+              <div class="flex justify-between">
+                <span class="text-pysideTextMuted">Customer Inquiries:</span>
+                <span class="text-pysideText"><span class="text-amityYellow font-bold">48</span> Triaged</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-pysideTextMuted">Autonomous Resolution:</span>
+                <span class="text-green-400 font-bold">87.5% (42 Solved)</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-pysideTextMuted">Competitor Sweeps:</span>
+                <span class="text-pysideText">3 Price Shifts Logged</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-pysideTextMuted">Mobile Escalations:</span>
+                <span class="text-amityYellow">6 WhatsApp Pings</span>
+              </div>
+            </div>
+
+            <!-- ROI & Value Callout -->
+            <div class="p-3 rounded-xl bg-pysideBg border border-pysideBorder space-y-2 text-[11px]">
+              <div class="flex items-center justify-between text-[10px] text-pysideTextMuted">
+                <span class="text-amityYellow font-bold uppercase">FOUNDER LEVERAGE ROI</span>
+                <span class="text-green-400 font-mono font-bold">$0 PAYROLL</span>
+              </div>
+              <p class="text-pysideTextSecondary font-reading text-xs leading-snug">
+                "Nightly triage completed across email and WhatsApp. 42 inquiries resolved with custom drafts; 6 enterprise leads staged for your sign-off. Market pricing sweep saved to reports."
+              </p>
+              <div class="pt-1 flex items-center justify-between text-[10px] text-pysideTextMuted border-t border-pysideBorder/40">
+                <span>Founder time saved:</span>
+                <span class="text-amityYellow font-bold">~18.5 hrs / week</span>
               </div>
             </div>
           </div>
 
-          <div class="w-full md:w-72 rounded-2xl bg-pysidePre border border-pysideBorder p-5 font-mono text-xs space-y-3">
-            <div class="text-amityYellow font-bold border-b border-pysideBorder pb-2 flex items-center justify-between font-ui">
-              <span>OPERATIONS DESK</span>
-              <span class="w-2 h-2 rounded-full bg-amityRed"></span>
-            </div>
-            <p class="text-pysideTextSecondary font-reading text-base leading-snug">
-              "Inbox triaged: 42 tickets. 38 addressed autonomously with custom responses. 4 staged for your confirmation. Research report on competitors generated and saved."
-            </p>
-            <div class="pt-2 text-[10px] text-amityYellow font-bold font-mono">
-              Founder time saved today: 3.8 hours
-            </div>
-          </div>
         </div>
       </div>
 
@@ -201,8 +467,9 @@
   </div>
 </section>
 
-<!-- Tab Switcher Script in Amity Red & Yellow -->
+<!-- Tab Switcher and Interactive Simulation Script -->
 <script>
+  // Tab Elements
   const tabBtns = document.querySelectorAll('.archetype-tab-btn');
   const panels = {
     companion: document.getElementById('panel-companion'),
@@ -210,32 +477,67 @@
     founder: document.getElementById('panel-founder'),
   };
 
+  // Function to switch tabs (Uniform red accent across all tabs)
+  function selectTab(targetTab: string) {
+    if (!targetTab || !panels[targetTab as keyof typeof panels]) return;
+
+    // Reset all tab buttons
+    tabBtns.forEach(btn => {
+      btn.setAttribute('aria-selected', 'false');
+      btn.className = 'archetype-tab-btn px-3.5 sm:px-5 py-2 rounded-xl font-mono text-xs sm:text-[13px] font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300 whitespace-nowrap';
+    });
+
+    // Activate selected button with uniform red styling
+    const activeBtn = document.querySelector(`.archetype-tab-btn[data-tab="${targetTab}"]`);
+    if (activeBtn) {
+      activeBtn.setAttribute('aria-selected', 'true');
+      activeBtn.className = 'archetype-tab-btn px-3.5 sm:px-5 py-2 rounded-xl font-mono text-xs sm:text-[13px] font-semibold transition-all duration-300 text-white bg-amityRed shadow-amity-red whitespace-nowrap';
+    }
+
+    // Hide all panels
+    Object.values(panels).forEach(p => {
+      p?.classList.add('hidden');
+    });
+
+    // Show active panel
+    panels[targetTab as keyof typeof panels]?.classList.remove('hidden');
+  }
+
+  // Bind tab buttons
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const tab = btn.getAttribute('data-tab');
-      if (!tab || !panels[tab as keyof typeof panels]) return;
-
-      // Reset all buttons
-      tabBtns.forEach(b => {
-        b.className = 'archetype-tab-btn px-4 sm:px-6 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300';
-      });
-
-      // Highlight active button
-      if (tab === 'companion') {
-        btn.className = 'archetype-tab-btn px-4 sm:px-6 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold transition-all duration-300 text-white bg-amityRed shadow-amity-red';
-      } else if (tab === 'innovator') {
-        btn.className = 'archetype-tab-btn px-4 sm:px-6 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold transition-all duration-300 text-obsidian bg-amityYellow shadow-amity-yellow font-bold';
-      } else if (tab === 'founder') {
-        btn.className = 'archetype-tab-btn px-4 sm:px-6 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold transition-all duration-300 text-white bg-amityRed shadow-amity-red';
-      }
-
-      // Hide all panels
-      Object.values(panels).forEach(p => {
-        p?.classList.add('hidden');
-      });
-
-      // Show selected panel
-      panels[tab as keyof typeof panels]?.classList.remove('hidden');
+      if (tab) selectTab(tab);
     });
   });
+
+  // Keyboard navigation for tabs
+  const tabList = document.querySelector('[role="tablist"]');
+  if (tabList) {
+    tabList.addEventListener('keydown', (e: Event) => {
+      const keyEvent = e as KeyboardEvent;
+      const tabsArray = Array.from(tabBtns) as HTMLElement[];
+      const currentIndex = tabsArray.findIndex(t => t.getAttribute('aria-selected') === 'true');
+      let newIndex = currentIndex;
+
+      if (keyEvent.key === 'ArrowRight') {
+        newIndex = (currentIndex + 1) % tabsArray.length;
+      } else if (keyEvent.key === 'ArrowLeft') {
+        newIndex = (currentIndex - 1 + tabsArray.length) % tabsArray.length;
+      } else if (keyEvent.key === 'Home') {
+        newIndex = 0;
+      } else if (keyEvent.key === 'End') {
+        newIndex = tabsArray.length - 1;
+      } else {
+        return;
+      }
+
+      keyEvent.preventDefault();
+      const newTabId = tabsArray[newIndex]?.getAttribute('data-tab');
+      if (newTabId) {
+        selectTab(newTabId);
+        tabsArray[newIndex]?.focus();
+      }
+    });
+  }
 </script>

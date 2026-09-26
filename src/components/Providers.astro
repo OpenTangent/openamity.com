@@ -1,0 +1,531 @@
+---
+// Providers.astro - Multi-Provider Model Coverage & Artificial Analysis Leaderboards
+import SectionKicker from './SectionKicker.astro';
+
+// Provider definitions with benchmark metrics and worker implementation details
+const providers = [
+  {
+    id: 'gemini',
+    name: 'Google Gemini',
+    featuredModel: 'Gemini 3.8 Flash',
+    badge: 'Output Speed Leader',
+    badgeColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30',
+    glowColor: 'bg-emerald-500/10 group-hover:bg-emerald-500/20',
+    logo: '/images/logos/google-gemini-icon.png',
+    workerFile: 'gemini_worker.py',
+    summary:
+      'Gemini 3.8 Flash is currently the fastest model available with an exceptional cost/intelligence balance. Its high throughput enables sub-second voice interactions and lightning-fast computer-use perception loops.',
+    metrics: [
+      { label: 'Output Speed', value: '330 tok/s', highlight: true, note: 'Rank #1 on Artificial Analysis' },
+      { label: 'Intelligence Index', value: '41', highlight: false, note: 'High cost/intelligence balance' },
+      { label: 'Cost per Task', value: '$1.24', highlight: false, note: 'Weighted average per index task' },
+    ],
+    strengths: [
+      'Sub-second latency for live voice conversation & audio input',
+      'Ultra-fast Linux terminal and desktop tool loop execution',
+      'Massive multimodal context window with low token overhead',
+    ]
+  },
+  {
+    id: 'claude',
+    name: 'Anthropic Claude',
+    featuredModel: 'Claude 5.5 (Opus & Fable)',
+    badge: 'Intelligence Leader',
+    badgeColor: 'text-amber-300 bg-amber-500/10 border-amber-500/30',
+    glowColor: 'bg-amber-500/10 group-hover:bg-amber-500/20',
+    logo: '/images/logos/claude-ai-icon.png',
+    workerFile: 'claude_worker.py',
+    summary:
+      'Claude 5.5 is currently the most intelligent model available, dominating benchmark reasoning depth. While it comes at a steep price point, it provides unmatched cognitive horsepower for high-stakes swarm tasks.',
+    metrics: [
+      { label: 'Intelligence Index', value: '58', highlight: true, note: 'Rank #1 on Artificial Analysis' },
+      { label: 'Output Speed', value: '69 tok/s', highlight: false, note: 'Claude Fable 5.1 with fallback' },
+      { label: 'Cost per Task', value: '$5.98', highlight: false, note: 'Premium frontier cognitive tier' },
+    ],
+    strengths: [
+      'Peerless multi-step architectural reasoning & code refactoring',
+      'Introspective Theory of Mind modelling in The Sanctuary',
+      'Extended thinking chains for complex, unconstrained problem solving',
+    ]
+  },
+  {
+    id: 'gpt',
+    name: 'OpenAI GPT',
+    featuredModel: 'GPT-6 Astra & GPT-6 Luna',
+    badge: 'High-End Cost Leader',
+    badgeColor: 'text-sky-300 bg-sky-500/10 border-sky-500/30',
+    glowColor: 'bg-sky-500/10 group-hover:bg-sky-500/20',
+    logo: '/images/logos/chatgpt-icon.png',
+    workerFile: 'chatgpt_worker.py',
+    summary:
+      'A versatile two-tier powerhouse: GPT-6 Astra ranks among the most intelligent models available at a balanced price, while GPT-6 Luna is the cheapest high-end model on the market, perfect for continuous background runs.',
+    metrics: [
+      { label: 'Luna Cost per Task', value: '$0.07', highlight: true, note: 'Cheapest high-end model (#1)' },
+      { label: 'Astra Intelligence', value: '53', highlight: true, note: 'Tied for #2 intelligence tier' },
+      { label: 'Luna Speed', value: '144 tok/s', highlight: false, note: 'Rapid autonomous task execution' },
+    ],
+    strengths: [
+      'Assign GPT-6 Astra for high-cognition creative and strategic work',
+      'Deploy GPT-6 Luna for high-frequency pulse sweeps at near-zero cost',
+      'Reliable JSON structured output & tool calling pipelines',
+    ]
+  },
+  {
+    id: 'deepseek',
+    name: 'DeepSeek',
+    featuredModel: 'DeepSeek V4.1 Flash',
+    badge: 'Open Weights Champion',
+    badgeColor: 'text-indigo-300 bg-indigo-500/10 border-indigo-500/30',
+    glowColor: 'bg-indigo-500/10 group-hover:bg-indigo-500/20',
+    logo: '/images/logos/deepseek-logo-icon.png',
+    workerFile: 'deepseek_worker.py',
+    summary:
+      'DeepSeek V4.1 Flash is an open weights model demonstrating higher intelligence than GPT-6 Luna (39 vs 37) while running at a blistering 234 tokens/sec, available at an ultra-competitive price point ($0.27/task).',
+    metrics: [
+      { label: 'Output Speed', value: '234 tok/s', highlight: true, note: 'Rank #2 Speed across all models' },
+      { label: 'Intelligence Index', value: '39', highlight: false, note: 'Higher intelligence than GPT-6 Luna' },
+      { label: 'Cost per Task', value: '$0.27', highlight: false, note: 'Fraction of closed-source cost' },
+    ],
+    strengths: [
+      'Open weights transparency aligned with sovereign local AI principles',
+      'Blazing output speed for interactive shell and streaming responses',
+      'Native chain-of-thought tags parsed by the Open Amity engine',
+    ]
+  }
+];
+
+const leaderboards = [
+  {
+    title: 'Output Speed',
+    metricBadge: 'Tokens / Second',
+    filename: '/images/graphs/AA-SpeedLeaders.png',
+    alt: 'Artificial Analysis Speed Leaderboard showing Gemini 3.8 Flash at 330 tokens per second',
+    champion: 'Gemini 3.8 Flash (330 tok/s)',
+    tagColor: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10',
+    description: 'Output generation speed measured under standardised benchmark queries. Higher is better.',
+    highlights: [
+      { model: 'Gemini 3.8 Flash', rank: '#1', value: '330 tok/s', provider: 'Google' },
+      { model: 'DeepSeek V4.1 Flash', rank: '#2', value: '234 tok/s', provider: 'DeepSeek' },
+      { model: 'GPT-6 Luna', rank: '#4', value: '144 tok/s', provider: 'OpenAI' },
+    ]
+  },
+  {
+    title: 'Intelligence Index',
+    metricBadge: 'Composite Score',
+    filename: '/images/graphs/AA-IntelligenceLeaders.png',
+    alt: 'Artificial Analysis Intelligence Index showing Claude Opus 5.5 at 58 points',
+    champion: 'Claude Opus 5.5 (58 Index)',
+    tagColor: 'text-amber-300 border-amber-500/30 bg-amber-500/10',
+    description: 'Artificial Analysis weighted index measuring broad reasoning, code generation, and math capabilities.',
+    highlights: [
+      { model: 'Claude Opus 5.5', rank: '#1', value: '58 Index', provider: 'Anthropic' },
+      { model: 'GPT-6 Astra', rank: '#3', value: '53 Index', provider: 'OpenAI' },
+      { model: 'DeepSeek V4.1 Flash', rank: '#9', value: '39 Index', provider: 'DeepSeek' },
+    ]
+  },
+  {
+    title: 'Cost per Task',
+    metricBadge: 'USD / Benchmark Task',
+    filename: '/images/graphs/AA-CostLeaders.png',
+    alt: 'Artificial Analysis Cost per Task showing GPT-6 Luna at $0.07',
+    champion: 'GPT-6 Luna ($0.07 / task)',
+    tagColor: 'text-sky-300 border-sky-500/30 bg-sky-500/10',
+    description: 'Weighted average cost per Intelligence Index task across blended input/output token usage. Lower is better.',
+    highlights: [
+      { model: 'GPT-6 Luna', rank: '#1', value: '$0.07', provider: 'OpenAI' },
+      { model: 'DeepSeek V4.1 Flash', rank: '#3', value: '$0.27', provider: 'DeepSeek' },
+      { model: 'Gemini 3.8 Flash', rank: '#4', value: '$1.24', provider: 'Google' },
+    ]
+  }
+];
+
+const upcomingWorkers = [
+  { name: 'xAI Grok', desc: 'Real-time telemetry and candid reasoning pipelines' },
+  { name: 'Meta Muse Spark', desc: 'Open architecture high-throughput research worker' },
+  { name: 'GLM (Zhipu AI)', desc: 'Multilingual and specialised technical reasoning' },
+  { name: 'Xiaomi MiMo', desc: 'High-efficiency multimodal reasoning and perception' },
+];
+---
+
+<section id="providers" class="relative pb-20 md:pb-32 scroll-mt-16 sm:scroll-mt-20">
+  <!-- Section Divider with embedded kicker badge -->
+  <SectionKicker title="Providers" />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24">
+    
+    <!-- Section Header (Clean minimal styling) -->
+    <div class="max-w-3xl mx-auto text-center mb-14 sm:mb-20 font-ui">
+      <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-pysideText">
+        Frontier Intelligence Across <br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amityRed via-amityRedLight to-amityYellow">
+          Every Top AI Model Provider
+        </span>
+      </h2>
+      <p class="mt-4 font-reading text-base sm:text-lg text-pysideTextSecondary leading-relaxed max-w-2xl mx-auto">
+        Never get locked into a single proprietary cloud. Open Amity connects to every leading frontier API through dedicated, asynchronous worker threads—giving your companion and swarm the freedom to switch or combine models at will.
+      </p>
+    </div>
+
+    <!-- The 4 Supported Providers Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 font-ui">
+      {providers.map((p) => (
+        <div class="pyside-card pyside-card-hover rounded-3xl p-6 sm:p-8 border-pysideBorder relative flex flex-col justify-between overflow-hidden group">
+          <!-- Ambient Glow Effect -->
+          <div class={`absolute -top-16 -right-16 w-44 h-44 rounded-full blur-3xl transition-all pointer-events-none ${p.glowColor}`}></div>
+
+          <div>
+            <!-- Provider Card Top Bar -->
+            <div class="flex items-center justify-between mb-5">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-pysideInput/80 border border-pysideBorder flex items-center justify-center p-2 shadow-inner-pyside shrink-0">
+                  <img src={p.logo} alt={`${p.name} logo`} class="w-full h-full object-contain" />
+                </div>
+                <div>
+                  <h3 class="text-lg sm:text-xl font-bold text-pysideText tracking-tight">
+                    {p.name}
+                  </h3>
+                  <span class="text-xs font-mono text-amityYellow">
+                    {p.featuredModel}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Top Performing Badge (without #1) -->
+              <span class={`text-[10px] sm:text-[11px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full border ${p.badgeColor} font-bold`}>
+                {p.badge}
+              </span>
+            </div>
+
+            <!-- Description -->
+            <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-2 leading-relaxed">
+              {p.summary}
+            </p>
+
+            <!-- Key Metrics Bar -->
+            <div class="mt-5 grid grid-cols-3 gap-2.5 p-3 rounded-2xl bg-pysideBgDarkest/70 border border-pysideBorder/60">
+              {p.metrics.map((m) => (
+                <div class="text-center px-1">
+                  <span class="block text-[10px] font-mono text-pysideTextMuted uppercase truncate" title={m.label}>
+                    {m.label}
+                  </span>
+                  <span class={`block text-base sm:text-lg font-bold font-mono mt-0.5 ${m.highlight ? 'text-amityYellow' : 'text-pysideText'}`}>
+                    {m.value}
+                  </span>
+                  <span class="block text-[9px] font-mono text-pysideTextDisabled truncate" title={m.note}>
+                    {m.note}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <!-- Key Strengths List -->
+            <ul class="mt-5 space-y-2 text-xs sm:text-[13px] font-mono text-pysideText">
+              {p.strengths.map((str) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amityYellow font-bold mt-0.5">✓</span>
+                  <span class="text-pysideTextSecondary leading-snug">{str}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Card Footer Metadata -->
+          <div class="mt-6 pt-3.5 border-t border-pysideBorder flex items-center justify-between text-[11px] font-mono text-pysideTextMuted">
+            <span class="flex items-center gap-1.5">
+              <span class="text-pysideTextDisabled">Worker:</span>
+              <code class="text-amityYellow bg-pysidePre px-1.5 py-0.5 rounded text-[11px] border border-pysideBorderSubtle">
+                {p.workerFile}
+              </code>
+            </span>
+            <span class="text-emerald-400 font-medium flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              Live & Supported
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- ARTIFICIAL ANALYSIS BENCHMARK LEADERBOARDS SECTION -->
+    <div class="mt-16 sm:mt-24 font-ui">
+      
+      <!-- Sub-section Header (Clean minimal styling) -->
+      <div class="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
+        <h3 class="text-xl sm:text-3xl font-bold text-pysideText">
+          Total Coverage Across the Frontier Leaderboards
+        </h3>
+        <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-2.5 max-w-2xl mx-auto leading-relaxed">
+          Open Amity is engineered so you never have to compromise between intelligence, speed, or price. Our modular framework covers the top performers across all three critical operational vectors.
+        </p>
+
+        <!-- Source Citation Link -->
+        <div class="mt-3 flex items-center justify-center gap-2 text-xs font-mono">
+          <span class="text-pysideTextMuted">Independent Benchmark Source:</span>
+          <a
+            href="https://artificialanalysis.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-amityYellow hover:text-white underline underline-offset-4 decoration-amityYellow/50 transition-colors inline-flex items-center gap-1"
+          >
+            <span>Artificial Analysis (artificialanalysis.ai)</span>
+            <span class="text-[10px]">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3 Leaderboard Graph Cards Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-7">
+        {leaderboards.map((b, index) => (
+          <div class="pyside-card rounded-2xl border-pysideBorder flex flex-col justify-between overflow-hidden group hover:border-amityYellow/40 transition-colors duration-300">
+            
+            <div class="p-5 sm:p-6 pb-4">
+              <!-- Top Category Header -->
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-pysideTextMuted font-bold">
+                  Vector 0{index + 1}
+                </span>
+                <span class={`text-[10px] font-mono px-2 py-0.5 rounded-full border ${b.tagColor} font-semibold`}>
+                  {b.metricBadge}
+                </span>
+              </div>
+
+              <h4 class="text-lg font-bold text-pysideText">
+                {b.title}
+              </h4>
+              <p class="font-reading text-xs text-pysideTextSecondary mt-1 leading-normal">
+                {b.description}
+              </p>
+
+              <!-- Graph Image Container with interactive zoom hint -->
+              <div class="mt-4 rounded-xl overflow-hidden border border-pysideBorder/80 bg-white/5 relative group/img cursor-pointer transition-transform duration-300">
+                <img
+                  src={b.filename}
+                  alt={b.alt}
+                  class="w-full h-auto object-contain bg-white rounded-lg p-2 transition-transform duration-300 group-hover/img:scale-[1.02]"
+                  loading="lazy"
+                  data-zoom-src={b.filename}
+                  data-zoom-title={b.title}
+                />
+                <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-pysideBgDarkest/90 backdrop-blur border border-pysideBorder text-[10px] font-mono text-amityYellow opacity-0 group-hover/img:opacity-100 transition-opacity">
+                  Click to inspect
+                </div>
+              </div>
+
+              <!-- Leaderboard Top Performers in Open Amity -->
+              <div class="mt-5 space-y-2">
+                <span class="block text-[10px] font-mono text-pysideTextMuted uppercase tracking-wider">
+                  Key Standouts in Open Amity:
+                </span>
+                <div class="space-y-1.5">
+                  {b.highlights.map((h) => (
+                    <div class="flex items-center justify-between text-xs font-mono px-2.5 py-1.5 rounded-lg bg-pysideBgDarkest/60 border border-pysideBorder/40">
+                      <div class="flex items-center gap-1.5">
+                        <span class="text-amityYellow font-bold">{h.rank}</span>
+                        <span class="text-pysideText font-medium">{h.model}</span>
+                      </div>
+                      <span class="text-amityYellow font-bold">{h.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Bottom Attribution Bar -->
+            <div class="px-5 sm:px-6 py-3 bg-pysideBgDarkest/90 border-t border-pysideBorder flex items-center justify-between text-[11px] font-mono text-pysideTextMuted">
+              <span class="truncate">{b.champion}</span>
+              <a
+                href="https://artificialanalysis.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-amityYellow transition-colors flex items-center gap-1 shrink-0 ml-2"
+                title="View full benchmark on Artificial Analysis"
+              >
+                <span>Analysis</span>
+                <span>↗</span>
+              </a>
+            </div>
+
+          </div>
+        ))}
+      </div>
+
+    </div>
+
+    <!-- UPCOMING PROVIDER WORKERS BANNER -->
+    <div class="mt-14 sm:mt-18 pyside-card rounded-3xl p-6 sm:p-9 border border-pysideBorder overflow-hidden relative font-ui">
+      <!-- Background subtle decorative gradient -->
+      <div class="absolute top-0 right-0 w-80 h-80 bg-amityRed/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-6 space-y-3.5">
+          <h3 class="text-xl sm:text-2xl font-bold text-pysideText tracking-tight">
+            More Provider Workers in Progress
+          </h3>
+          <p class="font-reading text-sm sm:text-base text-pysideTextSecondary leading-relaxed">
+            Open Amity’s decoupled worker engine is designed for rapid expansion. Every provider runs as an independent PySide6 worker thread with specialised streaming parsers, tool calling, and fatigue management.
+          </p>
+          <p class="font-reading text-xs sm:text-sm text-pysideTextMuted leading-relaxed">
+            Upcoming worker implementations expand from cloud frontier APIs to specialised high-efficiency and local models, giving you total freedom of choice.
+          </p>
+
+          <div class="pt-2 flex flex-wrap gap-3">
+            <a
+              href="https://github.com/OpenTangent/OpenAmity"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-mono font-medium rounded-lg bg-pysideInput hover:bg-pysideInputFocus border border-pysideBorder hover:border-amityYellow/50 text-pysideText transition-all"
+            >
+              <svg class="w-4 h-4 text-amityYellow" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              <span>Contribute a Worker on GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Pipeline Cards Grid (Equal height and width) -->
+        <div class="lg:col-span-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            {upcomingWorkers.map((w) => (
+              <div class="p-4 rounded-2xl bg-pysideBgDarkest/80 border border-pysideBorder hover:border-amityYellow/30 transition-colors flex flex-col justify-between h-full min-h-[96px] w-full">
+                <div>
+                  <div class="flex items-center gap-2 mb-1.5">
+                    <span class="w-2 h-2 rounded-full bg-amityYellow/70 shrink-0"></span>
+                    <span class="text-xs font-bold text-pysideText font-mono">
+                      {w.name}
+                    </span>
+                  </div>
+                  <p class="font-reading text-[11px] text-pysideTextSecondary leading-relaxed">
+                    {w.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-4 p-3 rounded-xl bg-pysidePre border border-pysideBorderPre flex items-center justify-between text-[11px] font-mono text-pysideTextMuted">
+            <span class="flex items-center gap-2">
+              <span class="text-amityYellow">⚙</span>
+              <span>Extensible via <code class="text-white">src/core/base_worker.py</code></span>
+            </span>
+            <span class="text-amityYellow text-[10px] font-semibold">QThread Architecture</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Interactive Lightbox Modal for Graph Inspection -->
+  <div
+    id="graph-lightbox"
+    class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300 font-ui"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Benchmark graph inspection modal"
+  >
+    <div class="relative max-w-2xl w-full bg-pysideCard border border-pysideBorder rounded-3xl p-5 sm:p-7 shadow-2xl overflow-hidden">
+      <!-- Modal Close Button -->
+      <button
+        id="close-lightbox"
+        type="button"
+        class="absolute top-4 right-4 p-2 rounded-xl bg-pysideInput text-pysideText hover:text-white border border-pysideBorder transition-colors"
+        aria-label="Close modal"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="mb-4">
+        <span class="text-[11px] font-mono text-amityYellow uppercase tracking-wider font-semibold">
+          Artificial Analysis Benchmark
+        </span>
+        <h3 id="lightbox-title" class="text-lg sm:text-xl font-bold text-pysideText mt-0.5">
+          Leaderboard Graph
+        </h3>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden border border-pysideBorder bg-white p-3 sm:p-4 flex items-center justify-center">
+        <img
+          id="lightbox-img"
+          src=""
+          alt="Leaderboard Graph Inspection"
+          class="max-h-[60vh] w-auto object-contain rounded-lg"
+        />
+      </div>
+
+      <div class="mt-4 flex items-center justify-between text-xs font-mono text-pysideTextMuted">
+        <span>Verified by Artificial Analysis</span>
+        <a
+          href="https://artificialanalysis.ai/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-amityYellow hover:underline flex items-center gap-1"
+        >
+          <span>Open artificialanalysis.ai</span>
+          <span>↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Lightbox functionality for graph inspection
+  const lightbox = document.getElementById('graph-lightbox');
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const closeBtn = document.getElementById('close-lightbox');
+
+  const graphImgs = document.querySelectorAll<HTMLImageElement>('[data-zoom-src]');
+
+  graphImgs.forEach((img) => {
+    img.addEventListener('click', () => {
+      const src = img.getAttribute('data-zoom-src');
+      const title = img.getAttribute('data-zoom-title');
+      if (lightbox && lightboxImg && src) {
+        lightboxImg.src = src;
+        if (lightboxTitle && title) {
+          lightboxTitle.textContent = `${title} Benchmark Leaderboard`;
+        }
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        setTimeout(() => {
+          lightbox.classList.remove('opacity-0');
+        }, 10);
+      }
+    });
+  });
+
+  const closeModal = () => {
+    if (lightbox) {
+      lightbox.classList.add('opacity-0');
+      setTimeout(() => {
+        lightbox.classList.remove('flex');
+        lightbox.classList.add('hidden');
+      }, 300);
+    }
+  };
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeModal();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox && !lightbox.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+</script>
