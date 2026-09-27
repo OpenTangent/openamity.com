@@ -51,7 +51,7 @@ import SectionKicker from './SectionKicker.astro';
             <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
-            <span id="terminal-title" class="ml-2 font-mono text-[11px] sm:text-xs text-pysideTextMuted">bash — flatpak-install.sh</span>
+            <span id="terminal-title" class="ml-2 font-mono text-[11px] sm:text-xs text-pysideTextMuted whitespace-nowrap">flatpak-install.sh</span>
           </div>
 
           <!-- Copy All Button -->
@@ -156,7 +156,7 @@ pip install -r requirements.txt
       btnDev.className = 'px-4 py-2 rounded-xl font-mono text-xs sm:text-[13px] font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300';
       codeFlatpak?.classList.remove('hidden');
       codeDev?.classList.add('hidden');
-      if (termTitle) termTitle.textContent = 'bash — flatpak-install.sh';
+      if (termTitle) termTitle.textContent = 'flatpak-install.sh';
     });
 
     btnDev.addEventListener('click', () => {
@@ -165,7 +165,7 @@ pip install -r requirements.txt
       btnFlatpak.className = 'px-4 py-2 rounded-xl font-mono text-xs sm:text-[13px] font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300';
       codeDev?.classList.remove('hidden');
       codeFlatpak?.classList.add('hidden');
-      if (termTitle) termTitle.textContent = 'bash — dev-setup.sh';
+      if (termTitle) termTitle.textContent = 'dev-setup.sh';
     });
   }
 
