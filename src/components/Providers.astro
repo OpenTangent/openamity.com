@@ -91,6 +91,30 @@ const providers = [
       'Blazing output speed for interactive shell and streaming responses',
       'Native chain-of-thought tags parsed by the Open Amity engine',
     ]
+  },
+  {
+    id: 'openrouter',
+    name: 'OpenRouter',
+    featuredModel: 'GLM 5.3, Tencent Hy4, Space Bunny, Nemotron & 500+ Models',
+    badge: 'Universal Gateway',
+    badgeColor: 'text-purple-300 bg-purple-500/10 border-purple-500/30',
+    glowColor: 'bg-purple-500/10 group-hover:bg-purple-500/20',
+    logo: '/images/logos/openrouter-icon.svg',
+    workerFile: 'openrouter_worker.py',
+    fullWidth: true,
+    summary:
+      'Why choose between providers? Open Amity now supports OpenRouter, giving you instantaneous access to 500+ state-of-the-art models—including GLM 5.3 Flash, Tencent Hy4, Space Bunny Alpha, NVIDIA Nemotron 3 Ultra, Xiaomi MiMo, Qwen 3.8, Mistral Medium 3.5, and fine-tuned domain models—through a single, unified API key. Switch models on the fly or configure automatic multi-provider fallback without touching your agent configuration.',
+    metrics: [
+      { label: 'Model Catalog', value: '500+ Models', highlight: true, note: 'Frontier, Open Weights & Niche' },
+      { label: 'Credentials', value: '1 API Key', highlight: true, note: 'Zero Billing & Key Sprawl' },
+      { label: 'Reliability', value: '100% Failover', highlight: true, note: 'Automatic Fallback Routing' },
+    ],
+    strengths: [
+      'Access 500+ open-source and proprietary models with zero setup friction',
+      'Automatic latency and price-optimised fallback routing across endpoints',
+      'Unified usage and billing tracking—no need to manage separate accounts',
+      'Native tool calling, JSON schema compliance, and streaming support',
+    ]
   }
 ];
 
@@ -166,10 +190,10 @@ const upcomingWorkers = [
       </p>
     </div>
 
-    <!-- The 4 Supported Providers Cards Grid -->
+    <!-- The 5 Supported Providers Cards Grid (Direct Providers + OpenRouter Universal Gateway) -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 font-ui">
       {providers.map((p) => (
-        <div class="pyside-card pyside-card-hover rounded-3xl p-6 sm:p-8 border-pysideBorder relative flex flex-col justify-between overflow-hidden group">
+        <div class={`pyside-card pyside-card-hover rounded-3xl p-6 sm:p-8 border-pysideBorder relative flex flex-col justify-between overflow-hidden group ${p.fullWidth ? 'md:col-span-2 border-purple-500/40 hover:border-purple-400/60 shadow-[0_0_30px_-5px_rgba(118,36,244,0.18)]' : ''}`}>
           <!-- Ambient Glow Effect -->
           <div class={`absolute -top-16 -right-16 w-44 h-44 rounded-full blur-3xl transition-all pointer-events-none ${p.glowColor}`}></div>
 
@@ -219,7 +243,7 @@ const upcomingWorkers = [
             </div>
 
             <!-- Key Strengths List -->
-            <ul class="mt-5 space-y-2 text-xs sm:text-[13px] font-mono text-pysideText">
+            <ul class={`mt-5 text-xs sm:text-[13px] font-mono text-pysideText ${p.fullWidth ? 'grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 space-y-0' : 'space-y-2'}`}>
               {p.strengths.map((str) => (
                 <li class="flex items-start gap-2.5">
                   <span class="text-amityYellow font-bold mt-0.5">✓</span>

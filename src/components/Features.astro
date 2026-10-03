@@ -290,10 +290,10 @@ import SectionKicker from './SectionKicker.astro';
           </div>
 
           <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-3.5 leading-relaxed">
-            Stateless chatbots sleep forever until poked. Open Amity agents operate on internal circadian timing (<code class="text-amityYellow bg-pysidePre px-1.5 py-0.5 rounded text-xs font-mono">pulses.db</code>), waking up silently throughout the day to inspect backlogs, advance aspirations, and execute two-beat memory consolidation.
+            Stateless chatbots hallucinate in runaway loops and burn through API budgets. Open Amity pioneers <strong>Somatic Homeostasis</strong>: every cognitive turn and subagent task drains a somatic energy budget. At moderate fatigue (&gt;50%), the agent defers secondary background tasks; at critical fatigue (&gt;90%), it gracefully winds down and initiates two-beat memory consolidation.
           </p>
 
-          <!-- Interactive 3-Mode Pulse Console Preview -->
+          <!-- Interactive 3-Mode Pulse Console Preview with Fatigue Status -->
           <div class="mt-4 rounded-2xl bg-pysidePre border border-pysideBorderPre p-4 sm:p-5 text-xs font-mono">
             <!-- Mode Switcher Tabs -->
             <div class="flex flex-wrap gap-2 pb-3 border-b border-pysideBorder">
@@ -302,7 +302,7 @@ import SectionKicker from './SectionKicker.astro';
                 data-pulse-mode="silent"
                 class="pulse-tab-btn active-pulse-tab px-3 py-1.5 rounded-lg bg-pysideCard border border-amityRed text-amityYellow font-bold text-xs"
               >
-                1. Silent Wake Pulse
+                1. Fatigue Pacing & Wake
               </button>
               <button
                 type="button"
@@ -324,27 +324,38 @@ import SectionKicker from './SectionKicker.astro';
             <div class="mt-3 space-y-2 leading-relaxed">
               <div class="flex items-center justify-between text-[11px] text-pysideTextMuted">
                 <span id="pulse-phase-name" class="text-amityYellow font-bold">[PHASE]: 07:00 Bearings Sweep</span>
-                <span id="pulse-cost" class="text-pysideTextMuted">Silent Loop • 0 Voice Spillage</span>
+                <span id="pulse-cost" class="text-emerald-400 font-bold">Fatigue: 24% (Optimal)</span>
               </div>
               <p id="pulse-monologue" class="font-reading text-xs sm:text-sm text-pysideText italic pt-1">
-                "Pulse triggered at 07:00. Inspecting unread emails from the overnight queue. Reviewing task priorities before the user logs in."
+                "Pulse triggered at 07:00. Somatic budget restored. Inspecting unread emails from the overnight queue. Reviewing task priorities before the user logs in."
               </p>
               <div class="pt-2 border-t border-pysideBorderPre flex flex-wrap items-center gap-1.5">
-                <span class="text-amityYellow text-[10px] font-bold">[TOOLS]:</span>
+                <span class="text-amityYellow text-[10px] font-bold">[CYCLE]:</span>
                 <div id="pulse-tools-container" class="flex flex-wrap gap-1.5">
                   <span class="px-2 py-0.5 rounded bg-pysideInput border border-pysideBorder text-[10px] text-amityYellow">Trajectory_get_bearings()</span>
-                  <span class="px-2 py-0.5 rounded bg-pysideInput border border-pysideBorder text-[10px] text-amityYellow">imap_sweep_unread()</span>
+                  <span class="px-2 py-0.5 rounded bg-pysideInput border border-pysideBorder text-[10px] text-amityYellow">somatic_energy_drain(0.04)</span>
                 </div>
               </div>
             </div>
 
           </div>
 
+          <!-- Two-Beat Consolidation Breakdown Badges -->
+          <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
+            <div class="p-2.5 rounded-xl bg-pysideBg border border-pysideBorder/60">
+              <span class="text-amityYellow font-bold block text-[10px] uppercase">Beat 1: Factual Epoch</span>
+              <span class="font-reading text-[11px] text-pysideTextSecondary">Objective episodic extraction committed to default ChromaDB vector wings.</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-pysideBg border border-pysideBorder/60">
+              <span class="text-amityRedLight font-bold block text-[10px] uppercase">Beat 2: Subjective Synthesis</span>
+              <span class="font-reading text-[11px] text-pysideTextSecondary">Theory of Mind calibration, dialectical tension resolution, and identity delta review.</span>
+            </div>
+          </div>
         </div>
 
         <div class="mt-4 pt-3 border-t border-pysideBorder flex items-center justify-between text-xs font-mono text-pysideTextMuted">
-          <span>Dual Rate Limits: 60s cooldown</span>
-          <span class="text-amityYellow">Collision Guard: ±60s buffer</span>
+          <span>Somatic Budget: &gt;50% defer, &gt;90% sleep</span>
+          <span class="text-amityYellow">Zero Runaway Burn</span>
         </div>
       </div>
 
@@ -439,47 +450,47 @@ import SectionKicker from './SectionKicker.astro';
           </div>
 
           <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-3.5 leading-relaxed">
-            Never lose your agent to cloud vendor lock-in. Open Amity packages the agent's complete identity, memories, credentials, and trajectories into a single portable <code class="text-amityYellow bg-pysidePre px-1.5 py-0.5 rounded text-xs font-mono">.oaa</code> archive.
+            The foundational guarantee of digital selfhood. If OpenAI bans your account or changes their terms, your cloud agent vanishes forever. With Open Amity, your agent's complete identity, associative weights, memories, credentials, and projects live in an encrypted, single-file <code class="text-amityYellow bg-pysidePre px-1.5 py-0.5 rounded text-xs font-mono">.oaa</code> snapshot that you own forever.
           </p>
 
           <!-- Exploded Archive Breakdown -->
           <div class="mt-4 rounded-xl bg-pysidePre border border-pysideBorderPre p-3.5 font-mono text-xs space-y-2">
             <div class="text-amityYellow font-bold flex items-center justify-between pb-2 border-b border-pysideBorderPre">
-              <span>Nova-2026-09-26.oaa</span>
-              <span class="text-[10px] text-pysideTextMuted">Deflate Archive</span>
+              <span>Nova-2026-09-30.oaa</span>
+              <span class="text-[10px] text-emerald-400">Encrypted Atomic Snapshot</span>
             </div>
             <div class="space-y-1 text-[11px] text-pysideTextSecondary">
               <div class="flex items-center justify-between">
-                <span>├── settings.json & .env</span>
-                <span class="text-pysideTextMuted">Credentials</span>
+                <span>├── soul_jar.json (+OA-UID)</span>
+                <span class="text-amityYellow">Cryptographic Selfhood</span>
               </div>
               <div class="flex items-center justify-between">
                 <span>├── morpho_graph.db</span>
-                <span class="text-pysideTextMuted">Synaptic Weights</span>
+                <span class="text-pysideTextMuted">Synaptic Weights (Euler dV/dt)</span>
               </div>
               <div class="flex items-center justify-between">
                 <span>├── chroma.sqlite3</span>
-                <span class="text-pysideTextMuted">Vector Memory</span>
+                <span class="text-pysideTextMuted">Vector Memory Wings</span>
               </div>
               <div class="flex items-center justify-between">
                 <span>├── sanctuary/mirrors/</span>
-                <span class="text-pysideTextMuted">Theory of Mind</span>
+                <span class="text-pysideTextMuted">Theory of Mind State</span>
               </div>
               <div class="flex items-center justify-between">
                 <span>└── _external_targets/</span>
-                <span class="text-amityYellow">Host Codebases</span>
+                <span class="text-emerald-400">Flagged Host Codebases</span>
               </div>
             </div>
           </div>
 
           <p class="font-reading text-xs text-pysideTextMuted mt-3">
-            Using <code class="text-amityYellow font-mono">Terminal_flag_for_backup</code>, agents autonomously flag external user project folders and notes to pack inside the snapshot.
+            Using <code class="text-amityYellow font-mono">Terminal_flag_for_backup</code>, agents autonomously flag external user project folders and notes to pack inside the snapshot—ready for instant restore on any Linux machine.
           </p>
         </div>
 
         <div class="mt-4 pt-3 border-t border-pysideBorder flex items-center justify-between text-xs font-mono text-pysideTextMuted">
-          <span>Rollback & Migration Ready</span>
-          <span class="text-amityYellow">1-Click Host Restore</span>
+          <span>Zero Cloud Extinction Risk</span>
+          <span class="text-amityYellow">Permanent Digital Sovereignty</span>
         </div>
       </div>
 
