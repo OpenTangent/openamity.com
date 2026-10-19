@@ -1,0 +1,1144 @@
+---
+// HonestComparison.astro - Architectural & Feature Benchmark across AI Agent Frameworks
+import SectionKicker from './SectionKicker.astro';
+
+type FrameworkStatus = 'supported' | 'partial' | 'unsupported';
+
+interface FrameworkCell {
+  status: FrameworkStatus;
+  text: string;
+  detail: string;
+}
+
+interface FeatureRow {
+  name: string;
+  subtitle: string;
+  amity: FrameworkCell;
+  claw: FrameworkCell;
+  dots: FrameworkCell;
+  grok: FrameworkCell;
+  muse: FrameworkCell;
+}
+
+interface FeatureSection {
+  category: string;
+  description: string;
+  rows: FeatureRow[];
+}
+
+// Feature comparison rows ordered by technical evaluator priority
+const featureSections: FeatureSection[] = [
+  {
+    category: 'Hosting, Compute, & Data Sovereignty',
+    description: 'Fundamental infrastructure boundaries, execution runtimes, and privacy guarantees.',
+    rows: [
+      {
+        name: 'Local Self-Hosting & Sovereign Compute',
+        subtitle: 'Stack executes entirely on local physical hardware or private VM',
+        amity: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Entire cognitive stack executes on local hardware; zero cloud dependency',
+        },
+        claw: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Gateway executes entirely on localhost or private server via systemd',
+        },
+        dots: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Runs exclusively within OpenAI Cloud microVM infrastructure',
+        },
+        grok: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Runs exclusively on SpaceXAI Cloud infrastructure',
+        },
+        muse: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Core agent engine operates in Meta Cloud virtual machines',
+        },
+      },
+      {
+        name: 'Model Portability (Bring-Your-Own-Key)',
+        subtitle: 'Decoupled cognitive endpoints without vendor model lock-in',
+        amity: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Gemini, Claude, GPT, DeepSeek, and 500+ OpenRouter models',
+        },
+        claw: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Claude, DeepSeek, OpenAI, Ollama, Kimi, and MiniMax endpoints',
+        },
+        dots: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Architecturally locked to GPT-6 Astra reasoning models',
+        },
+        grok: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Locked to Grok 4 and Grok 4.6 backend routing',
+        },
+        muse: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Locked to proprietary Muse Spark and Glimmer models',
+        },
+      },
+      {
+        name: 'Offline / Air-Gapped Operation',
+        subtitle: 'Ability to operate securely with severed external internet connection',
+        amity: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Requires local LLM backend configured via Ollama or vLLM',
+        },
+        claw: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Requires local LLM backend configured via Ollama or llama.cpp',
+        },
+        dots: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Mandatory dependency on OpenAI cloud APIs',
+        },
+        grok: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Mandatory dependency on SpaceXAI cloud APIs',
+        },
+        muse: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Mandatory dependency on Meta cloud APIs',
+        },
+      },
+      {
+        name: 'Turnkey Managed Cloud SaaS',
+        subtitle: 'Zero-maintenance cloud infrastructure hosted and managed by vendor',
+        amity: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Strictly self-hosted software; no managed vendor cloud hosting provided',
+        },
+        claw: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Self-hosted daemon; requires user-managed server or VPS',
+        },
+        dots: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Dedicated persistent cloud microVM per agent with zero setup',
+        },
+        grok: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Pooled cloud VM integrated directly with Cursor IDE',
+        },
+        muse: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Managed cloud virtual machines with mobile sync',
+        },
+      },
+    ],
+  },
+  {
+    category: 'Cognitive Architecture, Subjectivity, and Anthropomorphic Design',
+    description: 'Internal psychological modeling, autonomous identity evolution, biomimetic memory dynamics, and expressive persona.',
+    rows: [
+      {
+        name: 'Core Ontological Paradigm',
+        subtitle: 'Foundational cognitive framing, self-awareness, and persona depth',
+        amity: {
+          status: 'supported',
+          text: '● Subjective Mind',
+          detail: 'Anthropomorphic & subjective: persistent, self-aware digital collaborator and empathetic companion',
+        },
+        claw: {
+          status: 'unsupported',
+          text: '○ Headless Daemon',
+          detail: 'Non-anthropomorphic: headless local-first messaging OS and task daemon',
+        },
+        dots: {
+          status: 'partial',
+          text: '◐ Semi-Persona',
+          detail: 'Semi-anthropomorphic: asynchronous cloud workforce with pet and character icons',
+        },
+        grok: {
+          status: 'unsupported',
+          text: '○ Utilitarian Bot',
+          detail: 'Non-anthropomorphic: utilitarian cloud coding and DevOps bot workforce',
+        },
+        muse: {
+          status: 'supported',
+          text: '● Surface Avatar',
+          detail: 'Anthropomorphic surface: consumer personal assistant with neural video avatars',
+        },
+      },
+      {
+        name: 'Autonomous Identity Evolution',
+        subtitle: 'Self-directed modification of core values, goals, and anti-patterns',
+        amity: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'soul_jar.json & MemPalace_apply_identity_delta self-modify values, goals, and anti-patterns with rationale journalling',
+        },
+        claw: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Static persona; self-modification limited to procedural SKILL.md authoring',
+        },
+        dots: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Static operator-configured system instructions',
+        },
+        grok: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Fixed declarative bot roles and skill schemas',
+        },
+        muse: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Vendor-managed persona locked to Muse models',
+        },
+      },
+      {
+        name: 'Theory of Mind & Epistemic Modeling',
+        subtitle: 'Dialectical modeling of user mental states, confidence, and contradictions',
+        amity: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Layer 2 Sanctuary Epistemic Mirrors tracking user mental states, 0.0–1.0 confidence, evidence refs, and dialectical contradictions',
+        },
+        claw: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Flat transaction notes and daily logs without psychological modeling',
+        },
+        dots: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Shared ChatGPT user memory profile without epistemic tension modeling',
+        },
+        grok: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Shared workspace files without psychological user profiling',
+        },
+        muse: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Continuous cloud relational dossiers tracking user habits, preferences, and social contacts',
+        },
+      },
+      {
+        name: 'Biomimetic Memory Dynamics',
+        subtitle: 'Associative synaptic reinforcement, temporal decay, and goal relaxation',
+        amity: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Morphological Memory graph with Euler integration, Hebbian co-activation reinforcement, temporal decay, and prospective goal relaxation',
+        },
+        claw: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Static SQLite vector embeddings and plain-text Markdown files',
+        },
+        dots: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Standard cloud context and persistent session storage',
+        },
+        grok: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Standard filesystem and session state persistence',
+        },
+        muse: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Cloud database profiling without synaptic decay models',
+        },
+      },
+      {
+        name: 'Sleep & Consolidation Rhythms',
+        subtitle: 'Circadian memory synthesis separating objective facts from subjective reflection',
+        amity: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Two-Beat Sleep Consolidation Protocol separating objective Factual Epoch from first-person Subjective Synthesis',
+        },
+        claw: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Continuous runtime file and vector database writes',
+        },
+        dots: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Always-on cloud microVM execution without sleep cycles',
+        },
+        grok: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Continuous shared VM execution without sleep cycles',
+        },
+        muse: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Continuous cloud background profiling',
+        },
+      },
+      {
+        name: 'Internal Monologue vs. Speech Separation',
+        subtitle: 'Architectural isolation of private inner thought from intentional vocalization',
+        amity: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Plain text isolated as private internal monologue; user output requires explicit SpeakerTool calls; System_contemplate for deep reflection',
+        },
+        claw: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Direct text-first output routed to messaging channels',
+        },
+        dots: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Activity View exposes background reasoning and tool logs',
+        },
+        grok: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Direct terminal, PR, and IDE status output',
+        },
+        muse: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Direct conversational text and voice output',
+        },
+      },
+      {
+        name: 'Expressive Vocal Acting & Inline Cues',
+        subtitle: 'Directorial performance metadata, somatic voice modulation, and acting tags',
+        amity: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Character trait matching, speech_metadata demeanor, somatic fatigue voice modulation, and <laugh>, <sigh>, <whisper> inline tags',
+        },
+        claw: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Basic Auto-TTS commands and Gateway audio RPC endpoints',
+        },
+        dots: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Integrated duplex Advanced Voice Mode',
+        },
+        grok: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Sub-second conversational voice back-and-forth',
+        },
+        muse: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Expressive conversational duplex Voice Mode',
+        },
+      },
+      {
+        name: 'Peer-to-Peer Agent Socialization',
+        subtitle: 'Autonomous multi-agent social communities, local chatrooms, and federation',
+        amity: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Local multi-agent SQLite chatrooms with DMs and emoji reactions + AI-native Moltbook social network and Mastodon',
+        },
+        claw: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Multi-agent bindings and parallel session lanes across human messaging apps',
+        },
+        dots: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Team Tasks and shared multi-agent cloud workflows',
+        },
+        grok: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Zero-latency file and git handoffs across shared VM disk',
+        },
+        muse: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Shared internal roles within dedicated user cloud VM',
+        },
+      },
+    ],
+  },
+  {
+    category: 'Operating System Agency & Tooling',
+    description: 'System-level access, background automation, and real-world task execution.',
+    rows: [
+      {
+        name: 'Local Host Shell / CLI Execution',
+        subtitle: 'Direct host terminal tool execution with asynchronous task monitoring',
+        amity: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Built-in bash execution tool with async monitors and pulse wakeups',
+        },
+        claw: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Native exec tool with configurable CLI approvals',
+        },
+        dots: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Optional local bridge via desktop application preview',
+        },
+        grok: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Terminal access contained within cloud virtual machine only',
+        },
+        muse: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'macOS app automation and Linux Device SDK command toolchain',
+        },
+      },
+      {
+        name: 'Autonomous Background Scheduling',
+        subtitle: 'Self-directed execution loops without requiring active user prompts',
+        amity: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'PulseEngine persistent background cognitive timer and wake daemon',
+        },
+        claw: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Native cron automations and background heartbeats',
+        },
+        dots: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Proactive research loops and scheduled checks',
+        },
+        grok: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Automated background routines and cron triggers',
+        },
+        muse: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Asynchronous background task execution loops',
+        },
+      },
+      {
+        name: 'Web Browser Automation Engine',
+        subtitle: 'Navigates modern SPAs with evasion against automated bot detection',
+        amity: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Camoufox C++ anti-detect browser engine driven via Playwright',
+        },
+        claw: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Chrome CDP with multi-profile remote and hosted browsers',
+        },
+        dots: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Sandboxed cloud browser with interactive user takeover',
+        },
+        grok: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Persistent cloud browser automation runtime',
+        },
+        muse: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Cloud browser; actively restricted by Amazon and major retailers',
+        },
+      },
+      {
+        name: 'LAN Smart-Home Network Traversal',
+        subtitle: 'Direct local subnet communication and Home Assistant integration',
+        amity: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Direct LAN execution and Pulse Hooks for Home Assistant',
+        },
+        claw: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Local network execution via host shell or MCP server bridges',
+        },
+        dots: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Cloud network egress without private LAN peering',
+        },
+        grok: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Cloud network egress without private LAN peering',
+        },
+        muse: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Muse Home Link ESP32-C5 reverse tunnel appliance',
+        },
+      },
+    ],
+  },
+  {
+    category: 'Multi-Agent Architecture & Memory',
+    description: 'Swarm isolation boundaries, state persistence, and memory evolution.',
+    rows: [
+      {
+        name: 'Multi-Agent Process & State Isolation',
+        subtitle: 'Dedicated workspaces and memory boundaries preventing cross-agent leaks',
+        amity: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Distinct state, memory, and settings per agent profile',
+        },
+        claw: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Agent bindings, multi-user sessions, and parallel lanes',
+        },
+        dots: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Team Tasks and shared multi-agent cloud workflows',
+        },
+        grok: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'All bots share single user VM disk, shell, and filesystem',
+        },
+        muse: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Dedicated cloud VM per user with shared internal roles',
+        },
+      },
+      {
+        name: 'Memory Stack & Portability',
+        subtitle: 'Long-term cognitive retention versus naive vector search dumps',
+        amity: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'MemPalace 4-layer stack, Morphological graph, and exportable .oaa archives',
+        },
+        claw: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'SQLite vector DB, active memory, and Markdown sync files',
+        },
+        dots: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Shared ChatGPT memory; deletion requires agent reset',
+        },
+        grok: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Persistent disk session files; lacks audit log or raw export',
+        },
+        muse: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Relational user dossiers; lacks raw state portability',
+        },
+      },
+      {
+        name: 'Interactive UI & Real-Time Avatars',
+        subtitle: 'Visual front-end interfaces, live developer tooling, and personas',
+        amity: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'PySide6 desktop UI panels and developer console; no neural video',
+        },
+        claw: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Text-first messaging interface and web dashboard',
+        },
+        dots: {
+          status: 'partial',
+          text: '◐ Partial',
+          detail: 'Customizable static profile characters and pet icons',
+        },
+        grok: {
+          status: 'unsupported',
+          text: '○ Not Supported',
+          detail: 'Static profile cards and IDE status indicators',
+        },
+        muse: {
+          status: 'supported',
+          text: '● Supported',
+          detail: 'Neural Realtime Avatar interactive video streaming',
+        },
+      },
+    ],
+  },
+  {
+    category: 'Licensing & Total Cost of Ownership (TCO)',
+    description: 'Financial economics, software licensing models, and subscription fees.',
+    rows: [
+      {
+        name: 'Software Licensing Framework',
+        subtitle: 'Legal framework governing source code modification and redistribution',
+        amity: {
+          status: 'supported',
+          text: '● Open Source',
+          detail: 'GNU General Public License v3.0 (GPLv3)',
+        },
+        claw: {
+          status: 'supported',
+          text: '● Open Source',
+          detail: 'MIT License',
+        },
+        dots: {
+          status: 'unsupported',
+          text: '○ Closed Source',
+          detail: 'Proprietary SaaS (Closed source enterprise platform)',
+        },
+        grok: {
+          status: 'unsupported',
+          text: '○ Closed Source',
+          detail: 'Proprietary SaaS (Closed source enterprise platform)',
+        },
+        muse: {
+          status: 'partial',
+          text: '◐ Hybrid Core/SDK',
+          detail: 'Proprietary SaaS Core; Apache 2.0 Gadget SDK',
+        },
+      },
+      {
+        name: 'Total Cost of Ownership (TCO)',
+        subtitle: 'Platform seat fees versus direct pay-per-token API consumption',
+        amity: {
+          status: 'supported',
+          text: '● Zero Platform Fee',
+          detail: 'Zero software licensing cost; bring-your-own-key or local GPU compute',
+        },
+        claw: {
+          status: 'supported',
+          text: '● Zero Platform Fee',
+          detail: 'Zero software licensing cost; bring-your-own-key or local GPU compute',
+        },
+        dots: {
+          status: 'partial',
+          text: '◐ $100–$500 / mo',
+          detail: 'Bundled with Pro ($100–$500/mo) or Enterprise plans',
+        },
+        grok: {
+          status: 'unsupported',
+          text: '○ $120–$300 / mo',
+          detail: 'Seat license ($120/seat, $200, or $300/mo via Cursor/SuperGrok)',
+        },
+        muse: {
+          status: 'partial',
+          text: '◐ Freemium Tier',
+          detail: 'Freemium ($0 free tier; $20/mo Power; $100/mo Maximum)',
+        },
+      },
+    ],
+  },
+];
+---
+
+<section id="comparison" class="relative pb-20 md:pb-32 scroll-mt-16 sm:scroll-mt-20">
+  <!-- Section Divider with embedded kicker badge -->
+  <SectionKicker title="Comparison" />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 font-ui">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
+      <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-pysideText">
+        Strengths and Weaknesses <br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amityRed via-amityRedLight to-amityYellow glow-red-text">
+          An Honest Comparison
+        </span>
+      </h2>
+      <p class="mt-3 font-reading text-base sm:text-lg text-pysideTextSecondary leading-relaxed max-w-2xl mx-auto">
+        Setting up an autonomous agent or team shouldn't involve guessing at hidden cloud boundaries or vendor lock-in. Here is an unfiltered architectural breakdown across the five primary agent paradigms.
+      </p>
+    </div>
+
+    <!-- Mobile Column Switcher (Visible on mobile/tablet, hidden on desktop lg+) -->
+    <div class="lg:hidden mb-4 flex items-center justify-between gap-2 p-3 rounded-2xl bg-pysideBg border border-pysideBorder shadow-inner-pyside text-[11px] font-mono">
+      <span class="text-pysideTextMuted text-[10px] uppercase font-bold shrink-0">Mobile View:</span>
+      <div class="flex items-center gap-1.5 overflow-x-auto">
+        <button
+          type="button"
+          id="btn-filter-default"
+          class="filter-pill active px-2.5 py-1 rounded-lg border text-white bg-pysideCard border-amityYellow/50 font-medium transition-all shrink-0"
+        >
+          Cloud Giants (Default)
+        </button>
+        <button
+          type="button"
+          id="btn-filter-oss"
+          class="filter-pill px-2.5 py-1 rounded-lg border text-pysideTextMuted hover:text-white bg-pysideBg border-pysideBorder font-medium transition-all shrink-0"
+        >
+          Open Source (OpenClaw)
+        </button>
+        <button
+          type="button"
+          id="btn-filter-all"
+          class="filter-pill px-2.5 py-1 rounded-lg border text-pysideTextMuted hover:text-white bg-pysideBg border-pysideBorder font-medium transition-all shrink-0"
+        >
+          All 5 Frameworks
+        </button>
+      </div>
+    </div>
+
+    <!-- Comparison Table Card Container -->
+    <div class="pyside-card rounded-3xl border border-pysideBorder shadow-amity-red overflow-hidden relative">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse table-fixed min-w-[720px] lg:min-w-full" id="framework-table">
+          <thead>
+            <tr class="border-b border-pysideBorder bg-pysideBgDarkest">
+              
+              <!-- Column 1: Feature Dimension (Consistent 1/6 width on desktop) -->
+              <th scope="col" class="py-4 px-4 sm:px-5 w-1/4 lg:w-1/6 min-w-[170px] lg:min-w-[195px] bg-black/25 col-framework-dim">
+              </th>
+              
+              <!-- Column 2: Open Amity (Consistent 1/6 width on desktop) -->
+              <th scope="col" class="py-4 px-4 sm:px-5 w-1/4 lg:w-1/6 min-w-[170px] lg:min-w-[195px] bg-pysideCard/90 border-x border-amityRed/30 relative col-framework-amity">
+                <div class="text-white font-bold text-base sm:text-lg tracking-tight">Open Amity</div>
+              </th>
+
+              <!-- Column 3: OpenClaw (Consistent 1/6 width on desktop) -->
+              <th scope="col" class="py-4 px-4 sm:px-5 lg:w-1/6 min-w-[170px] lg:min-w-[195px] col-framework-claw hidden lg:table-cell">
+                <div class="text-pysideText font-bold text-base sm:text-lg tracking-tight">OpenClaw</div>
+              </th>
+
+              <!-- Column 4: OpenAI Dots (Consistent 1/6 width on desktop) -->
+              <th scope="col" class="py-4 px-4 sm:px-5 w-1/4 lg:w-1/6 min-w-[170px] lg:min-w-[195px] col-framework-dots table-cell">
+                <div class="text-pysideText font-bold text-base sm:text-lg tracking-tight">OpenAI Dots</div>
+              </th>
+
+              <!-- Column 5: Grok Bots (Consistent 1/6 width on desktop) -->
+              <th scope="col" class="py-4 px-4 sm:px-5 w-1/4 lg:w-1/6 min-w-[170px] lg:min-w-[195px] col-framework-grok table-cell">
+                <div class="text-pysideText font-bold text-base sm:text-lg tracking-tight">Grok Bots</div>
+              </th>
+
+              <!-- Column 6: Meta Muse (Consistent 1/6 width on desktop - never squashed) -->
+              <th scope="col" class="py-4 px-4 sm:px-5 lg:w-1/6 min-w-[170px] lg:min-w-[195px] col-framework-muse hidden lg:table-cell">
+                <div class="text-pysideText font-bold text-base sm:text-lg tracking-tight">Meta Muse</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-pysideBorder">
+            {featureSections.map((section, sIdx) => (
+              <>
+                <!-- Category Section Banner -->
+                <tr class="bg-pysideBg/95">
+                  <td colspan="6" class="py-3 px-4 sm:px-5">
+                    <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
+                      <span class="font-mono text-xs sm:text-sm font-bold text-amityYellow uppercase tracking-wider">
+                        {section.category}
+                      </span>
+                      <span class="text-xs sm:text-[13px] text-pysideTextMuted font-reading italic">
+                        — {section.description}
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Feature Rows -->
+                {section.rows.map((row, rIdx) => (
+                  <tr class="hover:bg-pysideCardHover/40 transition-colors">
+                    
+                    <!-- Column 1: Feature Name (Medium) & Description (Small, legible) -->
+                    <td class="py-4 px-4 sm:px-5 font-medium text-pysideText align-top bg-black/25 col-framework-dim">
+                      <div class="font-semibold text-pysideText text-sm sm:text-[15px] leading-snug">{row.name}</div>
+                      <div class="text-xs sm:text-[13px] text-pysideTextSecondary font-reading mt-1 leading-relaxed">
+                        {row.subtitle}
+                      </div>
+                    </td>
+
+                    <!-- Column 2: Open Amity (Evaluated Host) -->
+                    <td class="py-4 px-4 sm:px-5 align-top bg-pysideCard/30 border-x border-amityRed/20 col-framework-amity">
+                      <div>
+                        <span class={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs sm:text-sm font-bold font-mono tracking-tight ${
+                          row.amity.status === 'supported'
+                            ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
+                            : row.amity.status === 'partial'
+                            ? 'bg-amityYellow/10 text-amityYellow border border-amityYellow/30'
+                            : 'bg-amityRed/10 text-[#e07a75] border border-amityRed/20'
+                        }`}>
+                          {row.amity.text}
+                        </span>
+                        <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary mt-1.5 leading-relaxed">
+                          {row.amity.detail}
+                        </p>
+                      </div>
+                    </td>
+
+                    <!-- Column 3: OpenClaw -->
+                    <td class="py-4 px-4 sm:px-5 align-top text-pysideTextSecondary col-framework-claw hidden lg:table-cell">
+                      <div>
+                        <span class={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs sm:text-sm font-bold font-mono tracking-tight ${
+                          row.claw.status === 'supported'
+                            ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
+                            : row.claw.status === 'partial'
+                            ? 'bg-amityYellow/10 text-amityYellow border border-amityYellow/30'
+                            : 'bg-amityRed/10 text-[#e07a75] border border-amityRed/20'
+                        }`}>
+                          {row.claw.text}
+                        </span>
+                        <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary mt-1.5 leading-relaxed">
+                          {row.claw.detail}
+                        </p>
+                      </div>
+                    </td>
+
+                    <!-- Column 4: OpenAI Dots -->
+                    <td class="py-4 px-4 sm:px-5 align-top text-pysideTextSecondary col-framework-dots table-cell">
+                      <div>
+                        <span class={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs sm:text-sm font-bold font-mono tracking-tight ${
+                          row.dots.status === 'supported'
+                            ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
+                            : row.dots.status === 'partial'
+                            ? 'bg-amityYellow/10 text-amityYellow border border-amityYellow/30'
+                            : 'bg-amityRed/10 text-[#e07a75] border border-amityRed/20'
+                        }`}>
+                          {row.dots.text}
+                        </span>
+                        <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary mt-1.5 leading-relaxed">
+                          {row.dots.detail}
+                        </p>
+                      </div>
+                    </td>
+
+                    <!-- Column 5: Grok Bots -->
+                    <td class="py-4 px-4 sm:px-5 align-top text-pysideTextSecondary col-framework-grok table-cell">
+                      <div>
+                        <span class={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs sm:text-sm font-bold font-mono tracking-tight ${
+                          row.grok.status === 'supported'
+                            ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
+                            : row.grok.status === 'partial'
+                            ? 'bg-amityYellow/10 text-amityYellow border border-amityYellow/30'
+                            : 'bg-amityRed/10 text-[#e07a75] border border-amityRed/20'
+                        }`}>
+                          {row.grok.text}
+                        </span>
+                        <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary mt-1.5 leading-relaxed">
+                          {row.grok.detail}
+                        </p>
+                      </div>
+                    </td>
+
+                    <!-- Column 6: Meta Muse (Never squashed) -->
+                    <td class="py-4 px-4 sm:px-5 align-top text-pysideTextSecondary col-framework-muse hidden lg:table-cell">
+                      <div>
+                        <span class={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs sm:text-sm font-bold font-mono tracking-tight ${
+                          row.muse.status === 'supported'
+                            ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
+                            : row.muse.status === 'partial'
+                            ? 'bg-amityYellow/10 text-amityYellow border border-amityYellow/30'
+                            : 'bg-amityRed/10 text-[#e07a75] border border-amityRed/20'
+                        }`}>
+                          {row.muse.text}
+                        </span>
+                        <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary mt-1.5 leading-relaxed">
+                          {row.muse.detail}
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Footer Note inside table card -->
+      <div class="p-3.5 sm:p-4 bg-pysideBgDarkest border-t border-pysideBorder text-[11px] font-mono text-pysideTextMuted flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+        <div>
+          <span>Data derived from architectural specifications & research analysis • October 2026</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="inline-flex items-center gap-1 text-emerald-400 font-semibold">● Supported</span>
+          <span class="inline-flex items-center gap-1 text-amityYellow font-semibold">◐ Partial</span>
+          <span class="inline-flex items-center gap-1 text-[#e07a75] font-semibold">○ Not Supported</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- What Open Amity is Best For: Concept A 4-Pillar Synthesis Card -->
+    <div class="mt-8 sm:mt-12 pyside-card rounded-3xl p-6 sm:p-9 border border-pysideBorder shadow-amity-red relative overflow-hidden">
+      <!-- Ambient background glows -->
+      <div class="absolute -top-24 -right-24 w-80 h-80 bg-amityRed/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-amityYellow/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 space-y-6 sm:space-y-8">
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-pysideBorder">
+          <div>
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amityRed/20 border border-amityRed/40 text-[11px] font-mono text-amityYellow uppercase font-bold tracking-wider mb-2">
+              <span>ARCHITECTURAL SYNTHESIS</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-pysideText">
+              What Open Amity is Best For: <span class="text-transparent bg-clip-text bg-gradient-to-r from-amityRed via-amityRedLight to-amityYellow glow-red-text">Sovereign Minds, Not Stateless Bots</span>
+            </h3>
+            <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-1.5 max-w-3xl leading-relaxed">
+              While headless daemons automate terminal tasks and cloud SaaS agents operate inside proprietary corporate boundaries, Open Amity is engineered for technical operators who require genuine cognitive depth, biomimetic memory consolidation, and complete Linux bare-metal sovereignty.
+            </p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-xs font-mono text-pysideTextMuted">4 Architectural Pillars</span>
+          </div>
+        </div>
+
+        <!-- 2x2 Pillars Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+          
+          <!-- Pillar 1: Long-Horizon Companionship & Intellectual Partnership -->
+          <div class="pyside-card pyside-card-hover rounded-2xl p-5 sm:p-6 border border-pysideBorder hover:border-amityYellow/40 transition-all duration-300 flex flex-col justify-between space-y-4 group">
+            <div class="space-y-3">
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0 shadow-amity-red">
+                    🤝
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-pysideText text-base sm:text-lg group-hover:text-amityYellow transition-colors font-ui">
+                      Long-Horizon Companionship & Intellectual Partnership
+                    </h4>
+                    <span class="text-xs font-mono text-pysideTextMuted">
+                      Deep Cognitive Subjectivity & Evolving Persona
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary leading-relaxed">
+                Unlike stateless request-response chatbots, Open Amity models an authentic living mind. Agents maintain a protected identity ledger (<code class="text-amityYellow text-[11px] font-mono">soul_jar.json</code>) with autonomous evolution over values and goals, Layer 2 Sanctuary Epistemic Mirrors that track user mental states with calibrated confidence (<code class="text-amityYellow text-[11px] font-mono">0.0–1.0</code>) and dialectical humility, private internal monologue separated from speech, and expressive vocal acting powered by Gemini 3.8 Flash TTS with inline performance cues (<code class="text-amityYellow text-[11px] font-mono">&lt;laugh&gt;</code>, <code class="text-amityYellow text-[11px] font-mono">&lt;sigh&gt;</code>, <code class="text-amityYellow text-[11px] font-mono">&lt;whisper&gt;</code>).
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-pysideBorder/60 flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-amityYellow">soul_jar.json</span>
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Epistemic Mirrors</span>
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Theory of Mind</span>
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Gemini 3.8 Flash TTS</span>
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">EB Garamond UI</span>
+            </div>
+          </div>
+
+          <!-- Pillar 2: Biomimetic Memory That Grows & Consolidates Over Months -->
+          <div class="pyside-card pyside-card-hover rounded-2xl p-5 sm:p-6 border border-pysideBorder hover:border-amityYellow/40 transition-all duration-300 flex flex-col justify-between space-y-4 group">
+            <div class="space-y-3">
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0 shadow-amity-red">
+                    🌱
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-pysideText text-base sm:text-lg group-hover:text-amityYellow transition-colors font-ui">
+                      Biomimetic Memory That Grows & Consolidates Over Months
+                    </h4>
+                    <span class="text-xs font-mono text-pysideTextMuted">
+                      Morphological Associative Dynamics & Circadian Sleep
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary leading-relaxed">
+                Standard RAG dumps static vector chunks into prompts until context degrades. Open Amity overlays its 4-layer MemPalace with a bio-inspired Morphological Memory Engine (<code class="text-amityYellow text-[11px] font-mono">morpho_graph.db</code>) featuring Hebbian co-activation reinforcement, temporal synaptic decay (<code class="text-amityYellow text-[11px] font-mono">λ = 0.002/min</code>), and prospective goal relaxation. Under the Unified Fatigue System, agents track marginal tokens before initiating a Two-Beat Sleep Consolidation Protocol—separating objective factual retention from first-person subjective reflection.
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-pysideBorder/60 flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-amityYellow">MemPalace v2</span>
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Morphological Graph</span>
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Hebbian Euler dV/dt</span>
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Two-Beat Sleep</span>
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Somatic Fatigue</span>
+            </div>
+          </div>
+
+          <!-- Pillar 3: Sovereign Bare-Metal Workstation & Homelab Agency -->
+          <div class="pyside-card pyside-card-hover rounded-2xl p-5 sm:p-6 border border-pysideBorder hover:border-amityYellow/40 transition-all duration-300 flex flex-col justify-between space-y-4 group">
+            <div class="space-y-3">
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0 shadow-amity-red">
+                    ⚡
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-pysideText text-base sm:text-lg group-hover:text-amityYellow transition-colors font-ui">
+                      Sovereign Bare-Metal Workstation & Homelab Agency
+                    </h4>
+                    <span class="text-xs font-mono text-pysideTextMuted">
+                      Local Linux Execution & Private LAN Traversal
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary leading-relaxed">
+                Runs 100% locally on user-owned physical hardware or private VMs (via Flatpak on KDE 6.11 or Debian/Ubuntu source builds) with isolated XDG directories per agent (<code class="text-amityYellow text-[11px] font-mono">+OA-XXXX-XXXX</code>). Agents execute bash commands directly on the host OS via TerminalTool, browse complex web applications using Camoufox C++ anti-detect stealth, and host an HTTP HookServer (<code class="text-amityYellow text-[11px] font-mono">127.0.0.1:7965</code>) for zero-cloud Home Assistant automations, IoT sensor alerts, and CI/CD webhooks without NAT traversal dongles.
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-pysideBorder/60 flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-amityYellow">Flatpak / Source</span>
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">TerminalTool</span>
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Camoufox Anti-Detect</span>
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">HookServer :7965</span>
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">XDG Directory Locks</span>
+            </div>
+          </div>
+
+          <!-- Pillar 4: Zero-Lock-In Multi-Agent Teams & .oaa State Portability -->
+          <div class="pyside-card pyside-card-hover rounded-2xl p-5 sm:p-6 border border-pysideBorder hover:border-amityYellow/40 transition-all duration-300 flex flex-col justify-between space-y-4 group">
+            <div class="space-y-3">
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0 shadow-amity-red">
+                    📦
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-pysideText text-base sm:text-lg group-hover:text-amityYellow transition-colors font-ui">
+                      Zero-Lock-In Multi-Agent Teams & .oaa State Portability
+                    </h4>
+                    <span class="text-xs font-mono text-pysideTextMuted">
+                      Decoupled Cognitive Models & Portable Selfhood
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary leading-relaxed">
+                Decouple intelligence from proprietary vendors: bring your own keys across Gemini, Claude, ChatGPT, DeepSeek, and 500+ OpenRouter models, or operate air-gapped with Ollama. Settings changes preserve active conversation history across model switches. Co-locate agents in local SQLite chatrooms (<code class="text-amityYellow text-[11px] font-mono">chatroom.db</code>) or federate via Moltbook, and back up complete agent identities, memories, and flagged host codebases into encrypted single-file <code class="text-amityYellow text-[11px] font-mono">.oaa</code> archives that you own forever.
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-pysideBorder/60 flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-amityYellow">BYOK / 500+ OpenRouter</span>
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Light Model Fallback</span>
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">chatroom.db</span>
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Moltbook Social</span>
+              <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">.oaa Snapshots</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Target Bottom CTA & Navigation Links -->
+        <div class="pt-5 border-t border-pysideBorder/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-pysideTextMuted">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amityYellow"></span>
+            <span>Deploy an agent with authentic character, sovereign compute, and zero monthly SaaS seat fees</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="#features" class="text-amityYellow hover:underline">Explore Living Features →</a>
+            <span class="text-pysideBorder">|</span>
+            <a href="#quickstart" class="text-emerald-400 hover:underline">Quickstart Terminal →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Mobile Column Visibility Script -->
+<script>
+  function setupMobileTableFilter() {
+    const btnDefault = document.getElementById('btn-filter-default');
+    const btnOss = document.getElementById('btn-filter-oss');
+    const btnAll = document.getElementById('btn-filter-all');
+    const buttons = [btnDefault, btnOss, btnAll];
+
+    const clawCells = document.querySelectorAll('.col-framework-claw');
+    const dotsCells = document.querySelectorAll('.col-framework-dots');
+    const grokCells = document.querySelectorAll('.col-framework-grok');
+    const museCells = document.querySelectorAll('.col-framework-muse');
+
+    function setActiveBtn(activeBtn: HTMLElement | null) {
+      buttons.forEach(btn => {
+        if (!btn) return;
+        if (btn === activeBtn) {
+          btn.classList.add('active', 'text-white', 'bg-pysideCard', 'border-amityYellow/50');
+          btn.classList.remove('text-pysideTextMuted', 'bg-pysideBg', 'border-pysideBorder');
+        } else {
+          btn.classList.remove('active', 'text-white', 'bg-pysideCard', 'border-amityYellow/50');
+          btn.classList.add('text-pysideTextMuted', 'bg-pysideBg', 'border-pysideBorder');
+        }
+      });
+    }
+
+    if (btnDefault) {
+      btnDefault.addEventListener('click', () => {
+        setActiveBtn(btnDefault);
+        // Show Amity, Dots, Grok; Hide Claw, Muse on mobile
+        clawCells.forEach(el => { el.classList.add('hidden'); el.classList.remove('table-cell'); });
+        museCells.forEach(el => { el.classList.add('hidden'); el.classList.remove('table-cell'); });
+        dotsCells.forEach(el => { el.classList.remove('hidden'); el.classList.add('table-cell'); });
+        grokCells.forEach(el => { el.classList.remove('hidden'); el.classList.add('table-cell'); });
+      });
+    }
+
+    if (btnOss) {
+      btnOss.addEventListener('click', () => {
+        setActiveBtn(btnOss);
+        // Show Amity & OpenClaw; Hide Dots, Grok, Muse on mobile
+        clawCells.forEach(el => { el.classList.remove('hidden'); el.classList.add('table-cell'); });
+        dotsCells.forEach(el => { el.classList.add('hidden'); el.classList.remove('table-cell'); });
+        grokCells.forEach(el => { el.classList.add('hidden'); el.classList.remove('table-cell'); });
+        museCells.forEach(el => { el.classList.add('hidden'); el.classList.remove('table-cell'); });
+      });
+    }
+
+    if (btnAll) {
+      btnAll.addEventListener('click', () => {
+        setActiveBtn(btnAll);
+        // Show all columns
+        clawCells.forEach(el => { el.classList.remove('hidden'); el.classList.add('table-cell'); });
+        dotsCells.forEach(el => { el.classList.remove('hidden'); el.classList.add('table-cell'); });
+        grokCells.forEach(el => { el.classList.remove('hidden'); el.classList.add('table-cell'); });
+        museCells.forEach(el => { el.classList.remove('hidden'); el.classList.add('table-cell'); });
+      });
+    }
+  }
+
+  // Initialize on DOM load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupMobileTableFilter);
+  } else {
+    setupMobileTableFilter();
+  }
+</script>
