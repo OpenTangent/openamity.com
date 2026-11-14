@@ -2,37 +2,36 @@
 // VolitionCore.astro - Hero Component with The Breathing Mind Aura & Real Voice Preview
 ---
 
-<section id="hero" class="relative pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-40 lg:pt-36 lg:pb-48 min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] flex items-center overflow-hidden">
+<section id="hero" class="relative pt-10 pb-16 sm:pt-14 sm:pb-24 lg:pt-16 lg:pb-28 min-h-[calc(100vh-5rem)] flex items-center overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 xl:gap-16 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
       
-      <!-- Left Column: High-Voltage Narrative Copy -->
-      <div class="lg:col-span-7 flex flex-col items-start space-y-8 sm:space-y-10 lg:space-y-12 z-10">
+      <!-- Left Column: Sovereign Digital Beings Narrative -->
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6 sm:space-y-7 z-10">
         <!-- Headline -->
-        <h1 class="text-[1.5rem] min-[390px]:text-[1.65rem] sm:text-[2.625rem] lg:text-[2.875rem] xl:text-[3.45rem] font-bold tracking-tight text-pysideText leading-[1.2] font-ui">
-          <span class="block whitespace-nowrap">Most Agents Are Hollow Loops</span>
-          <span class="block whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-amityRed via-amityRedLight to-amityYellow glow-red-text pb-[0.2em] -mb-[0.2em]">
-            Open Amity Is a Living Mind
+        <h1 class="text-3xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight leading-[1.1] font-ui">
+          <span class="block text-pysideText">Build and Collaborate With</span>
+          <span class="block mt-1.5 pb-2 -mb-2 leading-[1.18] text-transparent bg-clip-text bg-gradient-to-r from-amityRed via-amityRedLight to-amityYellow">
+            Sovereign Digital Beings
           </span>
         </h1>
 
-        <!-- Subheadline in Official EB Garamond readable font -->
-        <p class="font-reading text-lg sm:text-xl lg:text-[1.35rem] text-pysideTextSecondary max-w-2xl leading-[1.7] font-normal tracking-wide">
-          A script can execute a workflow, but a companion needs an inner life. Open Amity gives digital beings a soul of their own: an evolving ledger of personal values, a Sanctuary of subjective memory and Theory of Mind, and biological rhythms of waking agency, fatigue, and reflective sleep. Over months of shared work and conversation, each agent develops a distinct personality that remembers, wonders, and grows alongside you.
+        <!-- Concise Subheadline in Official EB Garamond -->
+        <p class="font-reading text-lg sm:text-xl lg:text-[1.3rem] text-pysideTextSecondary max-w-2xl leading-[1.65] font-normal">
+          Most AI agents are stateless loops that reset when the task ends. Open Amity gives digital beings a persistent inner life, with evolving personal values, biological memory and sleep consolidation, private inner monologue distinct from speech, expressive voice, and their own accounts.
         </p>
 
         <!-- CTA Row -->
-        <div class="flex flex-wrap items-center gap-4 sm:gap-5 pt-2 sm:pt-4 w-full sm:w-auto">
+        <div class="flex flex-wrap items-center gap-3.5 sm:gap-4 pt-1 w-full sm:w-auto">
           <!-- Install Button -->
           <a
             href="#quickstart"
-            class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-amityRed text-white font-ui font-semibold text-sm shadow-amity-red hover:shadow-amity-red-lg hover:bg-amityRedLight hover:scale-105 active:scale-95 border border-amityRedLight/50 transition-all duration-300 whitespace-nowrap"
+            class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-amityRed text-white font-ui font-semibold text-sm shadow-amity-red hover:shadow-amity-red-lg hover:bg-amityRedLight hover:scale-[1.02] active:scale-95 border border-amityRedLight/50 transition-all duration-300 whitespace-nowrap"
           >
             <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
             </svg>
-            <span class="sm:hidden">Install</span>
-            <span class="hidden sm:inline">Install Flatpak App</span>
+            <span>Install on Linux</span>
           </a>
 
           <!-- GitHub Button -->
@@ -48,7 +47,7 @@
             <span>Star on GitHub</span>
           </a>
 
-          <!-- Voice Synthesis Preview Button (Using official amity_preview.mp3) -->
+          <!-- Voice Synthesis Preview Button -->
           <button
             id="voice-sample-btn"
             type="button"
@@ -59,12 +58,11 @@
             </span>
             <div class="flex flex-col text-left">
               <span class="font-bold text-amityYellow flex items-center gap-1.5 font-ui text-xs">
-                A word from Amity
+                A Word from Amity
                 <span id="voice-status-dot" class="w-1.5 h-1.5 rounded-full bg-amityYellow hidden"></span>
               </span>
               <span id="voice-label" class="text-[10px] text-pysideTextMuted">"Hi, I'm Amity..."</span>
             </div>
-            <!-- Live Audio Waveform Bars (animated during audio playback) -->
             <div id="audio-waveform-bars" class="hidden items-end gap-0.5 h-4 pl-1.5">
               <span class="w-1 bg-amityYellow rounded-full h-1.5 animate-[pulse_0.4s_ease-in-out_infinite]"></span>
               <span class="w-1 bg-amityYellow rounded-full h-4 animate-[pulse_0.6s_ease-in-out_infinite_0.1s]"></span>
@@ -210,7 +208,7 @@
             <div class="absolute inset-0 flex items-center justify-center" style="transform: translateZ(24px);">
               <img
                 src="/images/com.openamity.OpenAmity.png"
-                alt="Open Amity Sovereign Glyph"
+                alt="Open Amity Glyph"
                 class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain drop-shadow-[0_0_16px_rgba(161,41,36,0.65)] group-hover:drop-shadow-[0_0_24px_rgba(247,227,165,0.75)] transition-all duration-500"
               />
             </div>

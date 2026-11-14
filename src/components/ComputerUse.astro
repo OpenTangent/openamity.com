@@ -1,156 +1,60 @@
 ---
-// ComputerUse.astro - Direct Hardware & Operating System Agency on Linux (Part of the unified Tools section)
+// ComputerUse.astro - Embodied Linux Desktop & Shell Agency
 ---
 
-<div id="computer-use" class="relative pb-20 md:pb-32 scroll-mt-16 sm:scroll-mt-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12">
+<div id="computer-use" class="relative pb-16 md:pb-24 scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6">
     
     <!-- Section Header -->
-    <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16 font-ui">
-      <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-pysideText">
-        Executes Directly in Linux <br />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amityRed via-amityRedLight to-amityYellow">
-          Doesn't Make You Do It
-        </span>
-      </h2>
-      <p class="mt-3 font-reading text-base sm:text-lg text-pysideTextSecondary leading-relaxed max-w-2xl mx-auto">
-        Most AI assistants are trapped in cloud tabs, hallucinating mock terminals and guessing at outputs. Open Amity agents live on your Linux hardware with native shell autonomy, intelligent codebase inspection, browser automation, and deep system telemetry.
+    <div class="max-w-3xl mx-auto text-center mb-8 sm:mb-10 font-ui">
+      <h3 class="text-xl sm:text-3xl font-bold tracking-tight text-pysideText">
+        Embodied on Your Linux Desktop
+      </h3>
+      <p class="mt-2 font-reading text-sm sm:text-base text-pysideTextSecondary leading-relaxed max-w-2xl mx-auto">
+        Beyond conversation, Open Amity beings work directly alongside you in a sandboxed Linux workspace—running background builds, inspecting codebases, browsing complex web apps, and opening documents on your screen.
       </p>
     </div>
 
-    <!-- 4 Core OS Agency Pillars in PySide6 Card Styling -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 font-ui mb-12 sm:mb-16">
-      
-      <!-- Pillar 1: Terminal & Async Tasks -->
-      <div class="pyside-card pyside-card-hover rounded-3xl p-6 sm:p-7 border-pysideBorder relative flex flex-col justify-between overflow-hidden group">
-        <div class="absolute -top-16 -right-16 w-40 h-40 bg-amityRed/10 rounded-full blur-2xl group-hover:bg-amityRed/20 transition-all pointer-events-none"></div>
-
-        <div>
-          <div class="w-10 h-10 rounded-2xl bg-amityRed/20 border border-amityRed/50 flex items-center justify-center text-amityYellow text-lg mb-4 shadow-amity-red">
-            💻
-          </div>
-
-          <h3 class="text-lg sm:text-xl font-bold text-pysideText">
-            Terminal Tool
-          </h3>
-          <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-3 leading-relaxed">
-            Run commands synchronously with 30-second safeguards, or dispatch long-running background tasks with <code class="text-amityYellow bg-pysidePre px-1.5 py-0.5 rounded text-xs font-mono">Terminal_run_async</code>. The agent monitors processes in the background, sets timed reminders, and wakes up automatically via an autonomous system pulse when your build or test suite finishes.
-          </p>
-
-          <ul class="mt-5 space-y-2 text-xs sm:text-[13px] font-mono text-pysideText">
-            <li class="flex items-center gap-2">
-              <span class="text-amityYellow font-bold">✓</span>
-              <span>Autonomous wake pulses upon background process completion</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-amityYellow font-bold">✓</span>
-              <span>Sudo escalation with secure password token isolation</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-amityYellow font-bold">✓</span>
-              <span>Self-encapsulating <code class="text-amityYellow">.sh</code> scripts with auto-logged outputs</span>
-            </li>
-          </ul>
+    <!-- 4 Compact Summary Cards (1:1 aligned with the 4 interactive terminal tabs) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 font-ui mb-6">
+      <div class="pyside-card rounded-2xl p-4 border border-pysideBorder">
+        <div class="flex items-center gap-2.5 mb-1.5">
+          <span class="text-base">⚙️</span>
+          <h4 class="text-xs sm:text-sm font-bold text-pysideText">Async Shell & Pulses</h4>
         </div>
+        <p class="font-reading text-xs text-pysideTextSecondary leading-relaxed">
+          Dispatches long-running bash builds in the background and wakes automatically via pulse when tasks finish.
+        </p>
       </div>
 
-      <!-- Pillar 2: Token-Guarded Codebase Inspection -->
-      <div class="pyside-card pyside-card-hover rounded-3xl p-6 sm:p-7 border-pysideBorder relative flex flex-col justify-between overflow-hidden group">
-        <div class="absolute -top-16 -right-16 w-40 h-40 bg-amityYellow/10 rounded-full blur-2xl group-hover:bg-amityYellow/20 transition-all pointer-events-none"></div>
-
-        <div>
-          <div class="w-10 h-10 rounded-2xl bg-amityYellow/10 border border-amityYellow/40 flex items-center justify-center text-amityYellow text-lg mb-4 shadow-amity-yellow">
-            📄
-          </div>
-
-          <h3 class="text-lg sm:text-xl font-bold text-pysideText">
-            File Inspection
-          </h3>
-          <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-3 leading-relaxed">
-            Standard agents run crude <code class="text-amityYellow bg-pysidePre px-1.5 py-0.5 rounded text-xs font-mono">cat</code> commands that crash LLM context limits on large files. Open Amity’s <code class="text-amityYellow bg-pysidePre px-1.5 py-0.5 rounded text-xs font-mono">Terminal_read_file</code> provides windowed line slicing, regex grep with surrounding context, first-match anchor jumping, and binary detection guards.
-          </p>
-
-          <ul class="mt-5 space-y-2 text-xs sm:text-[13px] font-mono text-pysideText">
-            <li class="flex items-center gap-2">
-              <span class="text-amityYellow font-bold">✓</span>
-              <span>Windowed line pagination (<code class="text-amityYellow">start_line</code>, <code class="text-amityYellow">max_lines</code>)</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-amityYellow font-bold">✓</span>
-              <span>Grep queries with contiguous context lines (<code class="text-amityYellow">context_lines</code>)</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-amityYellow font-bold">✓</span>
-              <span>Binary probe protection & automatic Low Token Mode throttling</span>
-            </li>
-          </ul>
+      <div class="pyside-card rounded-2xl p-4 border border-pysideBorder">
+        <div class="flex items-center gap-2.5 mb-1.5">
+          <span class="text-base">🔍</span>
+          <h4 class="text-xs sm:text-sm font-bold text-pysideText">Surgical File Slicing</h4>
         </div>
+        <p class="font-reading text-xs text-pysideTextSecondary leading-relaxed">
+          Reads large codebases via line-numbered windows and context-aware grep without flooding active context.
+        </p>
       </div>
 
-      <!-- Pillar 3: Camoufox Stealth Browser -->
-      <div class="pyside-card pyside-card-hover rounded-3xl p-6 sm:p-7 border-pysideBorder relative flex flex-col justify-between overflow-hidden group">
-        <div class="absolute -top-16 -right-16 w-40 h-40 bg-amityRed/10 rounded-full blur-2xl group-hover:bg-amityRed/20 transition-all pointer-events-none"></div>
-
-        <div>
-          <div class="w-10 h-10 rounded-2xl bg-amityRed/20 border border-amityRed/50 flex items-center justify-center text-amityYellow text-lg mb-4 shadow-amity-red">
-            🌍
-          </div>
-
-          <h3 class="text-lg sm:text-xl font-bold text-pysideText">
-            Browser Tool
-          </h3>
-          <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-3 leading-relaxed">
-            Equipped with a C++ anti-detect Firefox build driven by Playwright, Open Amity agents browse the live web with humanised browser fingerprints that bypass bot detection. They interact with complex SPAs, capture Set-of-Marks visual screenshots with ARIA badges, submit forms, and download files straight to your disk.
-          </p>
-
-          <ul class="mt-5 space-y-2 text-xs sm:text-[13px] font-mono text-pysideText">
-            <li class="flex items-center gap-2">
-              <span class="text-amityYellow font-bold">✓</span>
-              <span>Set-of-Marks visual screenshots with numbered element badges</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-amityYellow font-bold">✓</span>
-              <span>Native file upload injection bypassing OS file picker dialogues</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-amityYellow font-bold">✓</span>
-              <span>Direct download capture into local <code class="text-amityYellow">~/Downloads</code> folder</span>
-            </li>
-          </ul>
+      <div class="pyside-card rounded-2xl p-4 border border-pysideBorder">
+        <div class="flex items-center gap-2.5 mb-1.5">
+          <span class="text-base">🌍</span>
+          <h4 class="text-xs sm:text-sm font-bold text-pysideText">Camoufox Web Browser</h4>
         </div>
+        <p class="font-reading text-xs text-pysideTextSecondary leading-relaxed">
+          Navigates modern SPAs with anti-detect fingerprinting, Set-of-Marks visual cues, and direct file downloads.
+        </p>
       </div>
 
-      <!-- Pillar 4: Telemetry & Host Integration -->
-      <div class="pyside-card pyside-card-hover rounded-3xl p-6 sm:p-7 border-pysideBorder relative flex flex-col justify-between overflow-hidden group">
-        <div class="absolute -top-16 -right-16 w-40 h-40 bg-amityYellow/10 rounded-full blur-2xl group-hover:bg-amityYellow/20 transition-all pointer-events-none"></div>
-
-        <div>
-          <div class="w-10 h-10 rounded-2xl bg-amityYellow/10 border border-amityYellow/40 flex items-center justify-center text-amityYellow text-lg mb-4 shadow-amity-yellow">
-            ⚙️
-          </div>
-
-          <h3 class="text-lg sm:text-xl font-bold text-pysideText">
-            System Tool
-          </h3>
-          <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-3 leading-relaxed">
-            Agents query real-time hardware telemetry (CPU, RAM, storage, temperatures, network interfaces) and launch files in your favourite Linux desktop applications via <code class="text-amityYellow bg-pysidePre px-1.5 py-0.5 rounded text-xs font-mono">xdg-open</code>. Through the PulseHook API, external services, systemd timers, or Home Assistant can inject wake pulses via HTTP REST.
-          </p>
-
-          <ul class="mt-5 space-y-2 text-xs sm:text-[13px] font-mono text-pysideText">
-            <li class="flex items-center gap-2">
-              <span class="text-amityYellow font-bold">✓</span>
-              <span>Host hardware metrics: thermals, CPU load, RAM, and uptime</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-amityYellow font-bold">✓</span>
-              <span>Launch reports & graphics in native apps using <code class="text-amityYellow">xdg-open</code></span>
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-amityYellow font-bold">✓</span>
-              <span>Secure REST API key creation for local cron & systemd automation</span>
-            </li>
-          </ul>
+      <div class="pyside-card rounded-2xl p-4 border border-pysideBorder">
+        <div class="flex items-center gap-2.5 mb-1.5">
+          <span class="text-base">📊</span>
+          <h4 class="text-xs sm:text-sm font-bold text-pysideText">Host Vitals & Webhooks</h4>
         </div>
+        <p class="font-reading text-xs text-pysideTextSecondary leading-relaxed">
+          Monitors system telemetry, opens local files via <code class="text-amityYellow font-mono">xdg-open</code>, and receives LAN/Home Assistant webhooks.
+        </p>
       </div>
     </div>
 

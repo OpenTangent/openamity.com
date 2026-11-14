@@ -50,6 +50,8 @@
   
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    overflow-x: clip;
     background-color: #1a1a1a; /* PySide6 BG_DARK */
     color: #eeeeee;            /* PySide6 TEXT_PRIMARY */
     font-family: 'Ubuntu', sans-serif;
@@ -92,17 +94,18 @@
   }
   
   .glow-red-text {
-    text-shadow: 0 0 20px rgba(161, 41, 36, 0.6), 0 0 40px rgba(161, 41, 36, 0.3);
+    /* Retired glow for crisp typography */
   }
 
   .glow-yellow-text {
-    text-shadow: 0 0 20px rgba(247, 227, 165, 0.6), 0 0 40px rgba(247, 227, 165, 0.25);
+    /* Retired glow for crisp typography */
   }
 
   /* PySide6 styled container objects */
   .pyside-card {
     background-color: #242424;
     border: 1px solid #3c3c3c;
+    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.35);
   }
 
   .pyside-card-hover {

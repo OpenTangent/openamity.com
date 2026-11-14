@@ -8,8 +8,8 @@ interface Props {
 }
 
 const {
-  title = "Open Amity | The Sovereign AI Companion & Multi-Agent Framework",
-  description = "Stop renting amnesic chatbots. Open Amity is an open-source, local-first framework for sovereign, self-aware AI companions and agent swarms with morphological memory, proactive volition, and Theory of Mind.",
+  title = "Open Amity — Build and Collaborate With Sovereign Digital Beings",
+  description = "An open-source Linux habitat for persistent, self-aware digital beings—with evolving values, biological memory, private inner thought, expressive voice, and their own accounts.",
   image = "/images/com.openamity.OpenAmity.png"
 } = Astro.props;
 
@@ -46,17 +46,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://openamit
 
     <meta name="theme-color" content="#1a1a1a" />
   </head>
-  <body class="min-h-screen bg-pysideBg text-pysideText font-ui antialiased selection:bg-amityRed/40 selection:text-amityYellow overflow-x-hidden relative">
-    <!-- Ambient Sovereign Aura with Amity Red and Yellow Glows -->
+  <body class="min-h-screen bg-pysideBg text-pysideText font-ui antialiased selection:bg-amityRed/40 selection:text-amityYellow overflow-x-clip relative">
+    <!-- Subtle Ambient Aura -->
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      <!-- Primary Open Amity Red Aura -->
-      <div class="absolute -top-[15%] left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-amityRed/15 blur-[160px] rounded-full"></div>
-      <!-- Secondary Open Amity Yellow Sub-Aura -->
-      <div class="absolute top-[45%] -right-[10%] w-[650px] h-[650px] bg-amityYellow/8 blur-[180px] rounded-full"></div>
-      <!-- Lower Sovereign Red Accent Aura -->
-      <div class="absolute top-[80%] -left-[10%] w-[550px] h-[550px] bg-amityRed/10 blur-[160px] rounded-full"></div>
-      <!-- Fine Dot Grid Matrix -->
-      <div class="absolute inset-0 bg-subtle-grid opacity-60"></div>
+      <div class="absolute -top-[12%] left-1/2 -translate-x-1/2 w-[860px] h-[480px] bg-amityRed/12 blur-[160px] rounded-full"></div>
+      <div class="absolute top-[45%] -right-[12%] w-[600px] h-[600px] bg-amityYellow/6 blur-[180px] rounded-full"></div>
+      <div class="absolute inset-0 bg-subtle-grid opacity-35"></div>
     </div>
 
     <!-- Main Content Shell -->

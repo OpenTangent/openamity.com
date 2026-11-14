@@ -3,22 +3,22 @@
 import SectionKicker from './SectionKicker.astro';
 ---
 
-<section id="quickstart" class="relative pb-20 md:pb-32 scroll-mt-16 sm:scroll-mt-20">
+<section id="quickstart" class="relative pb-20 md:pb-32 scroll-mt-24">
   <!-- Section Divider with embedded kicker badge -->
   <SectionKicker title="Quickstart" />
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16">
     
     <!-- Section Header -->
     <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16 font-ui">
       <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-pysideText">
-        From Zero to Sovereign <br />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amityRed via-amityRedLight to-amityYellow">
-          In Ten Minutes
+        Up and Running <br />
+        <span class="inline-block pb-1.5 -mb-1.5 text-transparent bg-clip-text bg-gradient-to-r from-amityRed via-amityRedLight to-amityYellow">
+          In Under Ten Minutes
         </span>
       </h2>
       <p class="mt-3 font-reading text-base sm:text-lg text-pysideTextSecondary leading-relaxed max-w-2xl mx-auto">
-        Grab an API key from your favourite LLM provider, install Open Amity, set up your agent's personality, values, voice, and socials, and start collaborating.
+        Bring your own API key (or local model), install Open Amity on Linux, shape your digital being's values and voice, and start collaborating.
       </p>
 
       <!-- Track Switcher -->
@@ -72,33 +72,75 @@ import SectionKicker from './SectionKicker.astro';
           
           <!-- Flatpak Track -->
           <div id="code-flatpak" class="space-y-2.5">
-            <p class="text-pysideTextMuted text-[11px]"># 1. Ensure Flathub is configured</p>
+            <div class="p-3 rounded-xl bg-pysideCard/80 border border-pysideBorder text-xs font-ui text-pysideTextSecondary leading-relaxed space-y-1">
+              <div>
+                Open Amity is officially distributed on{' '}
+                <a
+                  href="https://flathub.org/apps/com.openamity.OpenAmity"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-amityYellow font-semibold hover:underline"
+                >
+                  Flathub ↗
+                </a>.
+              </div>
+              <div class="text-[11px] text-pysideTextMuted">
+                Note:{' '}
+                <a
+                  href="https://flatpak.org/setup/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-pysideText hover:text-amityYellow underline decoration-pysideBorder hover:decoration-amityYellow transition-colors"
+                >
+                  Flatpak
+                </a>{' '}
+                must be installed on your system before proceeding.
+              </div>
+            </div>
+
+            <p class="font-mono text-pysideTextMuted text-[11px]"># 1. Ensure the Flathub remote is configured</p>
             <div class="text-amityYellow">flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo</div>
 
-            <p class="text-pysideTextMuted text-[11px]"># 2. Add the Open Amity repository</p>
-            <div class="text-amityYellow">flatpak remote-add --user --if-not-exists openamity https://opentangent.github.io/OpenAmity/index.flatpakrepo</div>
-
-            <p class="text-pysideTextMuted text-[11px]"># 3. Install the KDE Platform runtime</p>
-            <div class="text-amityYellow">flatpak install flathub org.kde.Platform//6.11</div>
-
-            <p class="text-pysideTextMuted text-[11px]"># 4. Install & Run Open Amity</p>
-            <div class="text-amityYellow">flatpak install --user openamity com.openamity.OpenAmity</div>
+            <p class="font-mono text-pysideTextMuted text-[11px]"># 2. Install and launch Open Amity</p>
+            <div class="text-amityYellow">flatpak install flathub com.openamity.OpenAmity</div>
             <div class="text-white font-bold bg-amityRed/40 p-2 rounded border border-amityRed/60">flatpak run com.openamity.OpenAmity</div>
           </div>
 
           <!-- Dev Track -->
           <div id="code-dev" class="hidden space-y-2.5">
-            <p class="text-pysideTextMuted text-[11px]"># 1. Clone the Open Amity repository</p>
+            <div class="p-3 rounded-xl bg-pysideCard/80 border border-pysideBorder text-[11px] font-ui text-pysideTextSecondary leading-relaxed space-y-1">
+              <div class="font-mono text-[10px] uppercase tracking-wider text-amityYellow font-bold">Prerequisites</div>
+              <ul class="space-y-1 list-disc list-inside text-pysideTextSecondary">
+                <li>
+                  <span class="font-semibold text-pysideText">Python 3.11–3.14</span>
+                  <span class="text-pysideTextMuted"> (required by <code class="text-amityYellow font-mono">google-genai&gt;=3.0.0</code> and <code class="text-amityYellow font-mono">PySide6&lt;6.12.0,&gt;=6.11.0</code>)</span>
+                </li>
+                <li>
+                  <span class="font-semibold text-pysideText">PortAudio</span> and <span class="font-semibold text-pysideText">FFmpeg</span>
+                  <span class="text-pysideTextMuted"> (<code class="text-amityYellow font-mono">sudo apt install libportaudio2 ffmpeg</code> on Debian/Ubuntu)</span>
+                </li>
+                <li>
+                  <span class="font-semibold text-pysideText">Node.js (v20+) &amp; npm</span>
+                  <span class="text-pysideTextMuted italic"> (optional, required only for the WhatsApp bridge)</span>
+                </li>
+              </ul>
+            </div>
+
+            <p class="font-mono text-pysideTextMuted text-[11px]"># 1. Clone the Open Amity repository</p>
             <div class="text-amityYellow">git clone https://github.com/OpenTangent/OpenAmity.git</div>
             <div class="text-amityYellow">cd OpenAmity</div>
 
-            <p class="text-pysideTextMuted text-[11px]"># 2. Create and activate a Python 3.10+ virtual environment</p>
-            <div class="text-amityYellow">python3 -m venv .venv && source .venv/bin/activate</div>
+            <p class="font-mono text-pysideTextMuted text-[11px]"># 2. Create and activate a Python 3.11–3.14 virtual environment</p>
+            <div class="text-amityYellow">python3 -m venv .venv</div>
+            <div class="text-amityYellow">source .venv/bin/activate</div>
 
-            <p class="text-pysideTextMuted text-[11px]"># 3. Install dependencies (requires libportaudio2 on Debian/Ubuntu)</p>
+            <p class="font-mono text-pysideTextMuted text-[11px]"># 3. Install dependencies</p>
             <div class="text-amityYellow">pip install -r requirements.txt</div>
 
-            <p class="text-pysideTextMuted text-[11px]"># 4. Launch your sovereign companion</p>
+            <p class="font-mono text-pysideTextMuted text-[11px]"># Optional: install Node dependencies if using the WhatsApp bridge from source</p>
+            <div class="text-amityYellow">cd src/tools/whatsapp_node &amp;&amp; npm install &amp;&amp; cd ../../..</div>
+
+            <p class="font-mono text-pysideTextMuted text-[11px]"># 4. Launch Open Amity</p>
             <div class="text-white font-bold bg-amityRed/40 p-2 rounded border border-amityRed/60">./run_OpenAmity.sh</div>
           </div>
 
@@ -138,15 +180,18 @@ import SectionKicker from './SectionKicker.astro';
   const copyText = document.getElementById('copy-text');
 
   const flatpakCommands = `flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak remote-add --user --if-not-exists openamity https://opentangent.github.io/OpenAmity/index.flatpakrepo
-flatpak install flathub org.kde.Platform//6.11
-flatpak install --user openamity com.openamity.OpenAmity
+flatpak install flathub com.openamity.OpenAmity
 flatpak run com.openamity.OpenAmity`;
 
   const devCommands = `git clone https://github.com/OpenTangent/OpenAmity.git
 cd OpenAmity
-python3 -m venv .venv && source .venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
+
+# Optional: install Node dependencies if using the WhatsApp bridge from source
+cd src/tools/whatsapp_node && npm install && cd ../../..
+
 ./run_OpenAmity.sh`;
 
   if (btnFlatpak && btnDev) {

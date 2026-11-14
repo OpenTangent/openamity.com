@@ -1,7 +1,7 @@
 ---
-// SectionKicker.astro - Unified Architectural Section Locator & Divider
+// SectionKicker.astro - Minimalist Architectural Section Divider
 interface Props {
-  title: string;      // e.g. "Morphological Memory"
+  title: string;
   index?: string;
   class?: string;
 }
@@ -10,19 +10,12 @@ const { title, class: className = "" } = Astro.props;
 ---
 
 <div
-  class={`relative w-full flex items-center justify-center select-none font-ui ${className}`}
+  class={`relative w-full max-w-5xl mx-auto px-4 py-4 flex items-center justify-center select-none font-ui ${className}`}
   aria-label={`Section: ${title}`}
 >
-  <!-- Full-width dividing line passing behind the badge -->
-  <div class="absolute inset-0 flex items-center" aria-hidden="true">
-    <div class="w-full border-t border-pysideBorder"></div>
-  </div>
-
-  <!-- Badge sitting on top of the divider line -->
-  <div class="relative z-10 inline-flex items-center px-4 py-1.5 rounded-lg bg-pysideBg border border-pysideBorder shadow-inner-pyside whitespace-nowrap">
-    <!-- Section Name (pure white title case) -->
-    <span class="text-xs sm:text-[13px] font-medium tracking-wide text-white">
-      {title}
-    </span>
+  <div class="w-full h-px bg-gradient-to-r from-transparent via-pysideBorder to-transparent"></div>
+  <div class="absolute inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-pysideBg border border-pysideBorder text-[11px] font-mono uppercase tracking-[0.18em] text-amityYellow shadow-sm">
+    <span class="w-1.5 h-1.5 rounded-full bg-amityRed"></span>
+    <span>{title}</span>
   </div>
 </div>

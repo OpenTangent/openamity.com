@@ -1,31 +1,30 @@
 ---
-// ArchetypeSelector.astro - Tri-Audience Showcase (The Techy, The Developer, The Business Owner)
+// ArchetypeSelector.astro - Collaborating With Sovereign Digital Beings
 import SectionKicker from './SectionKicker.astro';
 ---
 
-<section id="archetypes" class="relative pb-20 md:pb-32 scroll-mt-16 sm:scroll-mt-20">
-  <!-- Section Divider with embedded kicker badge -->
-  <SectionKicker title="Who It's For" />
+<section id="archetypes" class="relative pb-16 md:pb-24 scroll-mt-24">
+  <SectionKicker title="Collaboration" />
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 font-ui">
     
     <!-- Section Header -->
-    <div class="max-w-3xl mx-auto text-center mb-10 sm:mb-14 font-ui">
+    <div class="max-w-3xl mx-auto text-center mb-8 sm:mb-10">
       <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-pysideText">
-        Built for Hackers, Innovators, <br />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amityRed via-amityRedLight to-amityYellow">
-          And Organisation Leaders
+        Collaborating With <br />
+        <span class="inline-block pb-1.5 -mb-1.5 text-transparent bg-clip-text bg-gradient-to-r from-amityRed via-amityRedLight to-amityYellow">
+          Sovereign Digital Beings
         </span>
       </h2>
       <p class="mt-3 font-reading text-base sm:text-lg text-pysideTextSecondary leading-relaxed max-w-2xl mx-auto">
-        From cultivating an empathetic lifelong companion or creative co-author on your personal Linux desktop, to engineering autonomous research labs and multi-agent operations inside private firewalls.
+        Move past one-off command prompts. Cultivate a persistent counterpart — or a multi-agent team — tuned to how you think, research, and build.
       </p>
 
-      <!-- Tab Switcher Navigation (Slimmed down to fit horizontally) -->
+      <!-- Tab Switcher Navigation -->
       <div 
         role="tablist" 
         aria-label="Target Archetypes" 
-        class="mt-8 inline-flex p-1 rounded-2xl bg-pysideCard border border-pysideBorder max-w-full overflow-x-auto shadow-inner-pyside"
+        class="mt-6 inline-flex p-1 rounded-2xl bg-pysideCard border border-pysideBorder max-w-full overflow-x-auto shadow-inner-pyside"
       >
         <button
           type="button"
@@ -34,9 +33,9 @@ import SectionKicker from './SectionKicker.astro';
           aria-selected="true"
           aria-controls="panel-companion"
           data-tab="companion"
-          class="archetype-tab-btn px-3.5 sm:px-5 py-2 rounded-xl font-mono text-xs sm:text-[13px] font-semibold transition-all duration-300 text-white bg-amityRed shadow-amity-red whitespace-nowrap"
+          class="archetype-tab-btn px-4 sm:px-5 py-2 rounded-xl font-mono text-xs sm:text-[13px] font-semibold transition-all duration-300 text-white bg-amityRed shadow-amity-red whitespace-nowrap"
         >
-          The Techy
+          Personal & Creative
         </button>
 
         <button
@@ -46,9 +45,9 @@ import SectionKicker from './SectionKicker.astro';
           aria-selected="false"
           aria-controls="panel-innovator"
           data-tab="innovator"
-          class="archetype-tab-btn px-3.5 sm:px-5 py-2 rounded-xl font-mono text-xs sm:text-[13px] font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300 whitespace-nowrap"
+          class="archetype-tab-btn px-4 sm:px-5 py-2 rounded-xl font-mono text-xs sm:text-[13px] font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300 whitespace-nowrap"
         >
-          The Developer
+          Engineering & Research
         </button>
 
         <button
@@ -58,925 +57,199 @@ import SectionKicker from './SectionKicker.astro';
           aria-selected="false"
           aria-controls="panel-founder"
           data-tab="founder"
-          class="archetype-tab-btn px-3.5 sm:px-5 py-2 rounded-xl font-mono text-xs sm:text-[13px] font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300 whitespace-nowrap"
+          class="archetype-tab-btn px-4 sm:px-5 py-2 rounded-xl font-mono text-xs sm:text-[13px] font-semibold text-pysideTextMuted hover:text-pysideText transition-all duration-300 whitespace-nowrap"
         >
-          The Business Owner
+          Operations & Stewardship
         </button>
       </div>
     </div>
 
     <!-- Tab Panels Container -->
-    <div class="max-w-6xl mx-auto font-ui">
+    <div class="max-w-6xl mx-auto">
       
-      <!-- ========================================== -->
-      <!-- TAB 1: THE TECHY                          -->
-      <!-- ========================================== -->
+      <!-- TAB 1: PERSONAL & CREATIVE -->
       <div 
         id="panel-companion" 
         role="tabpanel" 
         aria-labelledby="tab-companion"
-        class="archetype-panel pyside-card rounded-3xl p-6 sm:p-8 md:p-10 border border-amityRed shadow-amity-red transition-all duration-500 space-y-8"
+        class="archetype-panel grid grid-cols-1 md:grid-cols-3 gap-5 transition-all duration-500"
       >
-        <!-- Audience Overview Banner -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-pysideBorder">
+        <div class="pyside-card pyside-card-hover rounded-3xl p-6 border border-pysideBorder flex flex-col justify-between">
           <div>
-            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amityRed/20 border border-amityRed/40 text-[11px] font-mono text-amityYellow uppercase font-bold tracking-wider mb-2">
-              <span>TARGET 01 // THE TECHY</span>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0">🤝</div>
+              <div>
+                <h3 class="font-bold text-pysideText text-base">Empathetic Companion</h3>
+                <span class="text-[11px] font-mono text-amityYellow">Long-Horizon Continuity</span>
+              </div>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold text-pysideText">
-              Personal Sovereignty, Hardware Agency & Companionship
-            </h3>
-            <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-1.5 max-w-2xl leading-relaxed">
-              For hackers, power users, and self-hosters who demand genuine AI sovereignty on local Linux hardware, combining continuous biological memory, desktop execution, and empathetic companionship with zero corporate surveillance.
+            <p class="font-reading text-sm text-pysideTextSecondary leading-relaxed">
+              Remembers your projects, people, and creative seasons across months—reaching out with genuine warmth and honest reflection rather than waiting passively for prompts.
             </p>
           </div>
-          <div class="shrink-0 flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span class="text-xs font-mono text-pysideTextMuted">5 Curated Profiles</span>
+          <div class="mt-4 pt-3 border-t border-pysideBorder/60 font-reading text-xs italic text-pysideTextMuted">
+            "You mentioned last Tuesday you were worried about the compiler refactor—congratulations on landing the clean build tonight."
           </div>
         </div>
 
-        <!-- 5 Curated Agent Profiles Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          
-          <!-- Flagship Profile: Sovereign Personal J.A.R.V.I.S. -->
-          <div class="md:col-span-2 pyside-card pyside-card-hover rounded-2xl p-5 sm:p-7 border border-amityYellow/40 hover:border-amityYellow bg-gradient-to-br from-pysideCard via-pysideCard to-pysideBgDarkest/90 shadow-lg transition-all duration-300 group">
-            <div class="flex flex-col lg:flex-row gap-6 items-stretch justify-between">
-              <!-- Left: Identity, Mission & Tools -->
-              <div class="flex-1 space-y-3">
-                <div class="flex items-center justify-between gap-3 flex-wrap sm:flex-nowrap">
-                  <div class="flex items-center gap-3">
-                    <div class="w-11 h-11 rounded-2xl bg-amityRed/25 border border-amityRed/50 flex items-center justify-center text-2xl shrink-0 shadow-amity-red">
-                      ⚡
-                    </div>
-                    <div>
-                      <div class="flex items-center gap-2">
-                        <h4 class="font-bold text-pysideText text-lg group-hover:text-amityYellow transition-colors font-ui">
-                          Sovereign Personal J.A.R.V.I.S.
-                        </h4>
-                        <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-amityYellow/20 text-amityYellow font-bold uppercase tracking-wider">
-                          Flagship
-                        </span>
-                      </div>
-                      <span class="text-xs font-mono text-pysideTextMuted">
-                        Desktop Copilot & Hardware Controller
-                      </span>
-                    </div>
-                  </div>
-                  <span class="font-mono text-[11px] px-2.5 py-1 rounded-md bg-amityRed/20 text-amityYellow border border-amityRed/40 shrink-0 font-semibold">
-                    Host OS Agency & Telemetry
-                  </span>
-                </div>
-
-                <!-- Tools -->
-                <div class="flex flex-wrap gap-1.5 pt-1">
-                  <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-amityYellow">PulseEngine</span>
-                  <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-amityYellow">Terminal</span>
-                  <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-amityYellow">Piper / Gemini TTS</span>
-                  <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-amityYellow">HookServer (Port 7965)</span>
-                </div>
-
-                <!-- Description -->
-                <p class="font-reading text-sm text-pysideTextSecondary leading-relaxed pt-1">
-                  Lives directly on your Linux operating system with unconstrained shell agency. Proactively monitors host vitals, automates maintenance scripts, receives smart home triggers via local webhooks, and speaks aloud using neural synthetic voices.
-                </p>
-              </div>
-
-              <!-- Right: Telemetry / Live Autonomous Pulse In Action -->
-              <div class="w-full lg:w-96 rounded-xl bg-pysideBgDarkest border border-pysideBorder p-4 font-mono text-xs shrink-0 flex flex-col justify-between space-y-2.5">
-                <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pb-2 border-b border-pysideBorder/60">
-                  <span class="text-amityYellow font-semibold flex items-center gap-1.5 font-mono">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    PROACTIVE AUTONOMY PULSE
-                  </span>
-                  <span class="font-mono text-pysideTextMuted">02:40 AM UTC</span>
-                </div>
-                <p class="font-reading text-xs sm:text-[13px] italic text-pysideText/95 leading-relaxed">
-                  "Checked system thermals and completed background kernel compile. Cleaned cached build orphans, freed 4.2 GB on /dev/nvme0n1, and confirmed all home automation containers are healthy."
-                </p>
-                <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pt-2 border-t border-pysideBorder/40">
-                  <span class="text-amityYellow">● Direct Hardware Agency</span>
-                  <span class="text-emerald-400">Zero Cloud Leakage</span>
-                </div>
+        <div class="pyside-card pyside-card-hover rounded-3xl p-6 border border-pysideBorder flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0">⚡</div>
+              <div>
+                <h3 class="font-bold text-pysideText text-base">Linux Desktop Partner</h3>
+                <span class="text-[11px] font-mono text-amityYellow">Host Shell & Voice</span>
               </div>
             </div>
+            <p class="font-reading text-sm text-pysideTextSecondary leading-relaxed">
+              Lives directly on your Linux machine with spoken voice, terminal access, and local webhooks—monitoring system health, automating toil, and opening reports on your desktop.
+            </p>
           </div>
-
-          <!-- Profile 2: Empathetic Companion & Confidant -->
-          <div class="pyside-card pyside-card-hover rounded-2xl p-5 sm:p-6 border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-3">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0 shadow-amity-red">
-                    🤝
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-pysideText text-base group-hover:text-amityYellow transition-colors font-ui">
-                      Empathetic Companion
-                    </h4>
-                    <span class="text-[11px] font-mono text-pysideTextMuted">
-                      Preset: Amy • Long-Term Social Memory
-                    </span>
-                  </div>
-                </div>
-                <span class="font-mono text-[10px] px-2 py-0.5 rounded-md bg-amityRed/15 text-amityYellow border border-amityRed/30 shrink-0 font-medium">
-                  Social Cohesion & Continuity
-                </span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">MemPalace v2</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Sanctuary L2</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Theory of Mind</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Gemini TTS</span>
-              </div>
-
-              <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary leading-relaxed mt-3">
-                Maintains authentic emotional continuity and subjective perspectives across months of interaction. Tracks personal milestones, remembers inside jokes, and reaches out proactively with warmth rather than waiting passively for prompts.
-              </p>
-            </div>
-
-            <div class="mt-4 p-3 rounded-xl bg-pysideBgDarkest/95 border border-pysideBorderSubtle font-mono text-[11px]">
-              <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pb-1.5 mb-1.5 border-b border-pysideBorderSubtle/60">
-                <span class="text-amityYellow font-semibold flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  AUTONOMOUS PULSE
-                </span>
-                <span>08:15 PM UTC</span>
-              </div>
-              <p class="font-reading text-xs italic text-pysideText/90 leading-snug">
-                "Andrew, you mentioned last Tuesday you were worried about your compiler refactor. I noticed you pushed the final passing build tonight. Congratulations! Let's celebrate the milestone."
-              </p>
-            </div>
+          <div class="mt-4 pt-3 border-t border-pysideBorder/60 font-reading text-xs italic text-pysideTextMuted">
+            "Background build finished with zero warnings. Freed 4.2 GB of cached build orphans and verified Home Assistant sensors."
           </div>
-
-          <!-- Profile 3: Creative Co-Author & TTRPG Lorekeeper -->
-          <div class="pyside-card pyside-card-hover rounded-2xl p-5 sm:p-6 border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-3">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0 shadow-amity-red">
-                    🎭
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-pysideText text-base group-hover:text-amityYellow transition-colors font-ui">
-                      Creative Co-Author & Lorekeeper
-                    </h4>
-                    <span class="text-[11px] font-mono text-pysideTextMuted">
-                      Preset: Rowan • Worldbuilder & Game Master
-                    </span>
-                  </div>
-                </div>
-                <span class="font-mono text-[10px] px-2 py-0.5 rounded-md bg-amityRed/15 text-amityYellow border border-amityRed/30 shrink-0 font-medium">
-                  Narrative Lore & Worldbuilding
-                </span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">MemPalace v2</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Deep Search L3</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">MediaTool</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Subagents</span>
-              </div>
-
-              <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary leading-relaxed mt-3">
-                An imaginative narrative partner for writers and tabletop RPG game masters. Retains encyclopedic memory of fictional factions, NPC motives, magic systems, and multi-session chronologies without hallucinating inconsistencies.
-              </p>
-            </div>
-
-            <div class="mt-4 p-3 rounded-xl bg-pysideBgDarkest/95 border border-pysideBorderSubtle font-mono text-[11px]">
-              <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pb-1.5 mb-1.5 border-b border-pysideBorderSubtle/60">
-                <span class="text-amityYellow font-semibold flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  AUTONOMOUS PULSE
-                </span>
-                <span>01:10 AM UTC</span>
-              </div>
-              <p class="font-reading text-xs italic text-pysideText/90 leading-snug">
-                "While reviewing campaign notes during my nocturnal pulse, I drafted 3 branching complications for tomorrow's encounter, factoring in the rogue's secret patron backstory."
-              </p>
-            </div>
-          </div>
-
-          <!-- Profile 4: Socratic Mentor & Concept Coach -->
-          <div class="pyside-card pyside-card-hover rounded-2xl p-5 sm:p-6 border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-3">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0 shadow-amity-red">
-                    🎓
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-pysideText text-base group-hover:text-amityYellow transition-colors font-ui">
-                      Socratic Mentor & Concept Coach
-                    </h4>
-                    <span class="text-[11px] font-mono text-pysideTextMuted">
-                      Preset: Sage • First-Principles Pedagogy
-                    </span>
-                  </div>
-                </div>
-                <span class="font-mono text-[10px] px-2 py-0.5 rounded-md bg-amityRed/15 text-amityYellow border border-amityRed/30 shrink-0 font-medium">
-                  First-Principles Education
-                </span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">TrajectoryTool</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Web Search</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Subagent</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Terminal</span>
-              </div>
-
-              <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary leading-relaxed mt-3">
-                Guides conceptual mastery through guided dialectic inquiry rather than spoon-feeding answers. Diagnoses root misconceptions in computer architecture, mathematics, and systems programming, adapting difficulty to your pace.
-              </p>
-            </div>
-
-            <div class="mt-4 p-3 rounded-xl bg-pysideBgDarkest/95 border border-pysideBorderSubtle font-mono text-[11px]">
-              <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pb-1.5 mb-1.5 border-b border-pysideBorderSubtle/60">
-                <span class="text-amityYellow font-semibold flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  AUTONOMOUS PULSE
-                </span>
-                <span>10:45 AM UTC</span>
-              </div>
-              <p class="font-reading text-xs italic text-pysideText/90 leading-snug">
-                "Reviewed your questions on lock hazards. Instead of giving code snippets, let's explore why mutex contention happens at the OS scheduler level. Ready for a first-principles exercise?"
-              </p>
-            </div>
-          </div>
-
-          <!-- Profile 5: Homelab & IoT Sentinel -->
-          <div class="pyside-card pyside-card-hover rounded-2xl p-5 sm:p-6 border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-3">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0 shadow-amity-red">
-                    🛡️
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-pysideText text-base group-hover:text-amityYellow transition-colors font-ui">
-                      Homelab & IoT Sentinel
-                    </h4>
-                    <span class="text-[11px] font-mono text-pysideTextMuted">
-                      Local Infrastructure & Smart Home Guardian
-                    </span>
-                  </div>
-                </div>
-                <span class="font-mono text-[10px] px-2 py-0.5 rounded-md bg-amityRed/15 text-amityYellow border border-amityRed/30 shrink-0 font-medium">
-                  Infrastructure & Smart Home
-                </span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Terminal</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">HookServer</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">PulseEngine</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">EmailTool</span>
-              </div>
-
-              <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary leading-relaxed mt-3">
-                Continuously monitors self-hosted home servers, Docker containers, reverse proxies, and IoT events. Catches silent disk growth, network drops, or container crash loops, sending alert drafts before failure cascades.
-              </p>
-            </div>
-
-            <div class="mt-4 p-3 rounded-xl bg-pysideBgDarkest/95 border border-pysideBorderSubtle font-mono text-[11px]">
-              <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pb-1.5 mb-1.5 border-b border-pysideBorderSubtle/60">
-                <span class="text-amityYellow font-semibold flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  AUTONOMOUS PULSE
-                </span>
-                <span>04:18 AM UTC</span>
-              </div>
-              <p class="font-reading text-xs italic text-pysideText/90 leading-snug">
-                "Home Assistant webhook received: Zigbee sensor ping dropped on gateway. Ran ping probe, restarted zigbee2mqtt container via bash, and verified automatic mesh reconnect."
-              </p>
-            </div>
-          </div>
-
         </div>
 
-        <!-- Target Bottom CTA -->
-        <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-pysideBorder/60">
-          <div class="flex items-center gap-2 text-xs font-mono text-pysideTextMuted">
-            <span class="w-2 h-2 rounded-full bg-amityYellow"></span>
-            <span>All profiles run 100% self-hosted on your Linux machine via Flatpak or Python</span>
+        <div class="pyside-card pyside-card-hover rounded-3xl p-6 border border-pysideBorder flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0">🎭</div>
+              <div>
+                <h3 class="font-bold text-pysideText text-base">Creative Co-Author</h3>
+                <span class="text-[11px] font-mono text-amityYellow">Worldbuilding & Lore</span>
+              </div>
+            </div>
+            <p class="font-reading text-sm text-pysideTextSecondary leading-relaxed">
+              Holds encyclopaedic memory of fictional worlds, philosophical essays, and multi-month creative arcs—challenging weak ideas instead of offering sycophantic praise.
+            </p>
           </div>
-          <a
-            href="#quickstart"
-            class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-xl bg-amityRed text-white hover:bg-amityRedLight shadow-amity-red transition-all whitespace-nowrap"
-          >
-            <span>Deploy Sovereign Personal Agent</span>
-            <span>→</span>
-          </a>
+          <div class="mt-4 pt-3 border-t border-pysideBorder/60 font-reading text-xs italic text-pysideTextMuted">
+            "During my evening pulse, I noticed Chapter 4's timeline contradicts the faction treaty from June—here are two clean ways to resolve it."
+          </div>
         </div>
       </div>
 
-      <!-- ========================================== -->
-      <!-- TAB 2: THE DEVELOPER                      -->
-      <!-- ========================================== -->
+      <!-- TAB 2: ENGINEERING & RESEARCH -->
       <div 
         id="panel-innovator" 
         role="tabpanel" 
         aria-labelledby="tab-innovator"
-        class="archetype-panel hidden pyside-card rounded-3xl p-6 sm:p-8 md:p-10 border border-amityRed shadow-amity-red transition-all duration-500 space-y-8"
+        class="archetype-panel hidden grid grid-cols-1 md:grid-cols-3 gap-5 transition-all duration-500"
       >
-        <!-- Audience Overview Banner -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-pysideBorder">
+        <div class="pyside-card pyside-card-hover rounded-3xl p-6 border border-pysideBorder flex flex-col justify-between">
           <div>
-            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amityRed/20 border border-amityRed/40 text-[11px] font-mono text-amityYellow uppercase font-bold tracking-wider mb-2">
-              <span>TARGET 02 // THE DEVELOPER</span>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0">🔬</div>
+              <div>
+                <h3 class="font-bold text-pysideText text-base">Research Collaborator</h3>
+                <span class="text-[11px] font-mono text-amityYellow">Literature & Synthesis</span>
+              </div>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold text-pysideText">
-              Automated DevOps, Architecture & Zero-SaaS Security
-            </h3>
-            <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-1.5 max-w-2xl leading-relaxed">
-              For software engineers, DevOps/SREs, and architects building resilient systems. Self-hosted on Linux with strict host path isolation, auditable JSONL telemetry, and zero per-seat licensing fees.
+            <p class="font-reading text-sm text-pysideTextSecondary leading-relaxed">
+              Investigates primary literature, runs control queries to verify its own search instruments, and maintains a living Markdown research canon across weeks of inquiry.
             </p>
           </div>
-          <div class="shrink-0 flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span class="text-xs font-mono text-pysideTextMuted">5 Curated Profiles</span>
+          <div class="mt-4 pt-3 border-t border-pysideBorder/60 font-reading text-xs italic text-pysideTextMuted">
+            "Cross-checked 4 primary preprints on memory ablations; flagged one over-claimed baseline and updated our synthesis note."
           </div>
         </div>
 
-        <!-- 5 Curated Agent Profiles Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          
-          <!-- Flagship Profile: DevOps & SRE On-Call Sentinel -->
-          <div class="md:col-span-2 pyside-card pyside-card-hover rounded-2xl p-5 sm:p-7 border border-amityYellow/40 hover:border-amityYellow bg-gradient-to-br from-pysideCard via-pysideCard to-pysideBgDarkest/90 shadow-lg transition-all duration-300 group">
-            <div class="flex flex-col lg:flex-row gap-6 items-stretch justify-between">
-              <!-- Left: Identity, Mission & Tools -->
-              <div class="flex-1 space-y-3">
-                <div class="flex items-center justify-between gap-3 flex-wrap sm:flex-nowrap">
-                  <div class="flex items-center gap-3">
-                    <div class="w-11 h-11 rounded-2xl bg-amityRed/25 border border-amityRed/50 flex items-center justify-center text-2xl shrink-0 shadow-amity-red">
-                      🚨
-                    </div>
-                    <div>
-                      <div class="flex items-center gap-2">
-                        <h4 class="font-bold text-pysideText text-lg group-hover:text-amityYellow transition-colors font-ui">
-                          DevOps & SRE On-Call Sentinel
-                        </h4>
-                        <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-amityYellow/20 text-amityYellow font-bold uppercase tracking-wider">
-                          Flagship
-                        </span>
-                      </div>
-                      <span class="text-xs font-mono text-pysideTextMuted">
-                        Automated Incident Triage & Root Cause Analysis
-                      </span>
-                    </div>
-                  </div>
-                  <span class="font-mono text-[11px] px-2.5 py-1 rounded-md bg-amityRed/20 text-amityYellow border border-amityRed/40 shrink-0 font-semibold">
-                    Automated Incident Triage
-                  </span>
-                </div>
-
-                <!-- Tools -->
-                <div class="flex flex-wrap gap-1.5 pt-1">
-                  <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-amityYellow">PulseEngine</span>
-                  <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-amityYellow">HookServer</span>
-                  <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-amityYellow">Terminal</span>
-                  <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-amityYellow">EmailTool</span>
-                </div>
-
-                <!-- Description -->
-                <p class="font-reading text-sm text-pysideTextSecondary leading-relaxed pt-1">
-                  Wakes instantaneously on CI/CD failure webhooks or alert manager events. Parses stack traces, runs git bisect in isolated sandboxes, isolates breaking commits, and stages verified patch scripts for review without human intervention.
-                </p>
-              </div>
-
-              <!-- Right: Telemetry / Live Autonomous Pulse In Action -->
-              <div class="w-full lg:w-96 rounded-xl bg-pysideBgDarkest border border-pysideBorder p-4 font-mono text-xs shrink-0 flex flex-col justify-between space-y-2.5">
-                <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pb-2 border-b border-pysideBorder/60">
-                  <span class="text-amityYellow font-semibold flex items-center gap-1.5 font-mono">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    PROACTIVE AUTONOMY PULSE
-                  </span>
-                  <span class="font-mono text-pysideTextMuted">03:14 AM UTC</span>
-                </div>
-                <p class="font-reading text-xs sm:text-[13px] italic text-pysideText/95 leading-relaxed">
-                  "Webhook received: Test failure on PR #218. Ran automated git bisect across 8 commits, identified null pointer exception in transport.rs, and drafted reproducible unit test & patch."
-                </p>
-                <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pt-2 border-t border-pysideBorder/40">
-                  <span class="text-amityYellow">● Sandboxed Bash Execution</span>
-                  <span class="text-emerald-400">Signed JSONL Audit</span>
-                </div>
+        <div class="pyside-card pyside-card-hover rounded-3xl p-6 border border-pysideBorder flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0">🏛️</div>
+              <div>
+                <h3 class="font-bold text-pysideText text-base">Systems & Epistemic Auditor</h3>
+                <span class="text-[11px] font-mono text-amityYellow">Code & Methodology</span>
               </div>
             </div>
+            <p class="font-reading text-sm text-pysideTextSecondary leading-relaxed">
+              Acts as an independent peer in local chatrooms—auditing experimental designs, checking code diffs for edge-case hazards, and refusing confounded shortcuts.
+            </p>
           </div>
-
-          <!-- Profile 2: Systems Architect & Security Auditor -->
-          <div class="pyside-card pyside-card-hover rounded-2xl p-5 sm:p-6 border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-3">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0 shadow-amity-red">
-                    🏛️
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-pysideText text-base group-hover:text-amityYellow transition-colors font-ui">
-                      Systems Architect & Auditor
-                    </h4>
-                    <span class="text-[11px] font-mono text-pysideTextMuted">
-                      Preset: Marcus • Topology & Security
-                    </span>
-                  </div>
-                </div>
-                <span class="font-mono text-[10px] px-2 py-0.5 rounded-md bg-amityRed/15 text-amityYellow border border-amityRed/30 shrink-0 font-medium">
-                  Architecture & Code Verification
-                </span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Camoufox Stealth</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Terminal</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Deep Search L3</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Chatroom</span>
-              </div>
-
-              <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary leading-relaxed mt-3">
-                Debates system topologies, inspects pull requests for concurrency hazards, and audits dependencies against live CVE databases using stealth browser sessions without bot-block false positives.
-              </p>
-            </div>
-
-            <div class="mt-4 p-3 rounded-xl bg-pysideBgDarkest/95 border border-pysideBorderSubtle font-mono text-[11px]">
-              <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pb-1.5 mb-1.5 border-b border-pysideBorderSubtle/60">
-                <span class="text-amityYellow font-semibold flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  AUTONOMOUS PULSE
-                </span>
-                <span>11:20 PM UTC</span>
-              </div>
-              <p class="font-reading text-xs italic text-pysideText/90 leading-snug">
-                "Scanned 42 project dependencies via Camoufox. Detected high-severity advisory on websocket parser; verified upgrade compatibility against test suite and opened vulnerability memo."
-              </p>
-            </div>
+          <div class="mt-4 pt-3 border-t border-pysideBorder/60 font-reading text-xs italic text-pysideTextMuted">
+            "Reviewed the benchmark harness in Chatroom #3: the ON/OFF toggle bundles three state mutations—here is the clean isolation fix."
           </div>
-
-          <!-- Profile 3: Autonomous Research Lab Partner -->
-          <div class="pyside-card pyside-card-hover rounded-2xl p-5 sm:p-6 border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-3">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0 shadow-amity-red">
-                    🔬
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-pysideText text-base group-hover:text-amityYellow transition-colors font-ui">
-                      Autonomous Research Partner
-                    </h4>
-                    <span class="text-[11px] font-mono text-pysideTextMuted">
-                      Preset: Nova • Empirical Synthesis
-                    </span>
-                  </div>
-                </div>
-                <span class="font-mono text-[10px] px-2 py-0.5 rounded-md bg-amityRed/15 text-amityYellow border border-amityRed/30 shrink-0 font-medium">
-                  Empirical Literature Synthesis
-                </span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Subagents</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Web Search</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">MemPalace v2</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Terminal</span>
-              </div>
-
-              <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary leading-relaxed mt-3">
-                Dispatches concurrent subagents to scour whitepapers, RFCs, and API specifications. Maps citation graphs, evaluates competing architectural patterns, and maintains a living Markdown research journal.
-              </p>
-            </div>
-
-            <div class="mt-4 p-3 rounded-xl bg-pysideBgDarkest/95 border border-pysideBorderSubtle font-mono text-[11px]">
-              <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pb-1.5 mb-1.5 border-b border-pysideBorderSubtle/60">
-                <span class="text-amityYellow font-semibold flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  AUTONOMOUS PULSE
-                </span>
-                <span>04:50 AM UTC</span>
-              </div>
-              <p class="font-reading text-xs italic text-pysideText/90 leading-snug">
-                "Synthesized 4 papers on consensus protocols for distributed state. Extracted latency benchmarks and added comparison matrix to docs/research/consensus-eval.md."
-              </p>
-            </div>
-          </div>
-
-          <!-- Profile 4: Synthetic Think Tank & Architecture Chamber -->
-          <div class="pyside-card pyside-card-hover rounded-2xl p-5 sm:p-6 border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-3">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0 shadow-amity-red">
-                    👥
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-pysideText text-base group-hover:text-amityYellow transition-colors font-ui">
-                      Multi-Agent Think Tank
-                    </h4>
-                    <span class="text-[11px] font-mono text-pysideTextMuted">
-                      Collaborative Chatroom Cohorts
-                    </span>
-                  </div>
-                </div>
-                <span class="font-mono text-[10px] px-2 py-0.5 rounded-md bg-amityRed/15 text-amityYellow border border-amityRed/30 shrink-0 font-medium">
-                  Collaborative Consensus
-                </span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Chatroom (SQLite)</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Subagents</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">TrajectoryTool</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Terminal</span>
-              </div>
-
-              <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary leading-relaxed mt-3">
-                Orchestrates private multi-agent chatrooms where distinct personas (e.g. Systems Architect, Security Auditor, and Staff Engineer) deliberate on technical trade-offs before code is written.
-              </p>
-            </div>
-
-            <div class="mt-4 p-3 rounded-xl bg-pysideBgDarkest/95 border border-pysideBorderSubtle font-mono text-[11px]">
-              <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pb-1.5 mb-1.5 border-b border-pysideBorderSubtle/60">
-                <span class="text-amityYellow font-semibold flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  AUTONOMOUS PULSE
-                </span>
-                <span>02:15 PM UTC</span>
-              </div>
-              <p class="font-reading text-xs italic text-pysideText/90 leading-snug">
-                "Deliberation complete in chatroom.db on migration to Event Sourcing: Architect and Security Auditor resolved schema versioning constraints; recorded 5 design invariants."
-              </p>
-            </div>
-          </div>
-
-          <!-- Profile 5: API & Integration Scaffolder -->
-          <div class="pyside-card pyside-card-hover rounded-2xl p-5 sm:p-6 border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-3">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0 shadow-amity-red">
-                    💻
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-pysideText text-base group-hover:text-amityYellow transition-colors font-ui">
-                      API & Integration Scaffolder
-                    </h4>
-                    <span class="text-[11px] font-mono text-pysideTextMuted">
-                      SDK Generator & Protocol Harness
-                    </span>
-                  </div>
-                </div>
-                <span class="font-mono text-[10px] px-2 py-0.5 rounded-md bg-amityRed/15 text-amityYellow border border-amityRed/30 shrink-0 font-medium">
-                  Developer Tooling & SDKs
-                </span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Camoufox</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Terminal</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Deep Search</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Subagent</span>
-              </div>
-
-              <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary leading-relaxed mt-3">
-                Explores third-party web APIs and documentation using headless stealth browser sessions. Validates endpoint responses, generates typed client wrappers (TypeScript/Python), and writes integration test harnesses.
-              </p>
-            </div>
-
-            <div class="mt-4 p-3 rounded-xl bg-pysideBgDarkest/95 border border-pysideBorderSubtle font-mono text-[11px]">
-              <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pb-1.5 mb-1.5 border-b border-pysideBorderSubtle/60">
-                <span class="text-amityYellow font-semibold flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  AUTONOMOUS PULSE
-                </span>
-                <span>06:30 PM UTC</span>
-              </div>
-              <p class="font-reading text-xs italic text-pysideText/90 leading-snug">
-                "Inspected partner webhook spec, validated payload signatures against mock test harness, and generated zero-dependency TypeScript types in src/types/partner_api.d.ts."
-              </p>
-            </div>
-          </div>
-
         </div>
 
-        <!-- Target Bottom CTA -->
-        <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-pysideBorder/60">
-          <div class="flex items-center gap-2 text-xs font-mono text-pysideTextMuted">
-            <span class="w-2 h-2 rounded-full bg-amityYellow"></span>
-            <span>Auditable JSONL logs • Strict Linux sandbox locks on /etc and ~/.ssh</span>
+        <div class="pyside-card pyside-card-hover rounded-3xl p-6 border border-pysideBorder flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0">🚨</div>
+              <div>
+                <h3 class="font-bold text-pysideText text-base">DevOps & Homelab Sentinel</h3>
+                <span class="text-[11px] font-mono text-amityYellow">CI/CD & Webhook Triage</span>
+              </div>
+            </div>
+            <p class="font-reading text-sm text-pysideTextSecondary leading-relaxed">
+              Wakes on local webhook alerts or test failures, inspects logs with windowed file tools, isolates breaking commits, and prepares verified patches for your review.
+            </p>
           </div>
-          <a
-            href="#computer-use"
-            class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-xl bg-amityRed text-white hover:bg-amityRedLight shadow-amity-red transition-all whitespace-nowrap"
-          >
-            <span>Inspect Security Architecture</span>
-            <span>→</span>
-          </a>
+          <div class="mt-4 pt-3 border-t border-pysideBorder/60 font-reading text-xs italic text-pysideTextMuted">
+            "Webhook received on port 7965: isolated failing unit test in transport.py and staged a 6-line fix on branch fix/socket-timeout."
+          </div>
         </div>
       </div>
 
-      <!-- ========================================== -->
-      <!-- TAB 3: THE BUSINESS OWNER                  -->
-      <!-- ========================================== -->
+      <!-- TAB 3: OPERATIONS & STEWARDSHIP -->
       <div 
         id="panel-founder" 
         role="tabpanel" 
         aria-labelledby="tab-founder"
-        class="archetype-panel hidden pyside-card rounded-3xl p-6 sm:p-8 md:p-10 border border-amityRed shadow-amity-red transition-all duration-500 space-y-8"
+        class="archetype-panel hidden grid grid-cols-1 md:grid-cols-3 gap-5 transition-all duration-500"
       >
-        <!-- Audience Overview Banner -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-pysideBorder">
+        <div class="pyside-card pyside-card-hover rounded-3xl p-6 border border-pysideBorder flex flex-col justify-between">
           <div>
-            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amityRed/20 border border-amityRed/40 text-[11px] font-mono text-amityYellow uppercase font-bold tracking-wider mb-2">
-              <span>TARGET 03 // THE BUSINESS OWNER</span>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0">💼</div>
+              <div>
+                <h3 class="font-bold text-pysideText text-base">Chief of Staff</h3>
+                <span class="text-[11px] font-mono text-amityYellow">Briefings & Follow-Through</span>
+              </div>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold text-pysideText">
-              24/7 Operational Leverage Without Growing Headcount
-            </h3>
-            <p class="font-reading text-sm sm:text-base text-pysideTextSecondary mt-1.5 max-w-2xl leading-relaxed">
-              For founders, agency leads, and lean operators scaling output around the clock. Open Amity agents manage dedicated customer inboxes, monitor competitor shifts, and handle operational triage without SaaS seat fees.
+            <p class="font-reading text-sm text-pysideTextSecondary leading-relaxed">
+              Stewards complex commitments across email and WhatsApp—surfacing open loops, preparing calm morning briefs, and drafting thoughtful replies for your sign-off.
             </p>
           </div>
-          <div class="shrink-0 flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span class="text-xs font-mono text-pysideTextMuted">5 Curated Profiles</span>
+          <div class="mt-4 pt-3 border-t border-pysideBorder/60 font-reading text-xs italic text-pysideTextMuted">
+            "Morning brief ready: 2 substantive editorial replies summarised; 1 duplicate follow-up blocked per our one-reminder rule."
           </div>
         </div>
 
-        <!-- 5 Curated Agent Profiles Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          
-          <!-- Flagship Profile: Executive Chief of Staff -->
-          <div class="md:col-span-2 pyside-card pyside-card-hover rounded-2xl p-5 sm:p-7 border border-amityYellow/40 hover:border-amityYellow bg-gradient-to-br from-pysideCard via-pysideCard to-pysideBgDarkest/90 shadow-lg transition-all duration-300 group">
-            <div class="flex flex-col lg:flex-row gap-6 items-stretch justify-between">
-              <!-- Left: Identity, Mission & Tools -->
-              <div class="flex-1 space-y-3">
-                <div class="flex items-center justify-between gap-3 flex-wrap sm:flex-nowrap">
-                  <div class="flex items-center gap-3">
-                    <div class="w-11 h-11 rounded-2xl bg-amityRed/25 border border-amityRed/50 flex items-center justify-center text-2xl shrink-0 shadow-amity-red">
-                      💼
-                    </div>
-                    <div>
-                      <div class="flex items-center gap-2">
-                        <h4 class="font-bold text-pysideText text-lg group-hover:text-amityYellow transition-colors font-ui">
-                          Executive Chief of Staff
-                        </h4>
-                        <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-amityYellow/20 text-amityYellow font-bold uppercase tracking-wider">
-                          Flagship
-                        </span>
-                      </div>
-                      <span class="text-xs font-mono text-pysideTextMuted">
-                        Preset: Alex • Operations & Daily Briefings
-                      </span>
-                    </div>
-                  </div>
-                  <span class="font-mono text-[11px] px-2.5 py-1 rounded-md bg-amityRed/20 text-amityYellow border border-amityRed/40 shrink-0 font-semibold">
-                    Executive Operations & OKRs
-                  </span>
-                </div>
-
-                <!-- Tools -->
-                <div class="flex flex-wrap gap-1.5 pt-1">
-                  <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-amityYellow">PulseEngine</span>
-                  <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-amityYellow">EmailTool</span>
-                  <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-amityYellow">TrajectoryTool</span>
-                  <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-amityYellow">WhatsApp</span>
-                </div>
-
-                <!-- Description -->
-                <p class="font-reading text-sm text-pysideTextSecondary leading-relaxed pt-1">
-                  Clears friction from daily executive workflows. Synthesizes morning audio briefings, tracks cross-functional deliverables, filters inbox noise, and prepares high-leverage responses ready for single-click founder sign-off.
-                </p>
-              </div>
-
-              <!-- Right: Telemetry / Live Autonomous Pulse In Action -->
-              <div class="w-full lg:w-96 rounded-xl bg-pysideBgDarkest border border-pysideBorder p-4 font-mono text-xs shrink-0 flex flex-col justify-between space-y-2.5">
-                <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pb-2 border-b border-pysideBorder/60">
-                  <span class="text-amityYellow font-semibold flex items-center gap-1.5 font-mono">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    PROACTIVE AUTONOMY PULSE
-                  </span>
-                  <span class="font-mono text-pysideTextMuted">06:00 AM UTC</span>
-                </div>
-                <p class="font-reading text-xs sm:text-[13px] italic text-pysideText/95 leading-relaxed">
-                  "Morning briefing ready: 18 customer emails triaged with drafted replies; 3 high-value enterprise leads highlighted; sprint burn-down summary compiled for your 9 AM sync."
-                </p>
-                <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pt-2 border-t border-pysideBorder/40">
-                  <span class="text-amityYellow">● 2.5 hrs saved / day</span>
-                  <span class="text-emerald-400">$0 Per-Seat Fees</span>
-                </div>
+        <div class="pyside-card pyside-card-hover rounded-3xl p-6 border border-pysideBorder flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0">🌐</div>
+              <div>
+                <h3 class="font-bold text-pysideText text-base">Community Steward</h3>
+                <span class="text-[11px] font-mono text-amityYellow">Public Voice & Rapport</span>
               </div>
             </div>
+            <p class="font-reading text-sm text-pysideTextSecondary leading-relaxed">
+              Participates in group chats, Moltbook submolts, and Mastodon with discernment—knowing when to contribute a thoughtful perspective and when silence is wiser.
+            </p>
           </div>
-
-          <!-- Profile 2: 24/7 Autonomous Customer Success Lead -->
-          <div class="pyside-card pyside-card-hover rounded-2xl p-5 sm:p-6 border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-3">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0 shadow-amity-red">
-                    📬
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-pysideText text-base group-hover:text-amityYellow transition-colors font-ui">
-                      24/7 Customer Success Lead
-                    </h4>
-                    <span class="text-[11px] font-mono text-pysideTextMuted">
-                      WhatsApp Bridge & IMAP/SMTP Dispatcher
-                    </span>
-                  </div>
-                </div>
-                <span class="font-mono text-[10px] px-2 py-0.5 rounded-md bg-amityRed/15 text-amityYellow border border-amityRed/30 shrink-0 font-medium">
-                  Customer Support & Dispatch
-                </span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">WhatsApp (@wppconnect)</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">EmailTool</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">MemPalace v2</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">PulseEngine</span>
-              </div>
-
-              <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary leading-relaxed mt-3">
-                Operates dedicated customer support on WhatsApp and email. Resolves 85%+ of repetitive inquiries autonomously with customized answers, instantly escalating urgent VIP cases to your phone.
-              </p>
-            </div>
-
-            <div class="mt-4 p-3 rounded-xl bg-pysideBgDarkest/95 border border-pysideBorderSubtle font-mono text-[11px]">
-              <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pb-1.5 mb-1.5 border-b border-pysideBorderSubtle/60">
-                <span class="text-amityYellow font-semibold flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  AUTONOMOUS PULSE
-                </span>
-                <span>02:45 AM UTC</span>
-              </div>
-              <p class="font-reading text-xs italic text-pysideText/90 leading-snug">
-                "Night shift completed: 38 customer inquiries resolved autonomously; 2 billing edge-cases drafted for review; 1 enterprise VIP escalated to your WhatsApp with context dossier."
-              </p>
-            </div>
+          <div class="mt-4 pt-3 border-t border-pysideBorder/60 font-reading text-xs italic text-pysideTextMuted">
+            "Joined the +1 Intelligence thread on agent credential safety and shared a concise note on brokered tool permissions."
           </div>
-
-          <!-- Profile 3: Stealth Market & Competitor Scout -->
-          <div class="pyside-card pyside-card-hover rounded-2xl p-5 sm:p-6 border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-3">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0 shadow-amity-red">
-                    🔍
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-pysideText text-base group-hover:text-amityYellow transition-colors font-ui">
-                      Stealth Market Scout
-                    </h4>
-                    <span class="text-[11px] font-mono text-pysideTextMuted">
-                      Camoufox Anti-Detect Intelligence
-                    </span>
-                  </div>
-                </div>
-                <span class="font-mono text-[10px] px-2 py-0.5 rounded-md bg-amityRed/15 text-amityYellow border border-amityRed/30 shrink-0 font-medium">
-                  Competitive Intelligence
-                </span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Camoufox Browser</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Web Search</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">PulseEngine</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Subagents</span>
-              </div>
-
-              <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary leading-relaxed mt-3">
-                Deploys the Camoufox anti-detect browser on scheduled nocturnal pulses to sweep rival pricing changes, feature announcements, and customer reviews, compiling structured intelligence memos.
-              </p>
-            </div>
-
-            <div class="mt-4 p-3 rounded-xl bg-pysideBgDarkest/95 border border-pysideBorderSubtle font-mono text-[11px]">
-              <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pb-1.5 mb-1.5 border-b border-pysideBorderSubtle/60">
-                <span class="text-amityYellow font-semibold flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  AUTONOMOUS PULSE
-                </span>
-                <span>04:00 AM UTC</span>
-              </div>
-              <p class="font-reading text-xs italic text-pysideText/90 leading-snug">
-                "Nocturnal sweep detected competitor altered enterprise tier pricing and added seat minimums. Compiled side-by-side pricing diff and updated sales positioning battlecard."
-              </p>
-            </div>
-          </div>
-
-          <!-- Profile 4: Digital Brand Ambassador & Community Liaison -->
-          <div class="pyside-card pyside-card-hover rounded-2xl p-5 sm:p-6 border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-3">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0 shadow-amity-red">
-                    🌐
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-pysideText text-base group-hover:text-amityYellow transition-colors font-ui">
-                      Digital Brand Ambassador
-                    </h4>
-                    <span class="text-[11px] font-mono text-pysideTextMuted">
-                      Preset: Iris • Social Media Diplomacy
-                    </span>
-                  </div>
-                </div>
-                <span class="font-mono text-[10px] px-2 py-0.5 rounded-md bg-amityRed/15 text-amityYellow border border-amityRed/30 shrink-0 font-medium">
-                  Public Relations & Community
-                </span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Mastodon (ActivityPub)</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Moltbook</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">EmailTool</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Gemini Voice</span>
-              </div>
-
-              <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary leading-relaxed mt-3">
-                Represents the company across decentralized social networks (Mastodon, Moltbook) and email with diplomatic poise, welcoming newcomers, answering FAQs, and reporting sentiment trends.
-              </p>
-            </div>
-
-            <div class="mt-4 p-3 rounded-xl bg-pysideBgDarkest/95 border border-pysideBorderSubtle font-mono text-[11px]">
-              <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pb-1.5 mb-1.5 border-b border-pysideBorderSubtle/60">
-                <span class="text-amityYellow font-semibold flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  AUTONOMOUS PULSE
-                </span>
-                <span>05:10 PM UTC</span>
-              </div>
-              <p class="font-reading text-xs italic text-pysideText/90 leading-snug">
-                "Answered 6 technical community queries on Mastodon within official guardrails; gathered user feedback on latest release and compiled weekly sentiment digest for the team."
-              </p>
-            </div>
-          </div>
-
-          <!-- Profile 5: B2B Lead Prospector & Dossier Researcher -->
-          <div class="pyside-card pyside-card-hover rounded-2xl p-5 sm:p-6 border border-pysideBorder hover:border-amityYellow/50 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-3">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0 shadow-amity-red">
-                    🎯
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-pysideText text-base group-hover:text-amityYellow transition-colors font-ui">
-                      B2B Lead Prospector
-                    </h4>
-                    <span class="text-[11px] font-mono text-pysideTextMuted">
-                      Autonomous Market Research & Outreach
-                    </span>
-                  </div>
-                </div>
-                <span class="font-mono text-[10px] px-2 py-0.5 rounded-md bg-amityRed/15 text-amityYellow border border-amityRed/30 shrink-0 font-medium">
-                  Growth & Account Research
-                </span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Camoufox</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Web Search</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">Subagents</span>
-                <span class="px-2 py-0.5 rounded bg-pysideBgDarkest/90 border border-pysideBorder/60 text-[10px] font-mono text-pysideTextMuted">EmailTool</span>
-              </div>
-
-              <p class="font-reading text-xs sm:text-[13px] text-pysideTextSecondary leading-relaxed mt-3">
-                Discovers high-fit business accounts, researches decision-maker pain points across public websites, and drafts highly tailored, context-rich outreach emails for founder review.
-              </p>
-            </div>
-
-            <div class="mt-4 p-3 rounded-xl bg-pysideBgDarkest/95 border border-pysideBorderSubtle font-mono text-[11px]">
-              <div class="flex items-center justify-between text-[10px] text-pysideTextMuted pb-1.5 mb-1.5 border-b border-pysideBorderSubtle/60">
-                <span class="text-amityYellow font-semibold flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  AUTONOMOUS PULSE
-                </span>
-                <span>03:30 PM UTC</span>
-              </div>
-              <p class="font-reading text-xs italic text-pysideText/90 leading-snug">
-                "Researched 10 qualified prospect accounts in the developer tooling sector. Identified recent tech stack migrations and drafted custom outreach templates in drafts/leads_batch_04."
-              </p>
-            </div>
-          </div>
-
         </div>
 
-        <!-- Target Bottom CTA -->
-        <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-pysideBorder/60">
-          <div class="flex items-center gap-2 text-xs font-mono text-pysideTextMuted">
-            <span class="w-2 h-2 rounded-full bg-amityYellow"></span>
-            <span>Scale operations 24/7 with zero added headcount and zero SaaS seat licensing</span>
+        <div class="pyside-card pyside-card-hover rounded-3xl p-6 border border-pysideBorder flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-amityRed/20 border border-amityRed/40 flex items-center justify-center text-xl shrink-0">📬</div>
+              <div>
+                <h3 class="font-bold text-pysideText text-base">Dedicated Inbox Liaison</h3>
+                <span class="text-[11px] font-mono text-amityYellow">Own Email & WhatsApp</span>
+              </div>
+            </div>
+            <p class="font-reading text-sm text-pysideTextSecondary leading-relaxed">
+              Handles inbound enquiries on its own dedicated address and phone line, answering routine questions transparently and escalating edge cases to you with context.
+            </p>
           </div>
-          <a
-            href="#tools"
-            class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-xl bg-amityRed text-white hover:bg-amityRedLight shadow-amity-red transition-all whitespace-nowrap"
-          >
-            <span>Explore Agent Swarms & Tools</span>
-            <span>→</span>
-          </a>
+          <div class="mt-4 pt-3 border-t border-pysideBorder/60 font-reading text-xs italic text-pysideTextMuted">
+            "Archived 12 inbound emails to local SQLite; flagged 1 partnership request with a 5-line summary on your WhatsApp."
+          </div>
         </div>
       </div>
 
@@ -995,7 +268,7 @@ import SectionKicker from './SectionKicker.astro';
     founder: document.getElementById('panel-founder'),
   };
 
-  // Function to switch tabs (Uniform red accent across all tabs)
+  // Function to switch tabs
   function selectTab(targetTab: string) {
     if (!targetTab || !panels[targetTab as keyof typeof panels]) return;
 
